@@ -6,10 +6,6 @@ var path = require('path');
 var mturk = require('mturk-api');
 var xml = require("xml-parse");
 
-var questions = require('../../data/endsurveyquestions.json');
-var values = require('../../data/marketvalues.json');
-var svalues = require('../../data/social.json');
-
 var qfileName = '../../../data/endsurveyquestions.json';
 var vfileName = '../../../data/marketvalues.json';
 var sfileName = '../../../data/social.json';

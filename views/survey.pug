@@ -26,19 +26,20 @@ block content
 					input#age(type="number", style="width:100px", min="1")
 			tr
 				td(style="padding:10px;text-align:right")
-					label(for="experience", style="font-weight:normal;") What level is your investing experience?
+					label(for="experience", style="font-weight:normal;") How often do you check your email?
 						| &nbsp;&nbsp;&nbsp;
 				td(style="padding:10px;")
 					select#experience
 						option(disabled selected value="") --select an option--
-						option None
-						option Novice
-						option Intermediate
-						option Expert
-						option Not Sure
+						option Hourly
+						option Daily
+						option 2 - 3 times a week
+						option Less than 2 times a week
+						option At most once a week
+						option I do not use email
 			tr
 				td(style="padding:10px;text-align:right;vertical-align:top")
-					| Do you have a savings plan such as a 401k?
+					| Do you consider yourself a trusting person?
 					| &nbsp;&nbsp;&nbsp;
 				td(style="padding:10px;")
 					select#plan
@@ -58,5 +59,6 @@ block content
 				alert("Please complete the survey.");
 				return
 			}
-			$.post('/api/participant', data, function() { window.location = '/study'; });
+			window.location = '/study';
+			//$.post('/api/participant', data, function() { window.location = '/study'; });
 		}

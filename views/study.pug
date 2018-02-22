@@ -1,187 +1,64 @@
 extends layout
 
-//- Mixins:
-
-//- Filter Entry Mixin
-mixin filter(name, id)
-	- var val = social[round][id]
-	-
-		var percentColors = [
-			{ pct: 0.0, color: { r: 0xdd, g: 0xed, b: 0xff } },
-			{ pct: 1.0, color: { r: 0x01, g: 0x2d, b: 0x6f } } ];
-		function getColorForPercentage(pct) {
-			for (var i = 1; i < percentColors.length - 1; i++) {
-				if (pct < percentColors[i].pct) {
-					break;
-				}
-			}
-			var lower = percentColors[i - 1];
-			var upper = percentColors[i];
-			var range = upper.pct - lower.pct;
-			var rangePct = (pct - lower.pct) / range;
-			var pctLower = 1 - rangePct;
-			var pctUpper = rangePct;
-			var color = {
-				r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-				g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-				b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
-			};
-			return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-		}
-
-	case rand
-		when 2
-			input(type="checkbox",id=id,style="margin-right:5px;",data-toggle="tooltip", title=val+"% chose this option", data-placement="top", onchange="filter(this, '" + id + "')", autocomplete="off")
-			label(for=id, style="font-weight:bold;font-size:18px;color:"+getColorForPercentage(val / social[round]["filter-max"]), data-placement="right")= name
-		when 1
-			input(type="checkbox",id=id,style="margin-right:5px;",data-toggle="tooltip", title=val+"% chose this option", data-placement="top", onchange="filter(this, '" + id + "')", autocomplete="off")
-			label(for=id, style="font-weight:bold;font-size:18px;", data-toggle="tooltip", title=val+"% chose to filter this category", data-placement="right")= name
-		default
-			input(type="checkbox",id=id,style="margin-right:5px;",autocomplete="off", onchange="filter(this, '" + id + "')")
-			label(for=id, style="font-weight:bold;font-size:18px;")= name
-	br
-
-//- Table Row Mixin
-mixin row(index, type, fee, price, return1, return5, name)
-	//- Generate new id for the fund
-	-
-		function newfundname() {
-			var ary = ['A','W','B','T','Y','N','C','D','E','F','G','H','M','S','L','R','U'];
-			var name = ary[Math.floor(Math.random() * ary.length)]+ary[Math.floor(Math.random() * ary.length)]+Math.floor(Math.random() * 9)+Math.floor(Math.random() * 9)+Math.floor(Math.random() * 9)+Math.floor(Math.random() * 9);
-			return name;
-		}
-	tr
-		td= newfundname()
-		td= type 
-		td(style="text-align:center;")= fee
-		td(style="text-align:center;")= '$' + price
-		td(style="text-align:center;")= return1
-			| %
-		td(style="text-align:center;")= return5
-			| %
-		td 
-			input.allocation(placeholder="0%", type="text", min="0", max="100", onchange="updateVal(this)", oninput="this.value = this.value.replace(/[^0-9.]/g, '');", autocomplete="off", data-extra=index, data-return=return1, style="text-align:center;")
-		//- if (rand == 3)
-		//-	td(style="text-align:center")=(marketvalues[round - 1][name] || "")
-
-//- Table sort head function mixin
-mixin sortButtons(target)
-	- var val = social[round][target]
-	-
-		var percentColors = [
-			{ pct: 0.0, color: { r: 0xdd, g: 0xed, b: 0xff } },
-			{ pct: 1.0, color: { r: 0x01, g: 0x2d, b: 0x6f } } ];
-		function getColorForPercentage(pct) {
-			for (var i = 1; i < percentColors.length - 1; i++) {
-				if (pct < percentColors[i].pct) {
-					break;
-				}
-			}
-			var lower = percentColors[i - 1];
-			var upper = percentColors[i];
-			var range = upper.pct - lower.pct;
-			var rangePct = (pct - lower.pct) / range;
-			var pctLower = 1 - rangePct;
-			var pctUpper = rangePct;
-			var color = {
-				r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
-				g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
-				b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
-			};
-			return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
-		}
-
-	case rand
-		when 3
-			span.glyphicon.glyphicon-chevron-up.sort-button(style="margin-left:5px;margin-right:1px;color:" + getColorForPercentage(val / social[round]["sort-max"]), onclick="sortAsc('" + target + "')", data-toggle="tooltip", title=val+"% chose to sort this column", data-placement="left")
-			span.glyphicon.glyphicon-chevron-down.sort-button(onclick="sortDesc('" + target + "')", style="color:" + getColorForPercentage(val / social[round]["sort-max"]), data-toggle="tooltip", title=val+"% of study participants chose to sort this column", data-placement="right")
-		when 2
-			span.glyphicon.glyphicon-chevron-up.sort-button(style="margin-left:5px;margin-right:1px;color:" + getColorForPercentage(val / social[round]["sort-max"]), onclick="sortAsc('" + target + "')")
-			span.glyphicon.glyphicon-chevron-down.sort-button(onclick="sortDesc('" + target + "')",data-placement="right", style="color:" + getColorForPercentage(val / social[round]["sort-max"]))
-		when 1
-			span.glyphicon.glyphicon-chevron-up.sort-button(style="margin-left:5px;margin-right:1px;", onclick="sortAsc('" + target + "')", data-toggle="tooltip", title=val+"% chose to sort this column", data-placement="left")
-			span.glyphicon.glyphicon-chevron-down.sort-button(onclick="sortDesc('" + target + "')", data-toggle="tooltip", title=val+"% of study participants chose to sort this column", data-placement="right")
-		default
-			span.glyphicon.glyphicon-chevron-up.sort-button(style="margin-left:5px;margin-right:1px;", onclick="sortAsc('" + target + "')")
-			span.glyphicon.glyphicon-chevron-down.sort-button(onclick="sortDesc('" + target + "')")
-
-
 //- Main content
 block content
-	div#filter
-		h3 
-			b Filters
-		h4 Asset Type:
-		+filter('Stock', 'stock')
-		+filter('Bond', 'bond')
-		+filter('Money Market', 'money-market')
-		+filter('Balanced', 'balanced')
-		+filter('International', 'international')
-		h4 Index or Actively Managed:
-		+filter('Index', 'index')
-		+filter('Actively Managed', 'active')
-		h4 Annual Fee:
-		+filter('Above 0.3%', 'above')
-		+filter('0.1% - 0.3%', 'between')
-		+filter('Below 0.1%', 'below')
-	div#study
-		h1 
-			b Round #{round}
-		- var s = rand == 2
-		- var sd = rand == 1 
-		h4 
-			- if (round > 1)
-				b Your return last round was #{retur}%
-		h4=text
-		case s
-			when true
-				div(style="width:300px;position:relative;font-size:16px;")
-					img(src="/images/scale.png", style="width:100%;height: 20px;")
-					span(style="display:block;position:absolute;top:20px;left:0;") 0%
-					case rand
-						when 1
-							span(style="display:block;position:absolute;top:20px;left:50%;transform:translateX(-50%)")= social[round]["filter-max"] / 2 + "%"
-							span(style="display:block;position:absolute;top:20px;right:0;")= social[round]["filter-max"] + "%"
-						when 2
-							span(style="display:block;position:absolute;top:20px;left:50%;transform:translateX(-50%)")= social[round]["sort-max"] / 2 + "%"
-							span(style="display:block;position:absolute;top:20px;right:0;")= social[round]["sort-max"] + "%"
-		button#next.good.no-anim Continue to next round
-			span#butt-back
-		table#data
-			thead
-				tr
-					th Funds
-					th Category
-					th Annual Fee
-					th Price
-					th Average annual return: 1 year
-					th Average annual return: 5 years
-					th Allocation
-					//- if (rand == 3)
-					//- th="Percents allocated by other participants (on average)"
-				tr#sub
-					th
-					th 
-						+sortButtons("category")
-					th 
-						+sortButtons("fee")
-					th
-						+sortButtons("price")
-					th(style="text-align:center;")
-						+sortButtons("first-year")
-					th
-						+sortButtons("fifth-year")
-					th
-					//- if (rand == 3)
-					//- th
-			tbody
-				each val, index in data[round]
-					+row(index, val.category, val.fee, val.price.slice(1, -1), val.oneYear.slice(1, -1), val.fiveYear, val.name)
-				
-	script.
-		var rand = #{rand};
-		var test = #{test};
-		var user = #{user};
-		var dt = new Date();
-		var start = dt.toUTCString();
+	div(style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden")
+		div(style="background:#f1f1f1;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;")
+			img(src="/images/google.png" style="width:91px;display:inline-block;float:left;cursor:pointer;margin-top:5px;")
+			div(style="float:left;background:#fff;cursor:text;height:30px;width: 50%; max-width: 590px; margin-left:80px;border:1px #cdcdcd solid;overflow:hidden")
+				span(style="border-top:5px solid #000; border-left:5px solid transparent;border-right:5px solid transparent;float:right;width:0;height:0;display:block;margin-top:12px;margin-right:10px;")
+			div(style="float:left;background:#4486F9;height:30px;width:60px;text-align:center;border-top-right-radius:2px;border-bottom-right-radius:2px;border:1px solid #4386FA;cursor:pointer;")
+				img(src="/images/search.png", style="height:70%;")
+			div(style="float:right;margin-left:auto")
+				img(src="/images/menu.png" style="height:20px;cursor:pointer")
+			div(style="float:right;margin-left: 25px")
+				img(src="/images/notif.png" style="height:20px;cursor:pointer")
+			div(style="float:right;margin-left:17px;margin-top:2px;")
+				img(src="/images/profile.png" style="height:36px;cursor:pointer")
+		div(style="background:#ffffff;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;")
+			div(style="color:#DD4B58;font-size:19px;margin-top:2px;cursor:pointer")
+				| Gmail
+				span(style="border-top:4px solid #D54937; border-left:4px solid transparent;border-right:4px solid transparent;width:0;height:0;display:inline-block;margin-left:5px;position:relative;top:-5px;")
+			img(src="/images/tools.PNG", style="height:32px;margin-left:105px;cursor:pointer;padding:-2px;")
+			img(src="/images/righttools.PNG", style="height:34px;margin-left:auto;cursor:pointer;padding:-2px;")
+		div(style="background:#ffffff;width:100%;position:relative;overflow:hidden;display:flex;flex-direction:row; align-items:flex-start;")
+			div(style="background:#ffffff;flex-shrink:0;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;")
+				button(style="color:#fff;font-size:11px;font-weight:bold;background:#D54937;border:0;padding:8px 28px;border-radius:2px;cursor:pointer")
+					| COMPOSE
+				div(style="margin-left:-30px;border-left:#D54937 4px solid;font-size:13px;font-weight:bold;color:#D54937;padding-left: 26px;padding-top:7px;padding-bottom:7px;margin-top:7px;")
+					| Inbox
+				div(style="font-size:13px;padding-top:7px;padding-bottom:7px;")
+					| Starred
+				div(style="font-size:13px;padding-top:7px;padding-bottom:7px;")
+					| Important
+				div(style="font-size:13px;padding-top:7px;padding-bottom:7px;")
+					| Sent Mail
+				div(style="font-size:13px;padding-top:7px;padding-bottom:7px;")
+					| Drafts
+				div(style="font-size:13px;padding-top:7px;padding-bottom:7px;")
+					span(style="border-top:5px solid transparent; border-left:5px solid #000;border-bottom:5px solid transparent;width:0;height:0;display:inline-block;margin-right:5px;margin-left:-10px;margin-top:3px;")
+					| Categories
+			div(style="background:#ffffff;flex-shrink:0;flex-grow:1;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;padding: 10px 28px 10px 30px;")
+				div(style="font-size:18px;padding:0px 0px 10px 10px;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;")=Subject
+					div(style="background:#DDDDDD;display:inline-block;font-size:11px;padding:2px 5px;margin-left:20px;") Inbox&nbsp;&nbsp;&nbsp;&nbsp;x
+				div(style="padding:10px;display:flex;flex-direction:row;border-bottom: 1px solid #e5e5e5;")
+					img(src="/images/picon.png", style="height:35px;")
+					div(style="display:flex;flex-direction:column;padding:0px 10px;flex-grow:1")
+						div(style="margin-top:-5px;")
+							span(style="font-weight:bold;font-size:13px;display:inline;") Somone Somboby&nbsp;
+							span(style="font-size:13px;display:inline;") &lt;somone@someone.com&gt;
+						span(style="font-size:13px;display:inline;") to me
+						div(style="width:100%;margin-top:10px;flex-grow:1; overflow-y:auto;")!=Message
+				div(style="padding:10px;display:flex;flex-direction:row;")
+					img(src="/images/picon.png", style="height:35px;")
+					div(style="margin-left: 10px;flex-grow:1;height:100px;border:1px #e5e5e5 solid;font-size:14px;color:#bbb;padding:10px")
+						| Click here to <u>Reply</u> or <u>Forward</u>
+	div(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.4);padding:20px;")
+		h4(style="color:white;") <span id="seconds">10</span> seconds remaining
+		h3(style="color:white;") Please select one:
+		div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-top:10px;") Phishing
+		div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-left:20px;margin-top:10px;") Normal
+
+			
+	//- Javascript			
 	script(src="/javascripts/study.js")
