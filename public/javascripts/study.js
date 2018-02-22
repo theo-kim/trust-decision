@@ -1,3 +1,20 @@
+var timelimit = 45;
+
+function countdown() {
+	timelimit--;
+	document.querySelector('#seconds').innerHTML = timelimit;
+	if (timelimit) {
+		setTimeout(countdown, 1000);
+	}
+	else {
+		document.querySelector('#bottombar').style.top = 0;
+	}
+}
+
+setTimeout(countdown, 1000);
+
+
+
 // // Utility function
 // Array.prototype.remove = function() {
 //     var what, a = arguments, L = a.length, ax;

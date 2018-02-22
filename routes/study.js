@@ -12,11 +12,11 @@ router.get('/', (req, res, next) => {
 		if (parseInt(req.cookies.round) < 10) 
 			res.render('study', {
 				message:emails[0][0].phishing.message,
-				subject:"Hello World",
-				toline:"you, me",
-				fro: "Teddy Kim",
-				faddress: "teddy@teddy.com",
-				timestamp: "Feb 13 (ten days ago)"
+				subject:emails[0][0].phishing.subject,
+				toline:emails[0][0].phishing.to.name,
+				fro:emails[0][0].phishing.from.name,
+				faddress:emails[0][0].phishing.from.email,
+				timestamp:emails[0][0].phishing.timestamp
 			});
 		else
 			res.redirect('/endsurvey');
