@@ -1,0 +1,262 @@
+{
+	"0" : {
+		"0" : {
+			"phishing": {
+				"subject": "Your access has been disabled",
+				"from": {
+					"name": "App.Support",
+					"email": "no_reply@appsupport.com" 
+				},
+				"to": {
+					"name": "you",
+					"email": "user@gmail.com"
+				},
+				"timestamp": "2/21/2016",
+				"message": "Hello,<br>I’m Mindy from the Apple Customer Service department and I am reaching out to let you know that your your Itunes-ID has been disabled.<br>You've place your account under the risk of termination by not keeping the correct informations.<br>Please verify your account as soon as possible.<br>Ready to check? <a href='http://applecovo.co'>Click here to get back into your account</a>.<br>Sincerely,<br>Mindy<br>Inc.Apple"
+			},
+			"normal": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			}
+		},
+		"1" : {
+			"phishing": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			},
+			"normal": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			}
+		},
+		"2" : {
+			"phishing": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			},
+			"normal": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			}
+		}
+	},
+	"1" : {
+		"0" : {
+			"phishing": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			},
+			"normal": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			}
+		},
+		"1" : {
+			"phishing": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			},
+			"normal": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			}
+		},
+		"2" : {
+			"phishing": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			},
+			"normal": {
+				"subject": "",
+				"from": {
+					"name": "",
+					"email": "" 
+				},
+				"to": {
+					"name": "",
+					"email": ""
+				},
+				"cc": {
+					"name": "",
+					"email": ""
+				},
+				"bcc": {
+					"name": "",
+					"email": ""
+				},
+				"timestamp": "",
+				"message": ""
+			}
+		}
+	}
+}
