@@ -1,0 +1,62 @@
+extends layout.pug
+
+block content
+	div#welcome
+		button#next.good(onclick="next()") Continue to Study
+		h3(style="text-align:center;clear:right") Participant Background Survey
+		h4(style="text-align:center;clear:right") 
+			i Please complete the following survey questions on your background
+		hr
+		table(style="margin: 0 auto; width: 100%")
+			tr
+				td(style="padding:10px;text-align:right;width:50%;")
+					label(for="gender", style="font-weight:normal;") Gender:
+						| &nbsp;&nbsp;&nbsp;
+				td(style="padding:10px;")
+					select#gender
+						option(disabled selected value="") --select an option--
+						option Male
+						option Female
+						option Other
+			tr
+				td(style="padding:10px;text-align:right")
+					label(for="age", style="font-weight:normal;") Age:
+						| &nbsp;&nbsp;&nbsp;
+				td(style="padding:10px;")
+					input#age(type="number", style="width:100px", min="1")
+			tr
+				td(style="padding:10px;text-align:right")
+					label(for="experience", style="font-weight:normal;") What level is your investing experience?
+						| &nbsp;&nbsp;&nbsp;
+				td(style="padding:10px;")
+					select#experience
+						option(disabled selected value="") --select an option--
+						option None
+						option Novice
+						option Intermediate
+						option Expert
+						option Not Sure
+			tr
+				td(style="padding:10px;text-align:right;vertical-align:top")
+					| Do you have a savings plan such as a 401k?
+					| &nbsp;&nbsp;&nbsp;
+				td(style="padding:10px;")
+					select#plan
+						option(disabled selected value="") --select an option--
+						option Yes
+						option No
+	script.
+		function next() {
+			var data = {
+				experience: $("#experience").val(),
+				age: $("#age").val(),
+				gender: $("#gender").val(),
+				plan: $("#plan").val()
+			}
+			console.log(data);
+			if (!data.experience || !data.age || !data.plan || !data.gender) {
+				alert("Please complete the survey.");
+				return
+			}
+			$.post('/api/participant', data, function() { window.location = '/study'; });
+		}

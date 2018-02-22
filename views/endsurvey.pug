@@ -1,0 +1,59 @@
+extends layout.pug
+
+mixin likert(name)
+	ul.likert
+		li
+			input(type='radio', name=name, value='strong_disagree')
+			label Strongly Disagree
+		li
+			input(type='radio', name=name, value='med_disagree')
+		li
+			input(type='radio', name=name, value='disagree')
+		li
+			input(type='radio', name=name, value='neutral')
+			label Neutral
+		li
+			input(type='radio', name=name, value='agree')
+		li
+			input(type='radio', name=name, value='med_agree')
+		li
+			input(type='radio', name=name, value='strong_agree')
+			label Strongly Agree
+
+mixin question(index, question)
+	tr
+		td(style="padding:10px;text-align:left;")
+			label(for="gender", style="font-weight:normal;")=question
+				| &nbsp;&nbsp;&nbsp;
+		td(style="padding:10px;")
+			+likert("q" + index)
+
+block content
+	div#welcome
+		h3(style="text-align:center;clear:right") Exit Survey
+		h4(style="text-align:center;clear:right") 
+			i Please complete the following exit survey questions by selecting the right value on each scale
+		hr
+		table(style="margin: 0 auto;")
+			each value, index in questions
+				+question(parseInt(index), value)
+			tr
+				td(style="padding:10px;text-align:left;vertical-align:top")
+					| Is there anything else you would like to tell us about the experience you just had with this study?
+				td(style="padding:10px;")
+					textarea#feedback(style="font-size:16px;padding:10px;width:100%")
+		button#next.good(onclick="next();", style="float:none; margin: 50px auto") Complete Study
+
+	script.
+		function next() {
+			var radioValue = $("input[name='q1']:checked").val();
+			var data = {
+				q1: $("input[name='q1']:checked").val(),
+				q2: $("input[name='q2']:checked").val(),
+				q3: $("input[name='q3']:checked").val(),
+				feedback: $("#feedback").val()
+			}
+
+			console.log(data);
+			$.post('/api/endsurvey', data, function() { window.location = '/result'; });
+		}

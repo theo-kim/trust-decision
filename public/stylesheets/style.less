@@ -1,0 +1,271 @@
+// Application wide color definitions
+// DIMENSIONS
+@default-font-size: 20px;
+
+// COLORS
+@error: #CC0000;
+@warning: #FFCC00;
+@good: #6CC070;
+
+// Application wide style rules
+body {
+	font: @default-font-size "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.error {
+	color: @error; 
+}
+
+a {
+	color: #00B7FF;
+}
+
+button#next {
+	overflow: hidden;
+	background: transparent;
+	border: 2px solid #000;
+	padding: 10px 20px;
+	display: block;
+	float: right;
+	position: relative;
+	z-index: 0;
+	&.good {
+		border-color: @good;
+		&:after {
+			background-color: @good;
+		}
+	}
+	&.error {
+		border-color: @error;
+		&:after {
+			background-color: @error;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		background-color: #000;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 100%;
+		transition: right 1s;
+		z-index: -1;
+		text-align: right;
+	}
+	&:not(.no-anim):hover:after {
+		right: 0;
+	}
+	span#butt-back {
+		display: block;
+		position: absolute;
+		background: @good;
+		top: 0;
+		left: 0;
+		right: 100%;
+		bottom: 0;
+		z-index: -1;
+		transition: right 1s;
+	}
+}
+
+// Welcome page
+div#welcome {
+	padding: 50px 200px;
+	line-height: 1.4em;
+
+	// Start button
+	button#start {
+		background-color: transparent;
+		border: 2px solid #000;
+		padding: 10px 20px;
+		display: block;
+		margin: 0 auto;
+		margin-top: 30px;
+		transition: background-color 0.5s, color 0.5s;
+		&:hover {
+			background-color: #000;
+			color: #FFF;
+		}
+	}
+}
+
+// Study page color and dimension definitions
+
+// DIMENSIONS
+// @filter-pain-width: 20%;
+// @filter-pain-padding-horizontal: 50px;
+// @filter-pain-padding-vertical: 0px;
+
+@filter-pain-width: 0;
+@filter-pain-padding-horizontal: 0px;
+@filter-pain-padding-vertical: 0px;
+
+@study-pain-padding-horizontal: 50px;
+@study-pain-padding-vertical: 0px;
+@thead-padding-horizontal: 20px;
+@thead-padding-vertical: 10px;
+@tbody-padding-horizontal: 10px;
+@tbody-padding-vertical: 10px;
+@sort-button-size: 24px;
+
+// COLORS
+@thead-background-color: #FFF;
+@filter-pain-background-color: @thead-background-color;
+@border-color: #CCC;
+@thead-border-color: @border-color;
+@filter-pain-border-color: @thead-border-color;
+
+// BORDER
+@thead-border: 2px solid @thead-border-color;
+@filter-pain-border: 2px solid @filter-pain-border-color;
+
+// Study Page Pain
+div#study {
+	float: left;
+	padding: @study-pain-padding-vertical @study-pain-padding-horizontal;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: @filter-pain-width;
+
+	span.sort-button {
+		font-size: @sort-button-size;
+		cursor: pointer;
+		opacity: 0.6;
+		transition: opacity 0.2s;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	// Asset Data Table
+	table#data {
+		float: left;
+		clear: right;
+		margin-top: 20px;
+		thead {
+			tr {
+				th {
+					background-color: @thead-background-color;
+					font-weight: normal !important;
+					padding: @thead-padding-vertical @thead-padding-horizontal;
+					//border: @thead-border;
+					border-bottom: 0;
+					text-align: center;
+				}
+				&#sub th {
+					padding-top: 0;
+					border-top: 0px solid #fff !important;
+					border-bottom: @thead-border;
+					white-space: nowrap;
+				}
+			}
+		}
+		tbody {
+			tr {
+				td {
+					padding: @tbody-padding-vertical @tbody-padding-horizontal;
+					border-bottom: 1px solid @border-color;
+				}
+			}
+		}
+	}
+}
+
+// Filter taskbar
+
+div#filter {
+	position: fixed;
+	float: left;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: @filter-pain-width;
+	overflow: hidden;
+
+	padding: @filter-pain-padding-vertical @filter-pain-padding-horizontal;
+
+	background-color: @filter-pain-background-color;
+
+	border-right: @filter-pain-border;
+
+	h4 {
+		margin-top:20px;
+	}
+}
+
+table#table {
+	th, td {
+		padding: 2px 15px;
+		border: 1px solid #333;
+	}
+	thead {
+		tr {
+			background: #888;
+			color: #fff;
+		}
+		th {
+			white-space: nowrap;
+		}
+	}
+	tbody {
+		tr:nth-child(odd) {
+			background: #eee;
+		}
+		td {
+			white-space: nowrap;
+		}
+	}
+} 
+
+.likert {
+	list-style:none;
+	width:100%;
+	margin:0;
+	padding:0 0 35px;
+	display:block;
+	border-bottom:2px solid #efefef;
+}
+.likert:last-of-type {border-bottom:0;}
+.likert:before {
+	content: '';
+	position:relative;
+	top:11px;
+	left:9.5%;
+	display:block;
+	background-color:#efefef;
+	height:4px;
+	width:78%;
+}
+.likert li {
+	display:inline-block;
+	width:14%;
+	text-align:center;
+	vertical-align: top;
+}
+.likert li input[type=radio] {
+	display:block;
+	position:relative;
+	top:0;
+	left:50%;
+	margin-left:-6px;
+}
+.likert li label {
+	width:100%;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 1em;
+	margin-top: 5px;
+}
+
+#subtable {
+	tr {
+		td:first-child {
+			border-left: 0; 
+		}
+		td:last-child {
+			border-right: 0; 
+		}
+	}
+}

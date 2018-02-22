@@ -1,0 +1,34 @@
+{
+  "name": "trust-decision",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "debug-windows": "cd bin & db.bat & cd ../ & set DEBUG=trust-decision & nodemon ./bin/www",
+    "debug": "DATABASE_URL=\"$(heroku config:get DATABASE_URL -a trust-decision)?ssl=true\" DEBUG=trust-decision:* nodemon ./bin/www",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "bower": "^1.8.2",
+    "cookie-parser": "^1.4.3",
+    "csv-parse": "^2.0.0",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "iplocation": "^5.0.0",
+    "json2csv": "^3.11.5",
+    "knex": "^0.14.2",
+    "less-middleware": "~2.2.1",
+    "moment": "^2.19.3",
+    "morgan": "~1.9.0",
+    "mturk-api": "^3.0.2",
+    "pg": "^6.1.0",
+    "pug": "2.0.0-beta11",
+    "serve-favicon": "~2.4.5",
+    "underscore": "^1.8.3",
+    "xml-parse": "^0.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

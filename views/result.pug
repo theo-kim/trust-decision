@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+	div#welcome
+		h1 Thank you for participating in this study!
+		h3 Your bonus: 
+			span(style="color:#888;font-weight:bold;")="$" + Math.round(total) / 100
+		h3 Survey code: 
+			span(style="color:#888;font-weight:bold;")=code
