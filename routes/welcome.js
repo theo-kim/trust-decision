@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', (req, res, next) => {
 
 	// Set cookies to be used in the study
-	res.cookie('round', 1, { maxAge : 8.64e7 });
+	res.cookie('round', 0, { maxAge : 8.64e7 });
 	// res.cookie('rand', rand, { maxAge : 8.64e7 });
 	// res.cookie('return', 0, { maxAge : 8.64e7 }); 
 	

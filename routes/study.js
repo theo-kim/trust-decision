@@ -9,7 +9,10 @@ router.get('/', (req, res, next) => {
 		next();
 	}
 	else {
-		if (parseInt(req.cookies.round) < 10) 
+		if (parseInt(req.cookies.round) === 0) {
+			res.render('scenario', {text: 'Hello World'});
+		}
+		else if (parseInt(req.cookies.round) < 10) 
 			res.render('study', {
 				message:emails[0][0].phishing.message,
 				subject:emails[0][0].phishing.subject,
