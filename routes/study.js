@@ -16,6 +16,7 @@ router.get('/', (req, res, next) => {
 				toline:emails[0][0].phishing.to.name,
 				fro:emails[0][0].phishing.from.name,
 				faddress:emails[0][0].phishing.from.email,
+				taddress:emails[0][0].phishing.to.email,
 				timestamp:emails[0][0].phishing.timestamp
 			});
 		else

@@ -13,6 +13,26 @@ function countdown() {
 
 setTimeout(countdown, 1000);
 
+var show = function() {
+	document.querySelector('#info-box').style.display = "block";
+	document.querySelector('#moreInfo').removeEventListener('click', show);
+	setTimeout(() => {
+		document.querySelector('#moreInfo').addEventListener('click', hide);
+		document.addEventListener('click', hide);
+	}, 200);
+}
+
+var hide = function() {
+	document.querySelector('#moreInfo').removeEventListener('click', hide);
+	document.removeEventListener('click', hide);
+	document.querySelector('#info-box').style.display = "none";
+	setTimeout(() => {
+		document.querySelector('#moreInfo').addEventListener('click', show);
+	}, 200)
+}
+
+document.querySelector('#moreInfo').addEventListener('click', show)
+
 
 
 // // Utility function
