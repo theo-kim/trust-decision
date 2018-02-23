@@ -21,7 +21,7 @@ block content
 				span(style="border-top:4px solid #D54937; border-left:4px solid transparent;border-right:4px solid transparent;width:0;height:0;display:inline-block;margin-left:5px;position:relative;top:-5px;")
 			img(src="/images/tools.PNG", style="height:32px;margin-left:105px;cursor:pointer;padding:-2px;")
 			img(src="/images/righttools.PNG", style="height:34px;margin-left:auto;cursor:pointer;padding:-2px;")
-		div(style="background:#ffffff;width:100%;position:relative;overflow:hidden;display:flex;flex-direction:row; align-items:flex-start;flex-grow")
+		div(style="background:#ffffff;width:100%;position:relative;overflow:hidden;display:flex;flex-direction:row; align-items:flex-start;")
 			div(style="background:#ffffff;flex-shrink:0;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;")
 				button(style="color:#fff;font-size:11px;font-weight:bold;background:#D54937;border:0;padding:8px 28px;border-radius:2px;cursor:pointer")
 					| COMPOSE
@@ -38,13 +38,13 @@ block content
 				div(style="font-size:13px;padding-top:7px;padding-bottom:7px;")
 					span(style="border-top:5px solid transparent; border-left:5px solid #000;border-bottom:5px solid transparent;width:0;height:0;display:inline-block;margin-right:5px;margin-left:-10px;margin-top:3px;")
 					| Categories
-			div(style="background:#ffffff;flex-shrink:0;flex-grow:1;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;padding: 10px 28px 10px 30px;max-height:100%;overflow:hidden;")
+			div(style="background:#ffffff;flex-grow:1;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;padding: 10px 28px 10px 30px;max-height:100%;overflow:hidden;")
 				div(style="font-size:18px;padding:0px 0px 10px 10px;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;")=subject
 					div(style="background:#DDDDDD;display:inline-block;font-size:11px;padding:2px 5px;margin-left:20px;") Inbox&nbsp;&nbsp;&nbsp;&nbsp;x
 				div(style="overflow:hidden;flex-grow:1;overflow-y:auto;display:flex;flex-direction:column;")
 					div(style="padding:10px;display:flex;flex-direction:row;border-bottom: 1px solid #e5e5e5;")
 						img(src="/images/picon.png", style="height:35px;")
-						div(style="display:flex;flex-direction:column;padding:0px 10px;flex-grow:1")
+						div(style="display:flex;flex-direction:column;align-items:stretch;padding:0px 10px;flex-grow:1")
 							div(style="display:flex;flex-direction:row")
 								div(style="display:flex;flex-direction:column")
 									div(style="margin-top:-5px;")
@@ -52,6 +52,8 @@ block content
 										span(style="font-size:13px;display:inline;") &lt;#{faddress}&gt;
 									div#moreInfo(style="margin-top:-5px;cursor:pointer")
 										span(style="font-size:13px;display:inline;")=toline
+										- if (bcc.name)
+											span(style="font-size:13px; display:inline;") , bcc: #{bcc.name}
 										span(style="border-top:4px solid #000; border-left:4px solid transparent;border-right:4px solid 	transparent;width:0;height:0;display:inline-block;margin-left:5px;position:relative;top:-2px;")
 										div
 											div#info-box(style="position:absolute;background:#fff;box-shadow: 0 0px 5px rgba(0,0,0,0.12);font-size:14px;padding-top:10px;padding-bottom:10px;line-height:2.0;padding-right:20px;display:none;")
@@ -61,6 +63,14 @@ block content
 												div
 													span(style="display:inline-block;width:95px;text-align:right;color:#aaa") to:
 													span(style="padding-left:10px") #{toline} &lt;#{taddress}&gt;
+												- if (cc.name)
+													div
+														span(style="display:inline-block;width:95px;text-align:right;color:#aaa") bcc:
+														span(style="padding-left:10px") #{bcc.name} &lt;#{bcc.email}&gt;
+												- if (bcc.name)
+													div
+														span(style="display:inline-block;width:95px;text-align:right;color:#aaa") bcc:
+														span(style="padding-left:10px") #{bcc.name} &lt;#{bcc.email}&gt;
 												div
 													span(style="display:inline-block;width:95px;text-align:right;color:#aaa") date:
 													span(style="padding-left:10px")=timestamp
@@ -75,7 +85,7 @@ block content
 													span(style="display:inline-block;width:95px;text-align:right;color:#aaa") security
 								div(style="font-size:13px;margin-left:auto;")=timestamp
 								img(src="/images/replybutt.png" style="height:30px;margin-top:-7px;margin-left:5px;")
-							div(style="width:100%;margin-top:10px;flex-grow:1;font-size:14px")!=message
+							div(style="margin-top:10px;flex-grow:1;font-size:14px")!=message
 					div(style="padding:10px;display:flex;flex-direction:row;")
 						img(src="/images/picon.png", style="height:35px;")
 						div(style="margin-left: 10px;flex-grow:1;height:100px;border:1px #e5e5e5 solid;font-size:14px;color:#bbb;padding:10px")
@@ -86,13 +96,13 @@ block content
 		div
 			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-top:10px;", onclick="next(0)") Phishing
 			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-left:20px;margin-top:10px;", onclick="next(1)") Normal
-		div#instructions(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;margin-top:25px;") Review Instructions
+		div#instructions(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;margin-top:25px;") Review Instructions (Timer will Pause)
 	div#bottominstr(style="position:absolute;bottom:-100%;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.9);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:100%;")
 		h2(style="color:white;") #{scenario.name}
 		div(style="color:white;")=scenario.body
 
 		h2(style="color:white;") Study Instructions
-		div(style="color:white;") You are being presented a simulated email correspondence. You must put yourself in the mindset of the above scenario and determine whether or not the email presented to you is an attempt at phishing.  You have 45 seconds to make your decision and need to select one of the two option choices at the bottom of the page.  Please base your decision on whether or not you would identify it as phishing if it were to appear in your own inbox.  
+		div(style="color:white;") You are being presented a simulated email correspondence. You must put yourself in the mindset of the above scenario and determine whether or not the email presented to you is an attempt at phishing.  You have 45 seconds to make your decision and need to select one of the two option choices at the bottom of the page.  Please base your decision on whether or not you would identify it as phishing if it were to appear in your own inbox.  Furthermore, feel free to interact with the email as you would the normal Gmail interface, like looking at the message details by clicking the recipient's name;
 			
 		div#resume(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;margin-top:25px;") Resume Study
 	div#waitbar(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,1);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:0;")

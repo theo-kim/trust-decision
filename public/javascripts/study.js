@@ -1,5 +1,5 @@
 var timelimit = 45;
-var timelimit2 = 10;
+var timelimit2 = 2;
 var timer;
 
 function countdown() {

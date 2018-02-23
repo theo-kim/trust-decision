@@ -11,23 +11,30 @@ router.get('/', (req, res, next) => {
 		next();
 	}
 	else {
-		if (parseInt(req.cookies.round) === 0) {
+		const s = parseInt(req.cookies.scenario);
+		const r = parseInt(req.cookies.round);
+
+		if (r === 0) {
 			res.render('scenario', {name: scenarios[0].name, body: scenarios[0].body});
 		}
-		else if (parseInt(req.cookies.round) === 4) {
-			res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
+		else if (r === 4) {
 			res.cookie('scenario', 1, { maxAge : 8.64e7 });
+			res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
 		}
-		else if (parseInt(req.cookies.round) < 10) {
+		else if (r < 10) {
+			console.log(s);
+			console.log(r - (s * 4) - 1);
 			res.render('study', {	
-				message:emails[req.cookies.scenario][req.cookies.round - 1].phishing.message,
-				subject:emails[req.cookies.scenario][req.cookies.round - 1].phishing.subject,
-				toline:emails[req.cookies.scenario][req.cookies.round - 1].phishing.to.name,
-				fro:emails[req.cookies.scenario][req.cookies.round - 1].phishing.from.name,
-				faddress:emails[req.cookies.scenario][req.cookies.round - 1].phishing.from.email,
-				taddress:emails[req.cookies.scenario][req.cookies.round - 1].phishing.to.email,
-				timestamp:emails[req.cookies.scenario][req.cookies.round - 1].phishing.timestamp,
-				scenario: scenarios[req.cookies.scenario],
+				message:emails[s][r - (s * 4) - 1].phishing.message,
+				subject:emails[s][r - (s * 4) - 1].phishing.subject,
+				toline:emails[s][r - (s * 4) - 1].phishing.to.name,
+				fro:emails[s][r - (s * 4) - 1].phishing.from.name,
+				faddress:emails[s][r - (s * 4) - 1].phishing.from.email,
+				taddress:emails[s][r - (s * 4) - 1].phishing.to.email,
+				timestamp:emails[s][r - (s * 4) - 1].phishing.timestamp,
+				bcc:emails[s][r - (s * 4) - 1].phishing.bcc,
+				cc:emails[s][r - (s * 4) - 1].phishing.cc,
+				scenario: scenarios[s],
 				sound: sounds[req.cookies.round - 1],
 			});
 		}
