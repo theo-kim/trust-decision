@@ -3,8 +3,8 @@ extends layout
 //- Main content
 block content
 	div#welcome
-		h1 Scenario 1: Apple Customer
-		p You are a frequent consumer of Apple products and purchase content from Apple’s iTunes and App Store services.  Your email address is "user@gmail.com."
+		h1=name
+		p=body
 		p Please evaluate the following three emails and decide whether they are attempts at Phishing or not.
 
 		button#start(onclick="continueStudy();") 5

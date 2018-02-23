@@ -19,22 +19,3 @@ function continueStudy() {
 }
 
 setTimeout(countdown, 1000);
-
-// var countdown = function() {
-// 	timer--;
-// 	document.querySelector('#start').innerHTML = timer;
-// 	if (timer) {
-// 		setTimeout(countdown, 1000);
-// 	}
-// 	else {
-// 		document.querySelector('#start').innerHTML = 'Continue';
-// 	}
-// };
-
-// var continue = function() {
-// 	if (timer < 1) {
-// 		$.cookie('round', parseInt($.cookie('round')) + 1 + '', { expires: 7, path: '/' });	
-// 		window.location='/survey';
-// 	}
-// }
-// setTimeout(countdown, 1000);

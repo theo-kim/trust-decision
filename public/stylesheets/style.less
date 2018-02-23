@@ -10,6 +10,7 @@
 // Application wide style rules
 body {
 	font: @default-font-size "Lucida Grande", Helvetica, Arial, sans-serif;
+	overflow-y: hidden;
 }
 
 .error {
@@ -271,5 +272,9 @@ table#table {
 }
 
 #bottombar {
-	transition:top 0.5s;
+	transition:top 0.5s, bottom 0.5s;
+}
+
+#bottominstr {
+	transition:top 0.5s, bottom 0.5s;
 }

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var emails = require('../data/emails.json');
+var scenarios = require('../data/scenarios.json');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -10,20 +11,25 @@ router.get('/', (req, res, next) => {
 	}
 	else {
 		if (parseInt(req.cookies.round) === 0) {
-			res.render('scenario', {text: 'Hello World'});
+			res.render('scenario', {name: scenarios[0].name, body: scenarios[0].body});
 		}
-		else if (parseInt(req.cookies.round) < 10) 
-			res.render('study', {
-				message:emails[0][0].phishing.message,
-				subject:emails[0][0].phishing.subject,
-				toline:emails[0][0].phishing.to.name,
-				fro:emails[0][0].phishing.from.name,
-				faddress:emails[0][0].phishing.from.email,
-				taddress:emails[0][0].phishing.to.email,
-				timestamp:emails[0][0].phishing.timestamp
+		else if (parseInt(req.cookies.round) === 4) {
+			res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
+			res.cookie('scenario', 1, { maxAge : 8.64e7 });
+		}
+		else if (parseInt(req.cookies.round) < 10) {
+			res.render('study', {	
+				message:emails[req.cookies.scenario][req.cookies.round - 1].phishing.message,
+				subject:emails[req.cookies.scenario][req.cookies.round - 1].phishing.subject,
+				toline:emails[req.cookies.scenario][req.cookies.round - 1].phishing.to.name,
+				fro:emails[req.cookies.scenario][req.cookies.round - 1].phishing.from.name,
+				faddress:emails[req.cookies.scenario][req.cookies.round - 1].phishing.from.email,
+				taddress:emails[req.cookies.scenario][req.cookies.round - 1].phishing.to.email,
+				timestamp:emails[req.cookies.scenario][req.cookies.round - 1].phishing.timestamp,
+				scenario: scenarios[req.cookies.scenario]
 			});
-		else
-			res.redirect('/endsurvey');
+		}
+		else res.redirect('/endsurvey');
 	}
 });
 

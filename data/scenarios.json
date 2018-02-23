@@ -1,0 +1,10 @@
+{
+	"0": {
+		"name": "Scenario 1: Apple Customer",
+		"body": "You are a frequent consumer of Apple products and purchase content from Apple’s iTunes and App Store services.  Your email address is 'user@gmail.com.'"
+	},
+	"1": {
+		"name": "Scenario 2: Student at NYU",
+		"body": " You are a student at New York University and frequently receive communications from other students and University services, as well as notification from content that you have subscribed to.  Your email address is 'student@nyu.edu'"
+	}
+}

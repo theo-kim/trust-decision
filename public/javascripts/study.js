@@ -1,17 +1,19 @@
 var timelimit = 45;
+var timer;
 
 function countdown() {
 	timelimit--;
 	document.querySelector('#seconds').innerHTML = timelimit;
 	if (timelimit) {
-		setTimeout(countdown, 1000);
+		timer = setTimeout(countdown, 1000);
 	}
 	else {
 		document.querySelector('#bottombar').style.top = 0;
+		document.querySelector('#instructions').style.display = "none";
 	}
 }
 
-setTimeout(countdown, 1000);
+timer = setTimeout(countdown, 1000);
 
 var show = function() {
 	document.querySelector('#info-box').style.display = "block";
@@ -32,8 +34,30 @@ var hide = function() {
 }
 
 document.querySelector('#moreInfo').addEventListener('click', show)
+document.querySelector('#instructions').addEventListener('click', function() {
+	document.querySelector('#bottombar').style.bottom = '100%';
+	document.querySelector('#bottombar').style.top = '-70%';
+
+	document.querySelector('#bottominstr').style.bottom = '0';
+	document.querySelector('#bottominstr').style.top = '0';
+
+	window.clearTimeout(timer);
+})
+document.querySelector('#resume').addEventListener('click', function() {
+	document.querySelector('#bottombar').style.bottom = '0';
+	document.querySelector('#bottombar').style.top = '70%';
+
+	document.querySelector('#bottominstr').style.bottom = '-100%';
+	document.querySelector('#bottominstr').style.top = '100%';
 
 
+	timer = setTimeout(countdown, 1000);
+})
+
+function next() {
+	$.cookie('round', parseInt($.cookie('round')) + 1 + '', { expires: 7, path: '/' });	
+	window.location='/study';
+}
 
 // // Utility function
 // Array.prototype.remove = function() {
