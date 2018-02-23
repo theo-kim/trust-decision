@@ -1,4 +1,5 @@
 var timelimit = 45;
+var timelimit2 = 10;
 var timer;
 
 function countdown() {
@@ -13,7 +14,19 @@ function countdown() {
 	}
 }
 
-timer = setTimeout(countdown, 1000);
+function countdown2() {
+	timelimit2--;
+	document.querySelector('#wait').innerHTML = timelimit2;
+	if (timelimit2) {
+		timer = setTimeout(countdown2, 1000);
+	}
+	else {
+		document.querySelector('#waitbar').style.top = '100%';
+		timer = setTimeout(countdown, 1000);
+	}
+}
+
+timer = setTimeout(countdown2, 1000);
 
 var show = function() {
 	document.querySelector('#info-box').style.display = "block";

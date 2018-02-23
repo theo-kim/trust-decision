@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	div#welcome
+	div#welcome(style="overflow-y:auto;height:100%;position:absolute;left:0;right:0;bottom:0;top:0;padding-bottom:50px")
 		h1 Welcome!
 		h3(style="margin-bottom:50px;") Instructions: Please read carefully
 
@@ -12,4 +12,4 @@ block content
 			p In the second part of the study, you will be presented with three different "games" (the Prisoner's Dilema, the Ultimatum, and the Trust Game) which will simulate situations in which you must unconditionally trust a complete stranger.  Each game will be explained in further detail prior to the start of that portion of the study.  Again, your performance during each game will directly result in a monetary bonus.
 			p(style="color:red") WARNING: Do not press the back button in your web browser or attempt to restart the study after pressing the Continue button below. Pressing the back button or restarting the study will invalidate all of your answers and you will not be eligible for your study reward. Furthermore, please keep your browser window fully maximized as the experiment is not meant to be run otherwise. Be sure you read the instructions above before beginning the study.   
 
-		button#start(onclick="window.location='/survey'") Start Study
+		button#start(onclick="window.location='/survey'",style="margin-bottom:50px;") Start Study

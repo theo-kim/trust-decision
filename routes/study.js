@@ -4,6 +4,7 @@ var router = express.Router();
 var emails = require('../data/emails.json');
 var scenarios = require('../data/scenarios.json');
 
+var sounds = ["/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp3", "/sounds/crowd.mp3", "/sounds/dogpark.mp3", "/sounds/traffic.wav",]
 /* GET home page. */
 router.get('/', (req, res, next) => {
 	if (!req.cookies.round) { 
@@ -26,7 +27,8 @@ router.get('/', (req, res, next) => {
 				faddress:emails[req.cookies.scenario][req.cookies.round - 1].phishing.from.email,
 				taddress:emails[req.cookies.scenario][req.cookies.round - 1].phishing.to.email,
 				timestamp:emails[req.cookies.scenario][req.cookies.round - 1].phishing.timestamp,
-				scenario: scenarios[req.cookies.scenario]
+				scenario: scenarios[req.cookies.scenario],
+				sound: sounds[req.cookies.round - 1],
 			});
 		}
 		else res.redirect('/endsurvey');

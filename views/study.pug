@@ -95,7 +95,11 @@ block content
 		div(style="color:white;") You are being presented a simulated email correspondence. You must put yourself in the mindset of the above scenario and determine whether or not the email presented to you is an attempt at phishing.  You have 45 seconds to make your decision and need to select one of the two option choices at the bottom of the page.  Please base your decision on whether or not you would identify it as phishing if it were to appear in your own inbox.  
 			
 		div#resume(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;margin-top:25px;") Resume Study
+	div#waitbar(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,1);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:0;")
+		h4(style="color:white;") Please wait <span id="wait">10</span> seconds
 
-			
+	audio(autoplay, style="display:none;", loop)
+		source(src=sound)
+
 	//- Javascript			
 	script(src="/javascripts/study.js")
