@@ -109,7 +109,9 @@ block content
 		h4(style="color:white;") Please wait <span id="wait">10</span> seconds
 
 	audio(autoplay, style="display:none;", loop)
-		source(src=sound)
+		source(src=sound, type="audio/wav")
+		source(src=sound, type="audio/flac")
+		source(src=sound, type="audio/mpeg")
 
 	//- Javascript			
 	script(src="/javascripts/study.js")

@@ -4,7 +4,7 @@ var router = express.Router();
 var emails = require('../data/emails.json');
 var scenarios = require('../data/scenarios.json');
 
-var sounds = ["/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp3", "/sounds/crowd.mp3", "/sounds/dogpark.mp3", "/sounds/traffic.wav",]
+var sounds = ["/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp3", "/sounds/crowd.mp3", "/sounds/dogpark.wav", "/sounds/traffic.wav", "/sounds/siren.wav",]
 /* GET home page. */
 router.get('/', (req, res, next) => {
 	if (!req.cookies.round) { 
