@@ -177,25 +177,22 @@
 		},
 		"2" : {
 			"phishing": {
-				"subject": "",
+				"subject": "Bill Tomson has shared a Document on Google Docs with you",
 				"from": {
-					"name": "",
-					"email": "" 
+					"name": "Bill Tomson",
+					"email": "bt2313@nyu.edu" 
 				},
 				"to": {
-					"name": "",
-					"email": ""
+					"name": "you",
+					"email": "hhhhhhhhhhhhhhhh@mailinator.com"
 				},
-				"cc": {
-					"name": "",
-					"email": ""
-				},
+				"cc": {	},
 				"bcc": {
-					"name": "",
-					"email": ""
+					"name": "you",
+					"email": "student@nyu.edu"
 				},
-				"timestamp": "",
-				"message": ""
+				"timestamp": "1/29/2018",
+				"message": "Bill Tomson has invited you to <b>view</b> the following document:<br><br><img src='http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Docs-icon.png' style='width:30px;'/> <span style='font-weight:bold;color:#4587F4;font-size:20px;transform:translateY(3px);display:inline-block;'>Important Class Document</span><br><br><a href='http://doc.s.goo.gle.co.me/suhcskcglquiw234fsac/view' style='display:inline-block;text-decoration:none;border-radius:2px;background:#4D90FE;border:0;font-weight:bold;color:#fff;padding:10px;'>Open in Docs</a> "
 			},
 			"normal": {
 				"subject": "",
