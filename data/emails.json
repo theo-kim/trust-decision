@@ -1,7 +1,7 @@
 {
 	"0" : {
-		"0" : {
-			"phishing": {
+		"phishing": [
+			{
 				"subject": "Your access has been disabled",
 				"from": {
 					"name": "App.Support",
@@ -16,30 +16,7 @@
 				"timestamp": "2/21/2016",
 				"message": "Hello,<br>I’m Mindy from the Apple Customer Service department and I am reaching out to let you know that your your Itunes-ID has been disabled.<br>You've place your account under the risk of termination by not keeping the correct informations.<br>Please verify your account as soon as possible.<br>Ready to check? <a href='http://applecovo.co'>Click here to get back into your account</a>.<br>Sincerely,<br>Mindy<br>Inc.Apple"
 			},
-			"normal": {
-				"subject": "",
-				"from": {
-					"name": "",
-					"email": "" 
-				},
-				"to": {
-					"name": "",
-					"email": ""
-				},
-				"cc": {
-					"name": "",
-					"email": ""
-				},
-				"bcc": {
-					"name": "",
-					"email": ""
-				},
-				"timestamp": "",
-				"message": ""
-			}
-		},
-		"1" : {
-			"phishing": {
+			{
 				"subject": "Account Notification",
 				"from": {
 					"name": "Apple Customer Support",
@@ -54,10 +31,7 @@
 				"timestamp": "2/21/2016",
 				"message": "<p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>Dear User</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’>&nbsp;</p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>For your protection, your account has been automatically locked.</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>We have prevented an unusual login attempt on your Apple account. Please review the sign in details below:</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’>&nbsp;</p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>Country: Mexico</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>Date and time: 23 October 2017</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>IP Address: 90.197.59.6</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>Operating System: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’>&nbsp;</p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>Our support team has locked your account for security measures, you must reset your account password info.</span></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>If you do not update your account within 12 hours (from opening this email) it will be Temporary Locked </span><a href=‘http://agdhdescxskdfjues.apple.io/verify/account)’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;’>Verify Your Account</span></a></p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’>&nbsp;</p><p style=‘line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;’><span style=‘font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;’>Apple Team</span></p>"
 			},
-			"normal": {}
-		},
-		"2" : {
-			"phishing": {
+			{
 				"subject": "Thank you for your purchase",
 				"from": {
 					"name": "Apple Customer Service",
@@ -74,30 +48,59 @@
 				},
 				"timestamp": "9/10/2017",
 				"message": "<p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><strong><span style='font-size: 32pt; font-family: Arial; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>Order Receipt No. 517234323</span></strong></p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><strong><span style='font-size: 24pt; font-family: Arial; color: #b7b7b7; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>Today at 11:53AM</span></strong></p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'>&nbsp;</p><table style='border: none; border-collapse: collapse; width: 100%; max-width:800px'><tbody><tr style='height: 36pt;'><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;' colspan='2'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>APPLE ID:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #3c78d8; background-color: transparent; font-variant: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;'>user@gmail.com</span></strong></span></p></td><td style='vertical-align: middle; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;' rowspan='3'><p style='line-height: 1.2; margin-top: 20pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>BILLED TO:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #3c78d8; background-color: transparent; font-variant: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;'>user@gmail.com</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'>&nbsp;</p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'>&nbsp;</p></td><td style='vertical-align: middle; background-color: #efefef; padding: 5pt 15pt 5pt 5pt; border: solid #ffffff 1pt;' rowspan='3'><p style='line-height: 1.2; margin-top: 20pt; margin-bottom: 0pt; text-align: right;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>TOTAL:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt; text-align: right;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>243.00 USD</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'>&nbsp;</p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'>&nbsp;</p></td></tr><tr style='height: 21pt;'><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>INVOICE DATE:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>3 March 2017</span></strong></span></p></td><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>SEQUENCE No.:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>1-45646343</span></strong></span></p></td></tr><tr style='height: 21pt;'><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>ORDER ID:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #3c78d8; background-color: transparent; font-variant: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;'>2647278283454</span></strong></span></p></td><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>DOCUMENT No.:</span></strong></span></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #3c78d8; background-color: transparent; font-variant: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;'>73743</span></strong></span></p></td></tr><tr style='height: 21pt;'><td style='background-color: #ffffff; padding: 5pt; border: 1pt solid #ffffff; vertical-align: top;' colspan='4'>&nbsp;</td></tr></tbody></table><p>&nbsp;</p><table style='border: none; border-collapse: collapse;width: 100%; max-width:800px'><tbody><tr style='height: 21pt;'><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>iTunes Store</span></strong></span></p></td><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>TYPE</span></strong></span></p></td><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>PURCHASED FROM</span></strong></span></p></td><td style='vertical-align: top; background-color: #efefef; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-family: arial, helvetica, sans-serif;'><strong><span style='font-size: 11pt; color: #999999; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>PRICE</span></strong></span></p></td></tr><tr style='height: 21pt;'><td style='vertical-align: top; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><br /><table style='border: none; border-collapse: collapse;'><tbody><tr style='height: 46pt;'><td style='vertical-align: top; padding: 0.07200000000000001pt 0.07200000000000001pt 0.07200000000000001pt 0.07200000000000001pt;'><img src='images/netflix.png' style='width:45px;margin-right:5px;' /></td><td style='vertical-align: top; padding: 0.72pt 0.72pt 0.72pt 0.72pt;'><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><strong><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>NETFLIX 1S Plan (Automatic Renewal)</span></strong></p><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-size: 11pt; font-family: Arial; color: #b7b7b7; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>Monthly | 3 March 2017</span></p></td></tr></tbody></table></td><td style='vertical-align: top; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><br /><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>Subscription</span></p></td><td style='vertical-align: top; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><br /><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>iPhone</span></p></td><td style='vertical-align: top; padding: 5pt 5pt 5pt 5pt; border: solid #ffffff 1pt;'><br /><p style='line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;'><strong><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>243.00 USD</span></strong></p></td></tr></tbody></table><p>&nbsp;</p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><strong><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>The Subscription period will automatically renew unless you turn it off at least 24 hours prior to the renewal period.</span></strong></p><p>&nbsp;</p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><strong><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>To cancel this order please you will be asked to provide the information for the credit card used to make the order</span></strong></p><p>&nbsp;</p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><a href='http://gbs.app.le.co/manage/subscriptions'><span style='font-size: 11pt; font-family: Arial; color: #3c78d8; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;'>Manage / Cancel Subscriptions</span></a></p><p>&nbsp;</p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>Regards,</span></p><p style='line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;'><span style='font-size: 11pt; font-family: Arial; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;'>Apple iTunes Store Team</span></p>"
-			},
-			"normal": {
-				"subject": "",
+			}
+		],
+		"normal": [
+			{
+				"subject": "Your Apple Telephone Experience",
 				"from": {
-					"name": "",
-					"email": "" 
+					"name": "Apple Support",
+					"email": "AppleSupport@insideapple.apple.com" 
 				},
 				"to": {
-					"name": "",
-					"email": ""
+					"name": "me",
+					"email": "user@gmail.com"
 				},
-				"cc": { },
-				"bcc": {
-					"name": "",
-					"email": ""
+				"cc": {},
+				"bcc": {},
+				"timestamp": "7/17/17",
+				"message": "<div style='background-color:#F5F5F5;position:relative;padding:15px 0;'><div style='background:#fff;border: 1px solid #D2D2D2;margin: 10px auto;padding:20px;width:45%;border-radius:6px;position:relative'><img src='/images/apple.gif' style='position:absolute;top:20px;right:20px;'/><h1 style='font-family:Helvetica;text-align:center;font-weight:bold;font-size:28px;padding-top:20px'>We'd like to hear from you.</h1><div style='font-family:helvetica;color:#797979;padding: 40px 20px;'><p>You recently contacted AppleCare Telephone Support.</p><p>We'd love to hear about the Experience</p><br><p>Your advisor: Laura</p><p>Your Case ID: 100237739039</p><br><a href='http://c.apple.com/r?v=2&la=en&lc=us&a=JbPB87Fgx6t56bqgdenJrfLmBhAfY0y6ghuycIO2k3Ab33NKg4WWy9NV8lB4fWcleaZ5MmH1KRhOPN4QNcRf9KE6NGuuXqYlveLFdedHNqjydOu%2BUOsbMnjsh8wMZiYFTBIqneIH21q37Ru%2BXGbZnOcFwcNjm1%2BkaUeI2mMuDFu3V%2BplSiArlVZC8XsLhLGbpwXPp64KnwUdYNW%2FPqjzrQ%3D%3D&ct=aI2e0q8M8k' style='display:inline-block;text-decoration:none;background:#3D90DC;border-radius:20px;color:#fff;border:#266399 solid 1px;padding:5px 20px'>Take the survey</a><br><br><br><p>Thanks for taking the time to share your thought</p><br><p>Sincerely,</p><p>Apple Support</p></div></div><div style='margin:20px auto;width:45%;color:#B7B7B7;font-size:11px;'>The survey will be available for a limited time. We hope you can provide us feedback to improve our support programs and offerings.</div><div style='margin:20px auto;width:45%;color:#B7B7B7;font-size:11px;'>We are here to help. At Apple Support, you can learn more about your product, download the latest software updates, and share tips and solutions with other users. You can also find out the best way to contact us, Contact Apple Support. </div><div style='margin:20px auto 0px auto;width:45%;color:#B7B7B7;font-size:11px;text-align:center'>TM and copyright &copy; 2017</div><div style='margin:0 auto;width:45%;color:#B7B7B7;font-size:11px;text-align:center;'><u>All Rights Reserved</u> / <u>Privacy Policy</u> / <u>Apple Support</u> / <u>Unsubscribe from future emails</u></div></div>"
+			},
+			{
+				"subject": "Apple Care Follow Up",
+				"from": {
+					"name": "Keisha Gray",
+					"email": "lgray2@apple.com" 
 				},
-				"timestamp": "",
-				"message": ""
+				"to": {
+					"name": "me",
+					"email": "user@gmail.com"
+				},
+				"cc": {},
+				"bcc": {},
+				"timestamp": "7/16/17",
+				"message": "Hello John,<br><br>If you need any help with your Macbook Pro after our conversation today, email me back and I will call you so we can get any further issues fixed for you.<br></br>Regards,<br><br><br>Keisha Gray<br><a href='mailto:lgray2@apple.com'>lgray2@apple.com</a>"
+			},
+			{
+				"subject": "Verify your Apple ID email address",
+				"from": {
+					"name": "Apple",
+					"email": "appleid@id.apple.com" 
+				},
+				"to": {
+					"name": "me",
+					"email": "user@gmail.com"
+				},
+				"cc": {},
+				"bcc": {},
+				"timestamp": "7/16/17",
+				"message": "<div style='background-color:#F5F5F5;position:relative;padding:15px 0;'><div style='background:#fff;border: 1px solid #D2D2D2;margin: 10px auto;padding:20px;width:45%;border-radius:6px;position:relative'><img src='/images/apple.gif' style='position:absolute;top:20px;right:20px;'/><div style='font-family:helvetica;color:#797979;padding: 40px 20px;'><p>You have selected <a href='mailto:user@gmail.com'>user@gmail.com</a> as your new Apple ID.  To verify this email address belongs to you, enter the code below on the email verification page:</p><p style='font-size:20px'>773601</p><p>This code will expire three hours after this email was sent.</p><p><b>Why you received this email.</b><br>Apple requires verification whenever an email address is selected as an Apple ID.  Your Apple ID cannot be used until you verify it</p><p>If you did not make this request, you can ignore this email.  No Apple ID will be created without verification.</p><br><p>Apple Support</p></div></div><div style='margin:20px auto 0px auto;width:45%;color:#B7B7B7;font-size:11px;text-align:center;'>Apple | Support | Privacy Policy</div><div style='margin:0 auto;width:45%;color:#B7B7B7;font-size:11px;text-align:center'>Copyright &copy; 2017</div><div style='margin:0 auto;width:45%;color:#B7B7B7;font-size:11px;text-align:center'>Apple Distribution International, Hollyhill Industrial Estate, Hollyhill, Cork, Ireland.‎</div><div style='margin:0 auto;width:45%;color:#B7B7B7;font-size:11px;text-align:center;'>All Rights Reserved</div></div>"
 			}
-		}
+		]
 	},
 	"1" : {
-		"0" : {
-			"phishing": {
+		"phishing": [
+			{
 				"subject": "Library Account",
 				"from": {
 					"name": "NYU Libaries",
@@ -112,30 +115,7 @@
 				"timestamp": "4/1/2017",
 				"message": "Dear Student,<br><br>Your access to your library account is expiring soon due to inactivity. To continue to have access to the library services, you must reactivate your account. For this purpose, click the web address below or copy and paste it into your web browser. A successful login will activate your account and you will be redirected to your library profile.<br><br><a href='http://auth.wzbx.ma'>https://auth.nyu.edu/cas/login?service=https%3a%2f%</a><br><br>If you are not able to login, please contact Library services atlibraries@nyu.edu for immediate assistance.<br><br>Sincerely,<br><br>University Library<br>New York University"
 			},
-			"normal": {
-				"subject": "",
-				"from": {
-					"name": "",
-					"email": "" 
-				},
-				"to": {
-					"name": "",
-					"email": ""
-				},
-				"cc": {
-					"name": "",
-					"email": ""
-				},
-				"bcc": {
-					"name": "",
-					"email": ""
-				},
-				"timestamp": "",
-				"message": ""
-			}
-		},
-		"1" : {
-			"phishing": {
+			{
 				"subject": "Congratulations: You are qualified to receive a four month free trial of Chegg Textbook Services",
 				"from": {
 					"name": "",
@@ -153,30 +133,7 @@
 				"timestamp": "10/5/17",
 				"message": "<img src='/images/chegg.png' style='height:20px'><div style='position:relative;overflow:hidden;height:600px;'><img src='/images/study.jpg' style='border-top:#E68D37 4px solid;width:600px;position:absolute;top:0;left:0;'/><div style='position:absolute;background:rgba(255,255,255,0.8);left:100px;top:75px;width:400px;height:250px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-size:18px;'><b>Good for those:</b><ul style='margin-left:10px;width:375px;padding-left:0;list-style-position:inside;list-style-image:url(\"/images/check.png\")'><li>2 a.m. late night cram sessions</li><li>\"I know nothing!\" panic attacks</li><li>\"I chose to party over studying\" moments</li></ul><a style='background:#5D9894;display:block;padding:10px;color:#fff;border-radius:5px;cursor:pointer;txt-decoration:none;' href='http://dealzbiz.com/promotions/ads/cheggs/trial'>Start your 6 month trial</a></div><div style='position:absolute;top:50px;left:200px;width:200px;height:50px;background:#E68D37;display:flex;flex-direction:row;justify-content:center;align-items:center;color:#fff;font-size:30px;text-align:center;font-family:helvetica;'>Chegg Study</div></div>"
 			},
-			"normal": {
-				"subject": "",
-				"from": {
-					"name": "",
-					"email": "" 
-				},
-				"to": {
-					"name": "",
-					"email": ""
-				},
-				"cc": {
-					"name": "",
-					"email": ""
-				},
-				"bcc": {
-					"name": "",
-					"email": ""
-				},
-				"timestamp": "",
-				"message": ""
-			}
-		},
-		"2" : {
-			"phishing": {
+			{
 				"subject": "Bill Tomson has shared a Document on Google Docs with you",
 				"from": {
 					"name": "Bill Tomson",
@@ -193,8 +150,10 @@
 				},
 				"timestamp": "1/29/2018",
 				"message": "Bill Tomson has invited you to <b>view</b> the following document:<br><br><img src='http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Docs-icon.png' style='width:30px;'/> <span style='font-weight:bold;color:#4587F4;font-size:20px;transform:translateY(3px);display:inline-block;'>Important Class Document</span><br><br><a href='http://doc.s.goo.gle.co.me/suhcskcglquiw234fsac/view' style='display:inline-block;text-decoration:none;border-radius:2px;background:#4D90FE;border:0;font-weight:bold;color:#fff;padding:10px;'>Open in Docs</a> "
-			},
-			"normal": {
+			}
+		],
+		"normal": [
+			{
 				"subject": "",
 				"from": {
 					"name": "",
@@ -215,6 +174,6 @@
 				"timestamp": "",
 				"message": ""
 			}
-		}
+		]
 	}
 }

@@ -72,8 +72,13 @@ function next() {
 	var soundCookie = $.cookie('sound');
 	soundCookie = soundCookie.substr(0, soundNum) + (parseInt(soundCookie[soundNum]) + 1) + "" + soundCookie.substr(soundNum + 1);
 
+	// Alter email cookie to record seen emails
+	var emailCookie = $.cookie('emails');
+	emailCookie |= Math.pow(2, emailIndex);
+
 	$.cookie('round', parseInt($.cookie('round')) + 1 + '', { expires: 7, path: '/' });	
 	$.cookie('sound', soundCookie, { expires: 7, path: '/' });	
+	$.cookie('emails', emailCookie, { expires: 7, path: '/' });	
 	window.location='/study';
 }
 

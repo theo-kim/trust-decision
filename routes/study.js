@@ -17,11 +17,12 @@ router.get('/', (req, res, next) => {
 		if (r === 0) {
 			res.render('scenario', {name: scenarios[0].name, body: scenarios[0].body});
 		}
-		else if (r === 4) {
+		else if (r === emails[0].normal.length + emails[0].phishing.length + 1) {
 			res.cookie('scenario', 1, { maxAge : 8.64e7 });
+			res.cookie('emails', 0, { maxAge : 8.64e7 });
 			res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
 		}
-		else if (r < 10) {
+		else if (r < emails[0].normal.length + emails[0].phishing.length + emails[1].normal.length + emails[1].phishing.length + 2) {
 			// Get random sound that has been played less than 5 times
 			const playedSounds = req.cookies.sound;
 			let randSound;
@@ -30,25 +31,48 @@ router.get('/', (req, res, next) => {
 				randSound = Math.floor(Math.random() * 10);
 			} while (parseInt(playedSounds[randSound]) > 4)
 			// END
+
+			// Get random email, but see if it was used already
+			const chosenEmail = req.cookies.emails,
+				nNormal = emails[s].normal.length,
+				nPhishing = emails[s].phishing.length,
+				nEmails = nNormal + nPhishing;
+
+			let randomEmail, type = 'phishing', selEmail, emailIndex;
+
+			do {
+				randomEmail = Math.floor(Math.random() * nEmails);
+			} while (parseInt(chosenEmail) & Math.pow(2, randomEmail))
+
+			if (randomEmail >= nPhishing) { randomEmail -= nPhishing; type = 'normal'; }
+
+			selEmail = emails[s][type][randomEmail];
+			// selEmail = emails[s]['normal'][2];
+			
+			emailIndex = randomEmail + ((type === 'normal') * nPhishing);
+			// END
 			
 			// Render Page
 			res.render('study', {	
-				message:emails[s][r - (s * 4) - 1].phishing.message,
-				subject:emails[s][r - (s * 4) - 1].phishing.subject,
-				toline:emails[s][r - (s * 4) - 1].phishing.to.name,
-				fro:emails[s][r - (s * 4) - 1].phishing.from.name,
-				faddress:emails[s][r - (s * 4) - 1].phishing.from.email,
-				taddress:emails[s][r - (s * 4) - 1].phishing.to.email,
-				timestamp:emails[s][r - (s * 4) - 1].phishing.timestamp,
-				bcc:emails[s][r - (s * 4) - 1].phishing.bcc,
-				cc:emails[s][r - (s * 4) - 1].phishing.cc,
+				message: selEmail.message,
+				subject: selEmail.subject,
+				toline: selEmail.to.name,
+				fro: selEmail.from.name,
+				faddress: selEmail.from.email,
+				taddress: selEmail.to.email,
+				timestamp: selEmail.timestamp,
+				bcc: selEmail.bcc,
+				cc: selEmail.cc,
 				scenario: scenarios[s],
 				sound: sounds[randSound],
 				soundNum: randSound,
+				emailIndex: emailIndex
 			});
 			// END
 		}
-		else res.redirect('/endsurvey');
+		else {
+			res.render('endsurvey', { questions: { 0: "Do you like icecream?", 1: "Do you like pizza?", 2: "Do you like fruit?", } });
+		}
 	}
 });
 

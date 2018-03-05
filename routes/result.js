@@ -20,16 +20,17 @@ var userTable = (process.env.DEBUG) ? 'dev_participants' : 'prod_participants';
 router.get('/', (req, res, next) => {
 	if (req.cookies.round && req.cookies.round > 0) {
 		var usercode = guid();
-		db.select([userTable + '.id', 'total_return', 'usercode']).from(testTable).join(userTable, userTable + '.id', testTable + '.userid').where(testTable + '.id', req.cookies.test).first()
-			.then((result) => {
-				if (!result.usercode) {
-					db(userTable).update({'usercode': usercode}).where('id', result.id)
-						.then((r) => {
-							res.render('result', {total: result.total_return, code: usercode});	
-						})
-				}
-				else res.render('result', {total: result.total_return, code: result.usercode});
-			});
+		res.render('result', {code: usercode})
+		// db.select([userTable + '.id', 'total_return', 'usercode']).from(testTable).join(userTable, userTable + '.id', testTable + '.userid').where(testTable + '.id', req.cookies.test).first()
+		// 	.then((result) => {
+		// 		if (!result.usercode) {
+		// 			db(userTable).update({'usercode': usercode}).where('id', result.id)
+		// 				.then((r) => {
+		// 					res.render('result', {total: result.total_return, code: usercode});	
+		// 				})
+		// 		}
+		// 		else res.render('result', {total: result.total_return, code: result.usercode});
+		// 	});
 	}
 	else {
 		next();

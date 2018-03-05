@@ -55,5 +55,6 @@ block content
 			}
 
 			console.log(data);
-			$.post('/api/endsurvey', data, function() { window.location = '/result'; });
+			window.location = '/result';
+			//$.post('/api/endsurvey', data, function() { window.location = '/result'; });
 		}
