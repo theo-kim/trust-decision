@@ -7,6 +7,7 @@ const survey = require('./survey.js');
 const welcome = require('./welcome.js');
 const endsurvey = require('./endsurvey.js');
 const result = require('./result.js');
+const email = require('./email.js');
 const api = require('./api/');
 
 router.use('/api', api);
@@ -16,6 +17,7 @@ router.use('/study', study);
 router.use('/survey', survey);
 router.use('/endsurvey', endsurvey);
 router.use('/result', result);
+router.use('/emails', email);
 router.use('/', welcome);
 
 module.exports = router;

@@ -26,10 +26,10 @@ block content
 					input#age(type="number", style="width:100px", min="1")
 			tr
 				td(style="padding:10px;text-align:right")
-					label(for="experience", style="font-weight:normal;") How often do you check your email?
+					label(for="email", style="font-weight:normal;") How often do you check your email?
 						| &nbsp;&nbsp;&nbsp;
 				td(style="padding:10px;")
-					select#experience
+					select#email
 						option(disabled selected value="") --select an option--
 						option Hourly
 						option Daily
@@ -42,23 +42,23 @@ block content
 					| Do you consider yourself a trusting person?
 					| &nbsp;&nbsp;&nbsp;
 				td(style="padding:10px;")
-					select#plan
+					select#trust
 						option(disabled selected value="") --select an option--
 						option Yes
 						option No
 	script.
 		function next() {
 			var data = {
-				experience: $("#experience").val(),
+				email: $("#email").val(),
 				age: $("#age").val(),
 				gender: $("#gender").val(),
-				plan: $("#plan").val()
+				trust: $("#trust").val()
 			}
 			console.log(data);
-			if (!data.experience || !data.age || !data.plan || !data.gender) {
+			if (!data.email || !data.age || !data.trust || !data.gender) {
 				alert("Please complete the survey.");
 				return
 			}
-			window.location = '/study';
-			//$.post('/api/participant', data, function() { window.location = '/study'; });
+			//- window.location = '/study';
+			$.post('/api/participant', data, function() { window.location = '/study'; });
 		}

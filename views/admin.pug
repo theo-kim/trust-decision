@@ -12,155 +12,32 @@ block content
 			table#table(data-toggle="table", data-pagination="true", data-sortable="true", data-search="true", style="font-size:16px;positon:relative")
 				thead
 					tr
-						th Bonus Worker
-						- var o = headers
-						- for (var i = 0; i < o.length; ++i)
-							th= o[i]
+						- var columns = headers
+						- for (var i = 0; i < columns.length; ++i)
+							th= columns[i]
 				tbody(style="max-height:100px;overflow-y:auto")
-					each val in users
+					each row in users
 						tr
-							- if (val['workerid'] || val['bonus'])
-								- if (val['bonus'])
-									td Bonused
-								- else
-									td
-										button(onclick='bonus(' + val["total_return"] + ', "' + val["workerid"] + '", "' + val["assignment"] + '")')='BONUS: $' + (Math.round(val['total_return']) / 100)  
-							- else 
-								td Unsubmitted
-							- for (var i = 0; i < o.length; ++i)
-								- if (o[i].includes('start') || o[i].includes('ending'))
-									td=moment(val[o[i]]).format('MM/DD HH:mm:ss')
-								- else if (o[i].includes('feedback'))
+							- for (var i = 0; i < columns.length; ++i)
+								- var col = columns[i];
+								- if (col.includes('start') || col.includes('ending'))
+									- if (row[col])
+										td=moment(row[col]).format('MM/DD HH:mm:ss')
+									- else
+										td=""
+								- else if (col.includes('feedback'))
 									td(style="white-space:normal;max-width:300px;")
-										div(style="overflow-y:auto;overflow-x:hidden;")=val[o[i]]
-								- else if (o[i].includes('allocation'))
-									- var vl = (val[o[i]] == null) ? [] : val[o[i]].split(",")
-									- vl.pop()
-									td(style="padding:0px;")
-										table#subtable(style="margin-top:-2px;margin-bottom:-2px;")
-											tr(style="background:none;")
-												each g in vl
-													td(style="border-top:0;border-bottom:0;")=g.split(':')[0]
-													td(style="border-top:0;border-bottom:0;")=g.split(':')[1] + "%"
-								- else if (o[i].includes('sort') && !(o[i].includes('total')) && val[o[i]] && typeof val[o[i]] !== "string")
-									td(style="padding:0px;")
-										table#subtable(style="margin-top:-2px;margin-bottom:-2px;")
-											tr(style="background:none;")
-												td(style="border-top:0;border-bottom:0;") Ascending
-												td(style="border-top:0;border-bottom:0;")=val[o[i]].ascending
-											tr(style="background:none;")
-												td(style="border-top:0;border-bottom:0;") Descending
-												td(style="border-top:0;border-bottom:0;")=val[o[i]].descending
-								- else 
-									td=val[o[i]]					
-
-		hr
-		h2(style="margin-top:50px;") View Average Allocations
-		div(style="overflow:auto;max-height:400px;position:relative")
-			table#table(style="table-layout:fixed;font-size:16px;margin-top:10px;")
-				thead
-					tr
-						th Name
-						th Round 1
-						th Round 2
-						th Round 3
-						th Round 4
-						th Round 5
-						th Round 6
-						th Round 7
-						th Round 8
-						th Round 9
-				tbody
-					- var s = Object.keys(marketdata[1])
-					each val in s
-						tr
-							td=val
-							- for (var i = 1; i < 10; ++i)
-								- var su = 0, n = 0;
-								- for (var j = 0; j < users.length; ++j)
-									- if (users[j][(2016 + i) + '_allocation'])
-										- var all = users[j][(2016 + i) + '_allocation'].split(',')
-										- for (var a = 0; a < all.length; ++a)
-											- var fund = all[a].split(':')[0], per = all[a].split(':')[1];
-											- 
-												if (per) {
-													per.replace(' ', '');
-												}
-												if (fund === val) {
-													su += parseInt(per);
-												}
-												++n;
-								- if (su > 0)
-									td=Math.round((su / n) * 10) / 10 + '%'
-								- else
-									td 0%
-					
-
-		hr
-		h2(style="margin-top:50px;") Assign Average Allocations
-		button(style="display:block;margin-bottom: 50px; border:0; background: #ddd; padding: 5px 20px;", onclick="saveValues()") Save
-		span.glyphicon.glyphicon-triangle-left(style="cursor:pointer;", onclick="prevRoundA()")
-		span#round1(style="padding:0 10px; padding-bottom:10px; display:inline-block; font-weight:bold;") ROUND 1
-		span.glyphicon.glyphicon-triangle-right(style="cursor:pointer;", onclick="nextRoundA()")
-		div(style="overflow:auto;max-height:400px;position:relative")
-			table.inputs#table(style="table-layout:fixed;font-size:16px;margin-top:10px;")
-				thead
-					tr
-						th Name
-						th Category
-						th Annual Fee
-						th Price
-						th Average annual return: 1 year
-						th Average annual return: 5 years
-						th Percents allocated by other participants (on average)
-				tbody
-					- for (var i = 1; i < 11; ++i)
-						- var s = Object.keys(marketdata[i])
-						each val in s
-							tr(class="round" + i)
-								td=val
-								td=marketdata[i][val].category
-								td=marketdata[i][val].fee
-								td=marketdata[i][val].price
-								td=marketdata[i][val].oneYear
-								td=marketdata[i][val].fiveYear
-								td
-									- var v = marketvalues[i - 1][marketdata[i][val].name] || ""
-									- var cd = marketdata[i][val].name
-									input(type="text", maxlength="3", autocomplete="off", data-name=cd, value=v)
-		hr
-		h2(style="margin-top:50px;") End Survey Questions 
-		button(style="display:block;margin-bottom: 50px; border:0; background: #ddd; padding: 5px 20px;", onclick="saveQuestions()") Save
-		div(style="margin:0px 100px;overflow:auto;max-height:400px;position:relative")
-			each val, key in questions
-				+question(parseInt(key), val)
-		hr
-		h2(style="margin-top:50px;") Percents Allocated by Other Participants
-		button(style="display:block;margin-bottom: 50px; border:0; background: #ddd; padding: 5px 20px;", onclick="savePercentages()") Save
-		span.glyphicon.glyphicon-triangle-left(style="cursor:pointer;", onclick="prevRound()")
-		span#round(style="padding:0 10px; padding-bottom:10px; display:inline-block; font-weight:bold;") ROUND 1
-		span.glyphicon.glyphicon-triangle-right(style="cursor:pointer;", onclick="nextRound()")
-		div(style="overflow:auto;max-height:400px;position:relative")
-			table.pushes#table(style="table-layout:fixed;font-size:16px;margin-top:10px;")
-				thead
-					tr
-						th(style="width: 400px;") Sorting Option
-						th(style="width: 400px;") Percentage
-				tbody
-					- const test = { category: 'Category', fee: 'Fee', price: 'Price', 'first-year': 'One Year Return', 'fifth-year': 'Five Year Return' }
-					- for (var i = 1; i < 11; ++i)
-						- var d = Object.keys(percentages[i])
-						each val in d
-							- if (!val.includes('max') && (val in test))
-								- "Hello"
-								tr(class="round" + i)
-									td(class=val)=test[val]
+										div(style="overflow-y:auto;overflow-x:hidden;")=row[col]
+								- else if (col.includes('email_index') && row[col])
+									- var s = row[col.replace('email_index', 'scenario')];
 									td
-										input(type="text", maxlength="3", autocomplete="off", value=percentages[i][val])
+										a(href='javascript:void(0)', onclick='window.open("/emails/' + s + '/' + row[col] + '")')=row[col] + ' (click to view email)'
+								- else 
+									td=row[col]
 
 	script(type="text/javascript" src="/javascripts/download.js")
 	script(type="text/javascript" src="/javascripts/admin.js")
-	- var s = csv
+	//- - var s = csv
 	script.
 		$('.pushes > tbody > tr').not('.round1').hide();
 		$('.inputs > tbody > tr').not('.round1').hide();

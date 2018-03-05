@@ -67,7 +67,7 @@ document.querySelector('#resume').addEventListener('click', function() {
 	timer = setTimeout(countdown, 1000);
 })
 
-function next() {
+function next(selection) {
 	// Alter sound cookie to record played sound
 	var soundCookie = $.cookie('sound');
 	soundCookie = soundCookie.substr(0, soundNum) + (parseInt(soundCookie[soundNum]) + 1) + "" + soundCookie.substr(soundNum + 1);
@@ -79,7 +79,18 @@ function next() {
 	$.cookie('round', parseInt($.cookie('round')) + 1 + '', { expires: 7, path: '/' });	
 	$.cookie('sound', soundCookie, { expires: 7, path: '/' });	
 	$.cookie('emails', emailCookie, { expires: 7, path: '/' });	
-	window.location='/study';
+	
+	let data = {
+		sound: sound,
+		'email_index': emailIndex,
+		selection: selection,
+		scenario: $.cookie('scenario'),
+		testid: $.cookie('test'),
+		start: start
+	}
+
+	$.post('/api/round', data, function() { window.location = '/study'; });
+	//window.location='/study';
 }
 
 const links = document.querySelectorAll('a');

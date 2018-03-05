@@ -1,21 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');
 var _ = require('underscore');
-var path = require('path');
-var mturk = require('mturk-api');
 var xml = require("xml-parse");
-
-var qfileName = '../../../data/endsurveyquestions.json';
-var vfileName = '../../../data/marketvalues.json';
-var sfileName = '../../../data/social.json';
-
-var config = {
-    access: 'AKIAIM5RDWIKG2R3D2HA',
-    secret: '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',
-    //real or test
-    sandbox: false
-};
 
 router.route('/questions')
 	.post((req, res, next) => {
