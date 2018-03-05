@@ -4,7 +4,7 @@ var router = express.Router();
 var emails = require('../data/emails.json');
 var scenarios = require('../data/scenarios.json');
 
-var sounds = ["/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp3", "/sounds/crowd.mp3", "/sounds/dogpark.wav", "/sounds/traffic.wav", "/sounds/siren.wav",]
+var sounds = ["", "/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp3", "/sounds/crowd.mp3", "/sounds/dogpark.wav", "/sounds/traffic.wav", "/sounds/siren.wav", "/sounds/park.wav", "/sounds/office.mp3"]
 /* GET home page. */
 router.get('/', (req, res, next) => {
 	if (!req.cookies.round) { 
@@ -22,8 +22,16 @@ router.get('/', (req, res, next) => {
 			res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
 		}
 		else if (r < 10) {
-			console.log(s);
-			console.log(r - (s * 4) - 1);
+			// Get random sound that has been played less than 5 times
+			const playedSounds = req.cookies.sound;
+			let randSound;
+
+			do {
+				randSound = Math.floor(Math.random() * 10);
+			} while (parseInt(playedSounds[randSound]) > 4)
+			// END
+			
+			// Render Page
 			res.render('study', {	
 				message:emails[s][r - (s * 4) - 1].phishing.message,
 				subject:emails[s][r - (s * 4) - 1].phishing.subject,
@@ -35,8 +43,10 @@ router.get('/', (req, res, next) => {
 				bcc:emails[s][r - (s * 4) - 1].phishing.bcc,
 				cc:emails[s][r - (s * 4) - 1].phishing.cc,
 				scenario: scenarios[s],
-				sound: sounds[req.cookies.round - 1],
+				sound: sounds[randSound],
+				soundNum: randSound,
 			});
+			// END
 		}
 		else res.redirect('/endsurvey');
 	}

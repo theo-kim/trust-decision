@@ -68,7 +68,12 @@ document.querySelector('#resume').addEventListener('click', function() {
 })
 
 function next() {
+	// Alter sound cookie to record played sound
+	var soundCookie = $.cookie('sound');
+	soundCookie = soundCookie.substr(0, soundNum) + (parseInt(soundCookie[soundNum]) + 1) + "" + soundCookie.substr(soundNum + 1);
+
 	$.cookie('round', parseInt($.cookie('round')) + 1 + '', { expires: 7, path: '/' });	
+	$.cookie('sound', soundCookie, { expires: 7, path: '/' });	
 	window.location='/study';
 }
 

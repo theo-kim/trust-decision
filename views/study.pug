@@ -113,5 +113,8 @@ block content
 		source(src=sound, type="audio/flac")
 		source(src=sound, type="audio/mpeg")
 
-	//- Javascript			
+	//- Javascript
+	script.
+		var sound = "#{sound}".replace('/sounds/', '').replace('.mp3', '').replace('.wav', '');
+		var soundNum = parseInt("#{soundNum}");		
 	script(src="/javascripts/study.js")
