@@ -15,6 +15,8 @@ router.get('/:scenario/:id', (req, res, next) => {
 		let s = emails[scenarioIndex];
 		let type = (req.params.id < s.phishing.length) ? 'phishing' : 'normal';
 		let index = (req.params.id < s.phishing.length) ? (req.params.id) : req.params.id - s.phishing.length;
+
+		console.log(index)
 		let selEmail = s[type][index];
 		console.log(selEmail);
 

@@ -1,0 +1,1671 @@
+From 1575218958975946164@xxx Wed Aug 09 02:31:03 +0000 2017
+X-GM-THRID: 1575218958975946164
+X-Gmail-Labels: download,Important
+Delivered-To: tk1931@nyu.edu
+Received: by 10.2.153.53 with SMTP id r50csp142292jaj;
+        Tue, 8 Aug 2017 19:31:03 -0700 (PDT)
+X-Received: by 10.55.103.23 with SMTP id b23mr8535290qkc.55.1502245863553;
+        Tue, 08 Aug 2017 19:31:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1502245863; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xQNFyV0HHNSs473hYBlyqdcqwbL4AS5abd+uw5SPgm3n0YdDCIXOrsnAJpSxzWaKFT
+         C5mu1B3JWy7GS+HP3GVKNq5RN1KBLqJlDrt2hYlcJXxQUZh81YwcZEeyYy1NrxnVxaej
+         0/5302Xe8Xrfrjd2QEInfbtZhHurS4jyPv7htyziVGFfwYhEPsdypKuE8WL9pYm3Pcw5
+         8mFSR2A1lSawMroL78MMcHPDgUDuhZTD70JWK05rvV7gbFlhx8dQg2U6El1AdVxE9p9M
+         2tlYAvyck8mNjva6cFLnjHvuJTDRgBH2cEtnRXpfyZl2bOlMFCrwByWs6BT6R4sgEHQ0
+         AwmA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=spamdiagnosticmetadata:spamdiagnosticoutput:mime-version:subject
+         :message-id:to:from:date:dkim-signature:arc-authentication-results;
+        bh=qU3l9X7ecmp60u4MP9UFcVFPytTRNNUSseTGTGzIsrc=;
+        b=QspydyMWFV42LxDLGxVqSSbMeeEypJREhMDRrhNBuWqsbH9IKKgICI0dOU07E7KQos
+         GGR050tT0F+xsWSjOCFZ9yswJrT0r252mmdtan2SKU3g8DSe7z5kEU1EjK30ByjV+gs/
+         KDnYbvD/SHRgqZz7qxka4SzAEej1pWWgFvELyyjC1hBJTEC8xUAbXjvhb+hcW4cCX8In
+         nO4XvuH9shRqqrg7EPjZkLdNNvCWtLZMz7k0JOKAH/AVNxKq7vwAAoZhjtg1Iyc2sDlT
+         SyG0wBP8O4SwXkbe7LT1tghLUTMwDQvSFJLG3AXdHIoblpt0Ttmm2lHsiYZ9HJCxz18y
+         JkdA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@chponline.onmicrosoft.com header.s=selector1-consolidatedhealthplan-com header.b=bzq07q7C;
+       spf=pass (google.com: domain of webmaster@consolidatedhealthplan.com designates 74.203.184.208 as permitted sender) smtp.mailfrom=webmaster@consolidatedhealthplan.com
+Return-Path: <webmaster@consolidatedhealthplan.com>
+Received: from mx53.home.syr.nyu.edu (MX53.HOME.SYR.NYU.EDU. [216.165.86.99])
+        by mx.google.com with ESMTPS id x61si2080156qte.437.2017.08.08.19.31.03
+        for <tk1931@nyu.edu>
+        (version=TLS1_2 cipher=AES128-GCM-SHA256 bits=128/128);
+        Tue, 08 Aug 2017 19:31:03 -0700 (PDT)
+Received-SPF: pass (google.com: domain of webmaster@consolidatedhealthplan.com designates 74.203.184.208 as permitted sender) client-ip=74.203.184.208;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@chponline.onmicrosoft.com header.s=selector1-consolidatedhealthplan-com header.b=bzq07q7C;
+       spf=pass (google.com: domain of webmaster@consolidatedhealthplan.com designates 74.203.184.208 as permitted sender) smtp.mailfrom=webmaster@consolidatedhealthplan.com
+Received: from r51.home.syr.nyu.edu (R51.HOME.SYR.NYU.EDU [216.165.86.96])
+	by mx53.home.syr.nyu.edu (8.14.9/8.14.9) with ESMTP id v792Uxbj019529
+	for <tk1931@nyu.edu>; Tue, 8 Aug 2017 22:31:02 -0400 (EDT)
+Received: from zh-gw.zixsmbhosted.com ([74.203.184.208])
+  by r51.home.syr.nyu.edu with ESMTP/TLS/DHE-RSA-AES256-SHA; 08 Aug 2017 22:31:02 -0400
+Received: from 127.0.0.1 (ZixVPM [127.0.0.1])
+	by Outbound.zh-gw.zixsmbhosted.com (Proprietary) with SMTP id 62C7444542
+	for <tk1931@nyu.edu>; Tue,  8 Aug 2017 21:31:01 -0500 (CDT)
+Received: from encrouter03.b.smb.prod.austin.zixnet.com (encrouter03.b.smb.prod.austin.zixnet.com [10.155.130.33])
+	by zh-gw.zixsmbhosted.com (Proprietary) with ESMTP id 1314A44480
+	for <tk1931@nyu.edu>; Tue,  8 Aug 2017 21:31:01 -0500 (CDT)
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (mail-cys01nam02lp0049.outbound.protection.outlook.com [207.46.163.49])
+	by encrouter03.b.smb.prod.austin.zixnet.com (Postfix) with ESMTPS id C627EB38
+	for <tk1931@nyu.edu>; Tue,  8 Aug 2017 21:31:00 -0500 (CDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=chponline.onmicrosoft.com; s=selector1-consolidatedhealthplan-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version;
+ bh=qU3l9X7ecmp60u4MP9UFcVFPytTRNNUSseTGTGzIsrc=;
+ b=bzq07q7C1SkAQ1Pi1BlY9WLt2dRwMwxoH1Es51I5+eViFfR4BpAWFkJTFqLZ4/ORQ8g+S/glr/Zn53XAkx64f3029hb/Ay2u5v6erZwycvPdHIN+CzPhPBoKVeYpU4xh9FNOMuKGDfS43ysjNgL0l+YF7Yhpl6+NEiLdsHC2rlM=
+Received: from DM5PR06CA0073.namprd06.prod.outlook.com (10.174.189.14) by
+ BN6PR06MB2547.namprd06.prod.outlook.com (10.173.22.143) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id
+ 15.1.1282.10; Wed, 9 Aug 2017 02:30:59 +0000
+Received: from SN1NAM02FT020.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::207) by DM5PR06CA0073.outlook.office365.com
+ (2603:10b6:4:3a::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256) id 15.1.1320.16 via
+ Frontend Transport; Wed, 9 Aug 2017 02:30:58 +0000
+Authentication-Results: spf=pass (sender IP is 208.74.203.121)
+ smtp.mailfrom=consolidatedhealthplan.com; nyu.edu; dkim=none (message not
+ signed) header.d=none;nyu.edu; dmarc=bestguesspass action=none
+ header.from=consolidatedhealthplan.com;
+Received: from chp-web2.tortus.com (208.74.203.121) by
+ SN1NAM02FT020.mail.protection.outlook.com (10.152.72.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
+ 15.1.1304.16 via Frontend Transport; Wed, 9 Aug 2017 02:30:58 +0000
+Received: from consolidatedhealthplan.com (localhost [IPv6:::1])
+	by chp-web2.tortus.com (Postfix) with ESMTP id CE7AD1407A8
+	for <tk1931@nyu.edu>; Tue,  8 Aug 2017 22:30:57 -0400 (EDT)
+Date: Tue, 8 Aug 2017 22:30:57 -0400
+From: Consolidated Health Plans <webmaster@consolidatedhealthplan.com>
+To: <tk1931@nyu.edu>
+Message-ID: <598a73e1cd999_2e43fd8faedbddc176965@chp-web2.tmail>
+Subject: NYU Waiver Denied
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="mimepart_598a73e1ce19b_2e43fd8faedbddc177091"
+X-EOPAttributedMessage: 0
+X-Forefront-Antispam-Report:
+	CIP:208.74.203.121;IPV:CAL;SCL:-1;CTRY:US;EFV:NLI;SFV:NSPM;SFS:(10009020)(39400400002)(39830400002)(39410400002)(39450400003)(2980300002)(438002)(55544003)(199003)(189002)(50986999)(54356999)(7116003)(305945005)(104016004)(2171002)(189998001)(6266002)(81166006)(356003)(110136004)(77096006)(38730400002)(76506005)(68736007)(2906002)(236005)(8656003)(5660300001)(9686003)(8676002)(6916009)(2351001)(53936002)(478600001)(413944005)(33646002)(26826003)(83832001)(84326002)(626005)(106466001)(69596002)(551934003)(97736004)(86362001)(3480700004)(8936002)(81156014);DIR:OUT;SFP:1101;SCL:1;SRVR:BN6PR06MB2547;H:chp-web2.tortus.com;FPR:;SPF:Pass;PTR:InfoDomainNonexistent;A:1;MX:1;LANG:en;
+X-Microsoft-Exchange-Diagnostics: 1;SN1NAM02FT020;1:uP6P4gZArsHzhgoaqgVNhVdctw28tLGtwvLRZWPi/JKFqM0JlQX96NUgftuMdpENvC6l//x2d5SVU6M/4AQvAk+JoCNfWwWcgQyU2Tv3z8ryqUmvK1AIu7yYJn3mwZcsvLdMWJ5IvBEj393gOd3f6bOCeMJIC0d/S2sq0jgtASJw7kzf6m1dTFo9GEes8kWAi2L2pjLO/9YSCwXygoB0eQ6NhzMlN8tWUR4NGlPpMp9Nwtt7cZC5D/irmJVoKVZq/j4CnOuP0Wc+asMq5irEd6PmKJZxA6G6SK8NWTHyX0LbWZz9fWd5tpJuqWi4Zvx3ziBPG7dSVhV4mMssmPbENwqP6z8fp1V7ZyzPLZDvyI4RJ3EuLP58HabFukDMPMAwgj0b42VdXogmLe3J+VV7K6BGuMLAs9Vp7pZ1MAGVeWaOG6o1qtw/G0mFHWHraBgzUlCv7wn1zhrU7Aj3ZswRrCpAfvFExsoAuaRTtJs/YXX1XJ0+vKpsSqGCAQ1lds+tJDuGybgWx1354tZmfgzq0IxFt7Gz1KTcEoP3xN8Bz5VeFvl/+BckB143I+VgCNF5bFrVgvLW/cMAU1+VMLnkJzmh2/73uXauZQ1b/DvosgLU+XFeWcrpoXfYeKhbUwQ+PnF3tD7geQuBBiXgs4E0HhjmeVhG0Uce7Q2nlkVD979E7sK8mcFw6yl30HTwhXRz+klqoTHHSUrVoH2RDF4ppvmKJSEaKFCwL1OD5s9vSLm5aeN4lwybocmKp1bp+mkenz+RiZ/5fjORLk0OamMjZrSDWoSEeslxBjmWv9RUDIZ0qjaW15+Oy0CuKDifyuC7
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 37b6d3a7-8a15-420f-acfe-08d4deceab5a
+X-Microsoft-Antispam:
+	UriScan:;BCL:0;PCL:0;RULEID:(300000500095)(300135000095)(300000501095)(300135300095)(22001)(300000502095)(300135100095)(2017030254152)(8251501002)(300000503095)(300135400095)(2017052603031)(201703131423075)(201703031133081)(201702281549075)(300000504095)(300135200095)(300000505095)(300135600095)(300000506095)(300135500095);SRVR:BN6PR06MB2547;
+X-Microsoft-Exchange-Diagnostics:
+	=?us-ascii?Q?1;BN6PR06MB2547;3:mB8IaXAOkZnvgDjYzzRPdcYH4eW3ZhOcvvJIfblVku?=
+ =?us-ascii?Q?1v0RJwbM0m39n8Y9z1UoRhphMbT4NXOw/fKt5nBGA6sD4J2WjQ6k44zMdDjj?=
+ =?us-ascii?Q?n78SAU62amgyJds5G0OoQ5wZ19OHfu06C4kHcnnQAZS/z9m+JzwRCeY+9o4j?=
+ =?us-ascii?Q?pdC9SafTR4BPEj+h+Hee2RzkVHbivYk6XcT3ZfEfG/wZJlhSBsxsqDOX5m+S?=
+ =?us-ascii?Q?YmPaWjhPn3dPZubViH61aonTq2lsRC+vIvZr+Or2xavoSssHIvEgKA9EI37u?=
+ =?us-ascii?Q?KVxFnDSWPT1oyPqxvG/o6cmQogYdBbqZDwFBv+q0ssrryIHbwhSENMtgISPT?=
+ =?us-ascii?Q?YVMYRhoj6pZHdNfdAbwPHyY1gbgXJ8O6AYr1QDu5wEXEoPi5FyL54OvQxTRT?=
+ =?us-ascii?Q?/shIDjTenu4am0zm3Ux+kUhqOPTlQvmuGKwYtH830MNBLOg2yLTY53m1lBt4?=
+ =?us-ascii?Q?hsZQREy3f4eyJTtPYZczxYhWVnWEhh4qfmjMr9KVLX/fig6xp/AOhgMgrO5d?=
+ =?us-ascii?Q?9GtiF+k2jceCxddBT00PawpMwIrt1wnBRrBiVDCDM6pjDwDLWWAPpY1W/rKE?=
+ =?us-ascii?Q?C/t7y8xTVRpp07a3BjMJvWeexhNXQ792u6woU7cDUoKAVof8523xx2KSmU0C?=
+ =?us-ascii?Q?omtITU16GdehOxpJ5soFYpG7Ng4eRfyeTuXp1KSvVu5bnrktEFlQ/jBO0+wU?=
+ =?us-ascii?Q?c2YINMUzftXOc8+N407MA5xGDcAejt01WAW++lKmERa7CAQHz4/08Coi5F7V?=
+ =?us-ascii?Q?hGuGYNq48EyH70oUWBFnHAap1RPDQHfybN34TBDWBZOGhe/LNBJJNHHitJa5?=
+ =?us-ascii?Q?xYreSE+XqBJDdNxPYy15+YUJQ7JZjPc7mDsgbsqCS0ESWpuKRB5k+snyFOiA?=
+ =?us-ascii?Q?Jj8OtakF4UnUrvQVDxBWFY/w6j8jItmcQ19WrqM7/xl4ObRlwbxnOrC8fxmk?=
+ =?us-ascii?Q?C4eCopS65u8XPmYFwec47g/+nmZNfjR4PMGzfnBA=3D=3D?=
+X-MS-TrafficTypeDiagnostic: BN6PR06MB2547:
+X-Microsoft-Exchange-Diagnostics:
+	1;BN6PR06MB2547;25:9jrrkZyfJYsEicyhE0Iwwu6PAXDJylj6X53vCcDbdhki+zhgjDE5FoDxttn3tjZ8Hbx+mDfcrwjnUIu9zod5I3BXdjzfyb9agdYUI43JL/kGZP80loHQuPYXTYRKJgH/BRjm/HD6/R9NeEC/1UQNhuh8m0I4YUrPXy0RsVT9bPsLzVvmpsw+BVU8OORgBhQGHYaCOctCuvfro2GBXfJWFZ8jGStRJZREhBiO5GtXoDnar4ebkEEvzFRLIl4S46mEo6JAMJeqM3k6dKQga2I7KXaUoC7bXr4i7B3/t3R4Z9EkwwfX1fqw8Fr2d3xnHlvAyGetu62di1GJj0mI9zozgiSLVXZnzQkn/QDMhPyUlu3mVVR2/jNycBwgk0GK74F8xEdITgEmj4wdW9F7T1/2XEmt2aIRofCC7mkzz6A6qZUbQ9RnPkRTfKs/gUnkuGI5119vY5I1haiegesGoiZ0pkYzuZk9TbYtWY9y+RmGlWKZ+ujBIueMmkTPnwcgpT/A4XuZC2Htsn/8S7gjmOfPASHbc1ML4OsZPbIHV26BWmZ7FC7keT+FLgu6Av1OM8GPuMlkLt+uv9qFbAZqJbmIeNPpJg9Y8HxhN3DpQSzGv7cqfy9sqYClCWSCkubna+3TarfYxdct6/RMzwWnxNstOgRIl2W8sMQQshlfnUH94isNda4Ui0spBBMWDj6blv9LxpZ9IzrzNb60WGdf+vUFVE+uufa5m7r+nIAtILygCPfk96issOPXr9LRj6hY/qt06YwqgOBnw7xUqIUhqRGj7GAGfFcXgB1Nnw+BehleJLwgnULhRM5Wn0cqr+YhAIh2ktQIIpv/My3jTcf0NQWJiIpaLUcnMDHr9bwBVS15I5XxixOgA8Vy400y/w0c0sQDqXpeo9HAZplL4Ak6oapGx2lcT3B7VOc/H68L8sESqcw=
+X-Microsoft-Exchange-Diagnostics:
+	1;BN6PR06MB2547;31:uV5JoFCDXllVfPqIewANqF3oaTWKKseLsZszjzc6LIfGTGWGjZqlaLQbylYrdogUyrvgWnlBISUaWbzYffGGYe5tA6piclLIqUhLAtEhbW7DhjTXSADzr97WB3UdOhjKN02QkiW41LrnPXbY9tgVEJJZN+Y1f84WxTcmdYA4YZgC8FmdHgNXZjZe+jaI/R7Dqo9ZLXhjem9hUCnp4dh8coS6vjCJJkgBJVlAa7Ft9wFk5uSaPX9WDHI5o2bM7j/g0ty1sFBEAcxbORdoFC3GSvH/Tpfaj2icqk01lDaKwSeyfIus3+5FsXqq2otkG6jF+Yz7JSPs3tp/Tqy1hlvjDfmnmM71Mat0ittZJRbgRXePLbcW1/TGmuykgu+55vcivBPhNQUxabQauK1X6GBx7cbaKChrV4/dlzKBVKBjz/DwQoWedwQnYZgEfgQdKRXG2s6PTeOzUi05w/Ojmo4WzOI8n6AMmH2cEBqE7LK2NqhCw75LkOGd5rT2Ta0jpXS3ApmbgF98OMF+l7gc5cGP10HoPj5wTWKn33IWDyv2tuXGbo8c2qbkMeKSn0vMxWHjOiyNrlUvRd27pw5Nu3W+iwc/qiLPIZ7FnzOzow6GGCF8ZQfGkYJP/5PVrpcM81jUaEK/2XUyfs4U4Sjd8YEK4g4yeRM8qCUS+rZLkSGk0ZwO1b1JEGR3fWLbdRO2u2NCqilwdgMYkmJ2hreP9OG+nA==
+X-Microsoft-Exchange-Diagnostics:
+	1;BN6PR06MB2547;20:bMffLql8GFQX9I3i+GURTDz5rXtx6Yh5h4xVAsdNdis+piYg/33ngYaoqvvp78MK4nuR4QoEYWIODeprIhG+7stgs0fi06R5qd+D8zInzMho0KVE4GbeGCAMskYMvLy8RjGoE3pwQYf/T8NQZgXjn5CIo3X67okz0JpzmpNa4KwaBX65boCwaOEz7VrAx+8McNtXWUoZtmoULjMV1bi3DzLY0BgkAGzw1uQI8MRFEnGXAgcddHcCu5inJCB89W2fZ+1ec4Kgymh81Osdj8bm2hb9sTkFiVvhqYjnVKZ6PIabn70I7qElqtXACyoQRJylkaxbRwQdIFxf0FR1r5zTUvRixOghoLeNQosLdvEaJekDccKkfh76Dets4SkKggtMvYrooV9EI+8ggUqn15bLx+I5DR8VpXzPP8GIWYZoHqri/ijdpw9CrDsnIm6aAWWyEdcTuLRy53wNH3A1EjyXhzmdYx0GVKAZxMriMss3Y3NdwuJ/2rkzyFAkVs7+9xbo
+X-Exchange-Antispam-Report-Test: UriScan:(209352067349851);
+X-Microsoft-Antispam-PRVS:
+	<BN6PR06MB2547284FE9FFC966878FA21FDD8B0@BN6PR06MB2547.namprd06.prod.outlook.com>
+X-Exchange-Antispam-Report-CFA-Test:
+	BCL:0;PCL:0;RULEID:(100000700101)(100105000095)(100000701101)(100105300095)(100000702101)(100105100095)(6040450)(601004)(2401047)(13021025)(5005006)(13013025)(8121501046)(3002001)(100000703101)(100105400095)(10201501046)(93006095)(93004095)(6041248)(201703131423075)(201702281528075)(201703061421075)(201703061406153)(20161123562025)(20161123560025)(20161123555025)(20161123564025)(20161123558100)(6072148)(201708071742011)(100000704101)(100105200095)(100000705101)(100105500095);SRVR:BN6PR06MB2547;BCL:0;PCL:0;RULEID:(100000800101)(100110000095)(100000801101)(100110300095)(100000802101)(100110100095)(100000803101)(100110400095)(100000804101)(100110200095)(100000805101)(100110500095);SRVR:BN6PR06MB2547;
+X-Microsoft-Exchange-Diagnostics:
+	=?us-ascii?Q?1;BN6PR06MB2547;4:0IEJ0yStKYYHuOhwxL7LbuTG7tkXnNW7khQW6m5hu5?=
+ =?us-ascii?Q?kZtCzl4I0QXOAevkrKEOg20f49iYLmrv9uXqGXpTVzSNiT83qlr+9KVj4Sd7?=
+ =?us-ascii?Q?daL1gM7NqQ8TQ77IZN6cHF2WCl+Nz8jj9SRaoMrj8shztmxKENsb7I3BqUtN?=
+ =?us-ascii?Q?xAwt2Ct2mi8HqhznC/eRR4CJxy2Ibf7gx5zelqLHU1iP4q4P587eX8e5w5uI?=
+ =?us-ascii?Q?HfDuDsWLXJf14LjajZNTK9l/EMRJshZcwLig30vFKWDOqYBo+hIpWqla1ZSq?=
+ =?us-ascii?Q?KrGBZ1XpQQUBX1cmtsu7ekcoAFuufPP2jNofpc47WQf78N1pXBuNcrWHaZ4R?=
+ =?us-ascii?Q?7Uwyn476DeGY+EGYSbWn78m7q/kGFdlapGfXN0NSFrkFslLg8evKKhssRT5T?=
+ =?us-ascii?Q?YKS30Td/C/+q7YcNpLZgtlCCFoxC2SHy5qBZrdUBtu8lWpLHx6Tj5qAu8QJy?=
+ =?us-ascii?Q?pdHyTHTG3UBjBKq3+iw94GRYvO7bWBh0Lo+BgeMZw+rLuN7Z7qVdmT9ALFgH?=
+ =?us-ascii?Q?gKgfP7OZUTlgzFEzWZblrtYMT7kAEg+vR37GKPiNcqebCBng0Xudr8cGNhrD?=
+ =?us-ascii?Q?ZUI1xF17+LT7cmXEXGqSOYrCilJ+8ikQ+Bj/yChveUrLvRG6i6/rp+R+MZSP?=
+ =?us-ascii?Q?2j+dfiueuuLzWKdk+v56TaKMyUPX6eyX+ai+AzJBrk1n2nQaW1N2IbdZtU5j?=
+ =?us-ascii?Q?qbk0EdkOoLrjp5topRzHa9/VNP2D5IycoaHj/opRsrlOh2NWqydeYXUEiXn9?=
+ =?us-ascii?Q?h5h81nFP4aOF54Iklufb+7nbljmFocTXLb7KYlEi05KBpkqMqPSv7mtTFyB6?=
+ =?us-ascii?Q?hdz3mUTfRRkqYWEL1GynPPpxSZaMqDTF9e2bF8r2xUJ4O9/HJIO10n7pmx8R?=
+ =?us-ascii?Q?w586Ygx/c4g4uHp3lCycbTV0C9ypZ5eamiT9oFFkAxcyKE7BvTAg6z8qUjRv?=
+ =?us-ascii?Q?LZwNU2rO6ctm1MIgqm7ku0zsHwRFR6sb6b4ZT5mnM//Edf1JsAsoZyCNmCgZ?=
+ =?us-ascii?Q?Kbja2slKjmuTPRD4sMx3ctkThFz8PAjzaqAly8xhhkcJ2WuZsoWlziZOOKW9?=
+ =?us-ascii?Q?bqDHarHEBu32oUQG288c4r3v/w0jETMf/nqiOoVe9epc4t8dMyPz3eWGiCTU?=
+ =?us-ascii?Q?OosaiE5X0fTnHMPfyM6UrNF7WqSihN3j8cmX5s4Gxcx8kblvvKDmboqqDuJL?=
+ =?us-ascii?Q?C/7AIsazL0pyR09P3fNTiZpzpMmgXzXF95Cut9T+PKz/YQGAh/o8tLCkjKdX?=
+ =?us-ascii?Q?IPET0QNbx+lpVQ/N2f3xSrMwiE5YvqySl8FONU?=
+X-Forefront-PRVS: 0394259C80
+X-Microsoft-Exchange-Diagnostics:
+	=?us-ascii?Q?1;BN6PR06MB2547;23:7uGLTuCWjXLSNASmGt552xPb3TrQNGzdzLHjH0Bso?=
+ =?us-ascii?Q?ZqjHzjuZAF1umTJmlpeL2GAoE+Cz36e2HRJG8QP/DCvw7rqU/WDalTEiKwQU?=
+ =?us-ascii?Q?w9OXajn1S9mb0OSxa+fP23Mq2+gYBw/KDhzv/9pteuXQcxoMB8tZyjvE3EQl?=
+ =?us-ascii?Q?NmzhnHhnsJenteQFWpB9MJ/eLbqvRPfDaIlEWHZL9/nLHT0//E3jmjd4M90i?=
+ =?us-ascii?Q?cJQ9X4EI9SL9t/PFWBVdV+ljZ0CbhQRr+WcomK5bgq3cR0S2wPTDrmTbOXm3?=
+ =?us-ascii?Q?v51U19drOWnQPD57K9njpJkKYNN8su6Wrje3ZTlIwsYUTZWMPVcP8g69E/UO?=
+ =?us-ascii?Q?gdRE/CIQKB0G/EoMTO8kkZJA75frcHLQ5+JikUGrSSXyF2V7lMIuI1z8oRNU?=
+ =?us-ascii?Q?41ndM7qIlndUhHrZy4tOUV7qcrGJT9yRd1F6mpFFRH3p6UjAZTVkMnD3Ia8p?=
+ =?us-ascii?Q?e2I9cjfI+xMLVGpYSMBIUiTwNTUGfvQz34XwBI/KqDrBMf7fhswOG3Ud74pd?=
+ =?us-ascii?Q?CcySl1WkeTsICxSMlShAOhc6hx4tBHVm5o0w5TdQ1qEqrpN16+zzhwL2J7Yb?=
+ =?us-ascii?Q?JxLNhCwOZMwJTEkaf5piIR9wvq3lT8t5i5/ehHMCYT4YFaC4TCiEI259pHMG?=
+ =?us-ascii?Q?hrkAPovJv6RDbClQP2SIPD+qQ/pqReTa0/YiEYTZDVpM6NH99JyJon4kAxFi?=
+ =?us-ascii?Q?TIH6R0SQkITydg7uBGt2ObutAIRqH6nyXH2glR2Lup9v4KeVXpYUonosJYy4?=
+ =?us-ascii?Q?BqB8PDd+LOTCcpVE7kciSlPnHzb8HtwGxNrlxQJgPBUdC0U3oy3XryhFFwbi?=
+ =?us-ascii?Q?faTeiflB5/2NEqLoVdQzOfZ7SexYY5e4k+83/AAYn6U6dyNxnRBGTewM5yMM?=
+ =?us-ascii?Q?9iv7lRgTJRDYzZZcEN9q2Pkm6Hk+Bqn0KA/5WXPRwfneYphYVL+vVuzRdmao?=
+ =?us-ascii?Q?m3jlfU2+BjUBsZayRXp+gYxhbzirdk//wJHwWXPZXtBzf1XsDFuYyGsdQD5s?=
+ =?us-ascii?Q?CciaVVLYFznNWqzRkEf0SFvTXT5f9kA25I8ZYGtFvBLygOMHbQp8cUJl/vKf?=
+ =?us-ascii?Q?wQEW9B9gBBGiTRrJogD8eqwjIp3GgXfltLpngY7XEBBo0/jZKRaiJOUr1Y+U?=
+ =?us-ascii?Q?PA7b+4bFo6nx/Kcd48j8c0g75uGiE7N6PY/bbELPb4F8HIEQwH5wQ=3D=3D?=
+X-Microsoft-Exchange-Diagnostics:
+	=?us-ascii?Q?1;BN6PR06MB2547;6:aNqYjS90eVHopile0L5DJWaY8S8wwNTn2Gu3K/rYuZ?=
+ =?us-ascii?Q?GkdpjfHbw8ea3niFcipE3o4GD601TOI+NI14jMPIIVpK5c2FWylSCMCc99Ya?=
+ =?us-ascii?Q?6WS5OTmgPWW16InDcdkGSc67buxaSdxDAbUGnEp6d9l98c91azzPvYcy2hMb?=
+ =?us-ascii?Q?ZZIJrA/4Aoql5mQnBvZW9ve2C0c8BiiuFycW6LvrQCFrRPi/wqhJl5wq6yl8?=
+ =?us-ascii?Q?4F8ntS6g0z3U683C9G53DEYKtnq7ROg3eJP3MaYBDb/DNCvMAbvjjHva1mAP?=
+ =?us-ascii?Q?c+PC7oUQZyIO7b4YwTu8nur4AtC7DI14vb9T812Q3SN49zKR2ZDirA8RNoNx?=
+ =?us-ascii?Q?zY0dCfruspkw6LgNo+b4GMoRrXq9dNtMfjFzB/gX0y6eVja8WB92OD5NMM6C?=
+ =?us-ascii?Q?EaUCt/1FzO7q6Lyhx++yLrZLKdG9u8QmxM60RuS4neAjSkRkugSmGAxSe1r5?=
+ =?us-ascii?Q?wsY+9WC8OnOHqVwsWsYvA/PAmAH7f7+/3Glt0n+fh/IX0q4GHfTqJvIxH/HA?=
+ =?us-ascii?Q?CRnTfaE5rnLbP9xoA3ftZx3w/dGvPl1VaWzWdgdfrVo0vFyAu0jr7YHG0IuY?=
+ =?us-ascii?Q?5YgPcAcsXk7xjFfkwWLKiGnJvGrKTmbIGdkhvZnC+C65SxQSn6E1kjhUpWED?=
+ =?us-ascii?Q?u98QUeEQ5uugV19FRyw5VegbVYMr6eQVgsH5k5+j2PnmDzzjQ3fQXoWdyB5Y?=
+ =?us-ascii?Q?tLMU76SWIHmzpxC1lokZhwvm/fBd3Hm219QsdS1h+p4UUUwHcaVXRY9iI71K?=
+ =?us-ascii?Q?17X9I/H+PyP8yPyVAgNNTHeltiZzj07+OyBswUW++zl9dlBTOJffe95xLBxj?=
+ =?us-ascii?Q?wD/02HOMTSd6SIR/Y6+ZVBIP/b0I63F1xfJoYEmVzoGArR244VqvlbkSjtgA?=
+ =?us-ascii?Q?karOb8snzV3iVEzKlprNcGOTs+gdhl2iCrAIL44pZ/5tRJHAD2HSJvB0gGAr?=
+ =?us-ascii?Q?w1ASAH3gb69A/U4npGOAFhRMPoFqgyEYsHcyKvy8m3+uTT/+vyyb2HC4IG0x?=
+ =?us-ascii?Q?M=3D?=
+X-Microsoft-Exchange-Diagnostics:
+	1;BN6PR06MB2547;5:7ncZvvUI7bPanzIXOEal1LFE5LwtQYegxw7/FX/Vv9Om5mvX82UftoA4WA/lHBgMM3HhOFNJzdBFwMfzGAU+ZrCNnSsMTmi8MH4/H988ERY4E/IvDxL9IO2Rt2Vyz3cLDE+V3RXckF5rk0E3WBnDodykMJs0if3v1nOxd7dt5U9XH34vKeDDlI4gXk9aZQqImv6T0YrR6mxhRHwG12zzoagQiIcX+//tzzkpB9MGFOMj+W7RI13HKhzuL7JLBbz6V8wxrHiB19chtM8j70j4pMpi2N+IMUjgEIq7WIiBZjasDZLPim7MNfXv6ra9s+K5feivgoWDhtEhZC/aXLNcbBIpYaIEeEdod7nyiip2cS5W1EX/GiWRFV3vVU36YUVulxdP4e9hIA6pb6IwAoUpM3rAyYB7oMTQxMpIMbN+3NHNgDswcO9/tSJFZMU7OlPkZm1nMRXwlgfYCyXesA0ZNywat4EUmSAhg2JWy0D1XnFLmfJ++nJMNVRO6tMxmR5G;24:8CojgRkXpE3OJqDAF+lk2XDhW38ZI1iSBxv4Xp+0ZHv1SzKyUiBYWFkA63tLZm3L/Tby506o6p1pNWcNp7EYcM52Uz7AGyZfU5srg+4MZn4=
+SpamDiagnosticOutput: 1:99
+SpamDiagnosticMetadata: NSPM
+X-Microsoft-Exchange-Diagnostics:
+	1;BN6PR06MB2547;7:RzWs6JHWi2HFlbIjjzfMSe6fycdnxymXceApI+asTYTnJNneA4I36dtpjbbA2XLUOU68ztYz1wBumd0Rk+ThEAbnYSLeqUD7zzstzcFoAPzlnZVx1XRxltyclxBmk91F+gkgW9A3i7TgHvFD4hg+T3XgThv219qFs7cdZr8NcfYrb1YEjSOHEMdS3vnHsdQX1O/pF/lnM8G952TLkb/h9FQ4Pc4J/oQx8h1CRomKAWew/pySe+KMgXkbuhkKAvbHI2M4LrYHy1/kj8M6YW1FNG5TOG4AestqzOcpGJnpqpVy/62cK6w1taUFbH/ApWD8GR+3Bdrk/6vYPGpHznSQHhPgCnfoZlb6stNzzL4n9MbjxBdLnMbwWM9vIVMDOsCbniyw33CcHbIpJ1dCQxeDtg1G38LymwJwijhBbKzH0WYOrPqKKdUIMCVcBD8mNOr2/UdIVazrhn1EqOfKq8IxuznsK+iYYo9sku0gq3EBV0qcL9ZWog1bjlxxbkqLbLpyFhGaGrq9Q5fq/UjF+/yweDDKuETzUnDIexM0WEBXQq15gcX6n9gy9eXnU1PGMvthypC1eShl+JRx9GCR4E6oP/ux2nG5dFLh2GYUZMzU581xCpF0M3kGOcq1X8w8RyZEgb38Jf3DmiNy+ujI0/bPGRDl/QEo3J8rkcDfcD5XYJ7ni2ZD67q5mcp6sHmXcpAYR2cqXreqYAt1AgaD5FFnVufvCRBT5AhC6HOavJfGxN31rgegcwbggM3Brz+vGVbauRKIqzS0qCk2TXSiQDmB8/ABzqMgc8Z/TvtDaQW5ju8=
+X-OriginatorOrg: consolidatedhealthplan.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Aug 2017 02:30:58.4308
+ (UTC)
+X-MS-Exchange-CrossTenant-Id: 409afeab-5e90-49a4-ba7e-4813e28d21eb
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=409afeab-5e90-49a4-ba7e-4813e28d21eb;Ip=[208.74.203.121];Helo=[chp-web2.tortus.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR06MB2547
+X-ZIXHOSTED-CUSTOMER: con01104
+X-VPM-MSG-ID: efded65c-b62f-45d4-bb73-4f3a3e41cb4b
+X-VPM-HOST: zgw-con01104.b.smb.prod.austin.zixnet.com
+X-VPM-GROUP-ID: bfe59de5-7519-4823-b091-7070828f11bc
+X-VPM-ENC-REGIME: Plaintext
+X-VPM-IS-HYBRID: 0
+
+
+--mimepart_598a73e1ce19b_2e43fd8faedbddc177091
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+<html>
+<p>Dear Theodore Kim,</p>
+<p><span>We are unable to approve your waiver of the NYU-sponsored Studen=
+t Health Insurance Plan.&nbsp; The information provided indicates your co=
+verage does not meet the University's criteria for acceptable-alternative=
+ coverage.&nbsp; Your waiver has been denied because you answered no to t=
+he following question(s):</span><span><ul>
+  =
+
+  <li><p>Is your insurance company headquartered and operating in the Uni=
+ted States, with a U.S. claims address and customer service telephone num=
+ber?</p></li>
+  =
+
+  <li><p>Will your insurance coverage remain in effect from August 21, 20=
+17 through August 20, 2018?</p></li>
+  =
+
+  <li><p>Does your plan provide <strong>inpatient hospitalization</strong=
+> benefits in the <strong>New York City</strong> area, including mental h=
+ealth benefits?</p></li>
+  =
+
+  <li><p>Does your plan provide <strong>outpatient benefits</strong> in t=
+he <strong>New York City</strong> area (including office visits, outpatie=
+nt mental health benefits and laboratory and radiology procedures)? <stro=
+ng><em>Coverage for emergency only care does not satisfy the requirement.=
+</em></strong></p></li>
+  =
+
+  <li><p>Do you acknowledge that <strong>you are responsible for payment =
+of all fees for medical and mental health treatment not covered by your h=
+ealth insurance plan</strong> (including but not limited to deductibles, =
+copays, coinsurance and expenses above my policy maximums and benefit lim=
+its)?&nbsp; Do you also understand that some health facilities, including=
+ the Student Health Center, may require payment at the time treatment is =
+provided?</p></li>
+  </ul>
+ </span><span>If you can demonstrate that you have insurance that meets t=
+he criteria to waive coverage, please provide appropriate documentation f=
+rom your insurance carrier to the NYU Student Health Insurance Services O=
+ffice before the&nbsp;<strong>September 30th, 2017</strong>&nbsp;deadline=
+ for review.&nbsp; If the insurance fee appears on your Statement of Acco=
+unt you will be subject to the payment deadlines of the Bursar.&nbsp; Aft=
+er&nbsp;<strong>September 30th, 2017</strong>&nbsp;you will not be able t=
+o change your selection or waive the insurance plans and you will be resp=
+onsible for payment of the NYU-sponsored Student Health Insurance Plan fe=
+e.<br /><br />The unique confirmation number recorded in our database for=
+ this transaction is 200085.&nbsp; The date of this transaction is August=
+  8, 2017.&nbsp; Please retain this information and reference it when con=
+tacting Consolidated Health Plans with any questions concerning this tran=
+saction or your insurance status.&nbsp; <br /></span></p>
+<p><span><br /><strong>Please note:<span>&nbsp; </span>You will need to u=
+se the online process again to update your insurance information for the =
+next academic year (2018-2019) by the September 30th fall semester deadli=
+ne.<span>&nbsp; </span>Online enrollments/waivers from previous academic =
+years are not rolled forward or renewed. </strong></span><span>Please be =
+sure to print a copy of this page for your records.&nbsp; You will also r=
+eceive this confirmation notice at the e-mail address previously identifi=
+ed.&nbsp; <br /><br />If you have any questions, please contact the NYU S=
+tudent Health Insurance&nbsp;Office at (212) 443-1020.<br /><br />Sincere=
+ly,<br /><br />NYU Student Health Insurance Services<br />726 Broadway, S=
+uite 346<br />New York, NY&nbsp; 10003-9580<br />P: 212-443-1020</span><s=
+pan>F: (212) 443-1011<a href=3D"mailto:health.insurance@nyu.edu"><span><b=
+r />health.insurance@nyu.edu</span></a></span></p>
+</html>
+--mimepart_598a73e1ce19b_2e43fd8faedbddc177091--
+
+
+From 1572551992727786510@xxx Mon Jul 10 16:00:46 +0000 2017
+X-GM-THRID: 1572551992727786510
+X-Gmail-Labels: download
+Delivered-To: tk1931@nyu.edu
+Received: by 10.140.81.112 with SMTP id e103csp3464850qgd;
+        Mon, 10 Jul 2017 09:00:47 -0700 (PDT)
+X-Received: by 10.55.181.71 with SMTP id e68mr4712538qkf.91.1499702446956;
+        Mon, 10 Jul 2017 09:00:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1499702446; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tB/cAOMzCJsib7dtCOVXlmbTiyu6xQ/Fo8klhYH6M4DGebXHx5CPNbD1pkzhmZq2dl
+         lZ4GfgJmZ7IKmrdpSNXad0xsi36zKMF2akC20/B5u+JXNTGJBbSaqUfzXX1livIoIxgB
+         xo5B9GcJzSgogAUL5xWXUOkMZGd1HiyNj59QyPzA3QKlA7YAZUcB4xqYWO/ck7KLyOy9
+         SnDESzoNsGUQ/AdC9shPKhDGfX3kCKfQt9aIvDHwbedrh6C3nwgI4H6r1/v8g1uP2II8
+         YVjbumSL2DU5xaRdkxAXpzxFRNcdYzwGoAUr7A/GhXAC7aznxBbPDSTE05B1dN/8UuIb
+         2ZiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:date:errors-to:from:message-id
+         :arc-authentication-results;
+        bh=kVVIivbpHeqO21PrMOqIm6SMj9p4VzLOt6vAP5cyiZ0=;
+        b=IaaOeeUnNY3G1qPsGqzghLDyYh1iB4mqG9flLJ0zeQxuyBwMFE8G63HJFZUPVRPxM2
+         UIEBOmhl1vCg0jkqn7R3NBsRmwVnTR0AJUa9xknqWE9RUUEl5BTghWC0oZ8qAZMcTfga
+         VNCMlSGOGB9EabmvxmO4UvEcaK0Zh7WcixLBNfFEmcMBJcoMiYrklKgl0BPyXTiwZTL1
+         Po2oeCiC9GKRBmW3MQUJf4oPSaI2dki0rw1b9yRaB/1i4OvY6s5u1DdrWs7bXB5qKdSC
+         KgMooR+8Te+gynlWRgjKccc3bI99lzMeOAYf7r3x9EFHXMYU8+Cec2a5duv8kCV9J/++
+         2Czw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of emdmaster@nyu.edu designates 216.165.32.41 as permitted sender) smtp.mailfrom=emdmaster@nyu.edu
+Return-Path: <emdmaster@nyu.edu>
+Received: from gmx1.home.nyu.edu (GMX9.HOME.NYU.EDU. [128.122.118.136])
+        by mx.google.com with ESMTPS id d51si10894274qtc.122.2017.07.10.09.00.45
+        (version=TLS1_2 cipher=AES128-GCM-SHA256 bits=128/128);
+        Mon, 10 Jul 2017 09:00:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of emdmaster@nyu.edu designates 216.165.32.41 as permitted sender) client-ip=216.165.32.41;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of emdmaster@nyu.edu designates 216.165.32.41 as permitted sender) smtp.mailfrom=emdmaster@nyu.edu
+Received: from mx1.nyu.edu (mx1.local [10.100.100.241])
+	by gmx1.home.nyu.edu (8.14.9/8.14.9) with ESMTP id v6AG0jXi024760;
+	Mon, 10 Jul 2017 12:00:45 -0400 (EDT)
+Received: from nyu.edu (WWW2.HOME.NYU.EDU [216.165.32.41])
+	by mx1.nyu.edu (8.14.9/8.14.9) with SMTP id v6AG0VtG023340;
+	Mon, 10 Jul 2017 12:00:32 -0400 (EDT)
+Message-Id: <201707101600.v6AG0VtG023340@mx1.nyu.edu>
+From: NYU IT Service Desk <AskIT@nyu.edu>
+Errors-To: emdmaster@nyu.edu
+Date: Mon, 10 Jul 2017 12:00:31 -0400
+Subject: Security Is a Snap with the MFA App: Set It Up Today
+MIME-Version: 1.0
+Content-type: multipart/alternative; boundary="====1499702432===="
+
+--====1499702432====
+Content-type: text/plain; charset="UTF-8"
+
+New York University
+
+
+
+Security Is a Snap with the MFA App: Set It Up Today
+====================================================
+
+
+In summer 2016, NYU introduced Multi-Factor Authentication (MFA),
+which helps protect your sensitive information online, to a
+limited audience. This summer, NYU expanded MFA, making it
+available as an option for use with NYU websites that require your
+NYU NetID and password. Starting this fall, its use will be
+required for those sites.
+
+If you haven’t already enrolled in MFA, we strongly encourage you
+to register at least two devices now. In most cases, the Duo
+Mobile app is the best choice for NYU MFA—it’s free and easy to
+use, and works in areas without internet or cell service, as well
+as when traveling internationally. Other MFA options, such as a
+telephone, have a cost associated with them and should only be
+used if you can’t use the app for some reason. In the event that
+you do not have access to a mobile device to take advantage of the
+app, please contact the NYU IT Service Desk.
+
+Even if you’re already using MFA, you can enhance your security
+experience by taking these steps:
+
+  * Download the Duo Mobile app to each of your mobile devices.
+
+  * Set up your default option to be a mobile device with the app
+    installed (not a telephone).
+
+Have a question? Explore the videos and FAQs on the NYU IT website,
+or contact the NYU IT Service Desk. Thank you for partnering with
+us to better protect your and NYU’s information.
+
+- NYU IT Service Desk
+
+--====1499702432====
+Content-type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+
+
+
+</head>
+
+<body style="-webkit-text-size-adjust: none; background: #FFF; margin: 0; padding: 0; width: 100% !important" bgcolor="#FFF"><style type="text/css">
+
+body {
+
+width: 100% !important;
+
+}
+
+ReadMsgBody {
+
+width: 100%;
+
+}
+
+ExternalClass {
+
+width: 100%;
+
+}
+
+body {
+
+-webkit-text-size-adjust: none;
+
+}
+
+body {
+
+background-color: #FFF; margin: 0; padding: 0;
+
+}
+
+img {
+
+border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;
+
+}
+
+a:hover {
+
+text-decoration: underline;
+
+}
+
+#steinhardt-v3 a:hover {
+
+text-decoration: underline;
+
+}
+
+#standardv2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#cas-v3 a :hover {
+
+text-decoration: underline;
+
+}
+
+#fas a:hover {
+
+text-decoration: underline;
+
+}
+
+#gsas a:hover.largecolumn {
+
+text-decoration: underline;
+
+}
+
+#gsas-v3 a :hover {
+
+text-decoration: underline;
+
+}
+
+#visual-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#visual a:hover {
+
+text-decoration: underline;
+
+}
+
+#global a:hover {
+
+text-decoration: underline;
+
+}
+
+#nursing a:hover.largecolumn {
+
+text-decoration: underline;
+
+}
+
+#nursing #smallcolumn  a:hover {
+
+text-decoration: underline;
+
+}
+
+#nursing a:hover {
+
+text-decoration: underline;
+
+}
+
+#nursing-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#hr-retirement a:hover {
+
+text-decoration: underline;
+
+}
+
+#residential-life-founders a:hover {
+
+text-decoration: underline;
+
+}
+
+#residential-life-founders #footer a:hover {
+
+text-decoration: underline;
+
+}
+
+#tisch a:hover {
+
+text-decoration: underline;
+
+}
+
+#tisch #footer a:hover {
+
+text-decoration: underline;
+
+}
+
+#silver a:hover {
+
+text-decoration: underline;
+
+}
+
+#steinhardt-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#steinhardt a:hover {
+
+text-decoration: underline;
+
+}
+
+#ilearn a:hover {
+
+text-decoration: underline;
+
+}
+
+#livesmart a:hover {
+
+text-decoration: underline;
+
+}
+
+#standard a:hover {
+
+text-decoration: underline;
+
+}
+
+#formal a:hover {
+
+text-decoration: underline;
+
+}
+
+#nyuminute-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#memo a:hover {
+
+text-decoration: underline;
+
+}
+
+#brc a:visited {
+
+color: #ed1849; text-decoration: none;
+
+}
+
+#brc a:hover {
+
+text-decoration: underline;
+
+}
+
+#dollars a:hover {
+
+text-decoration: underline;
+
+}
+
+#dollars02 a:hover {
+
+text-decoration: underline;
+
+}
+
+#recognition a:hover {
+
+text-decoration: underline;
+
+}
+
+#pso a:hover {
+
+text-decoration: underline;
+
+}
+
+#phd-v2 a :hover {
+
+text-decoration: underline;
+
+}
+
+#dental a :hover {
+
+text-decoration: underline;
+
+}
+
+#public-safety a :hover {
+
+text-decoration: underline;
+
+}
+
+#studentlink a:hover {
+
+text-decoration: underline;
+
+}
+
+#dispatchv2 a:hover {
+
+text-decoration: underline;
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  #InTheNews .icon {
+
+    display: none !important;
+
+  }
+
+  #InTheNews .context {
+
+    font-size: .95em; padding: 0 1em 0 0;
+
+  }
+
+  #InTheNews .context td {
+
+    padding: .25em 0 .5em 1em !important;
+
+  }
+
+  #InTheNews .date {
+
+    padding-left: .5em;
+
+  }
+
+  #InTheNews .title {
+
+    padding-left: .5em;
+
+  }
+
+  #InTheNews .pressPages {
+
+    font-size: .9em;
+
+  }
+
+}
+
+</style>
+
+<table id="standardv2" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; width: 100%" cellspacing="0" cellpadding="0">
+
+<tbody>
+
+<tr>
+
+<td style="border-collapse: collapse; text-align: left; vertical-align: top" align="left" valign="top">
+
+<table id="header-wrap" style="background: #57068c; width: 100%" cellspacing="0" cellpadding="0" bgcolor="#57068c">
+
+<tbody>
+
+<tr>
+
+<td style="border-collapse: collapse; text-align: left; vertical-align: top" align="left" valign="top">
+
+<table id="header" cellspacing="0" cellpadding="0" align="center" style="margin: 15px auto; padding: 0 15px; width: 100%">
+
+<tbody>
+
+<tr>
+
+<td style="border-collapse: collapse; text-align: left; vertical-align: top" align="left" valign="top"><a href="http://www.nyu.edu/" style="color: #D11255; display: block; line-height: 1px; text-decoration: none"><img src="http://www.nyu.edu/info/email.direct/images/common/logo-nyu.png" alt="New York University" width="89" height="30" style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none" /></a></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<!--/#header--></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<!--/#header-wrap--><center>
+
+<table id="main" style="padding: 30px 15px 0; width: 100%" cellspacing="0" cellpadding="0">
+
+<tbody>
+
+<tr>
+
+<td valign="top" style="border-collapse: collapse; text-align: left; vertical-align: top" align="left"><br />
+
+<h1 style="background: #fff; color: #000; font-family: Arial, sans-serif; font-size: 21px; font-weight: bold; line-height: 23px; margin: 0; padding: 3px 0 0">Security Is a Snap with the MFA App: Set It Up Today</h1>
+
+<br />In summer 2016, NYU introduced Multi-Factor Authentication (MFA), which helps protect your sensitive information online, to a limited audience. This summer, NYU expanded MFA, making it available as an option for use with NYU websites that require your NYU NetID and password. <span class="bold" style="font-weight: bold">Starting this fall, its use will be required for those sites.</span><br /><br />If you haven&#x2019;t already enrolled in MFA, we strongly encourage you to <a href="http://www.nyu.edu/servicelink/KB0013523" target="_blank" style="color: #D11255; text-decoration: none">register at least two devices</a> now. In most cases, the Duo Mobile app is the best choice for NYU MFA&#x2014;it&#x2019;s free and easy to use, and works in areas without internet or cell service, as well as when traveling internationally. Other MFA options, such as a telephone, have a cost
+
+associated with them and should only be used if you can&#x2019;t use the app for some reason. In the event that you do not have access to a mobile device to take advantage of the app, please contact the <a href="http://www.nyu.edu/it/servicedesk" target="_blank" style="color: #D11255; text-decoration: none">NYU IT Service Desk</a>.<br /><br /><span class="bold" style="font-weight: bold">Even if you&#x2019;re already using MFA</span>, you can enhance your security experience by taking these steps:
+
+<ul style="margin-left: 0; margin-top: 0; overflow: hidden; padding-left: 2px !important">
+
+<li style="list-style: circle; margin-bottom: 5px; margin-left: 15px"><a href="http://www.nyu.edu/servicelink/KB0013523" target="_blank" style="color: #D11255; text-decoration: none">Download the Duo Mobile app</a> to each of your mobile devices.</li>
+
+<li style="list-style: circle; margin-bottom: 5px; margin-left: 15px"><a href="http://www.nyu.edu/servicelink/KB0013524" target="_blank" style="color: #D11255; text-decoration: none">Set up your default option</a> to be a mobile device with the app installed (not a telephone).</li>
+
+</ul>
+
+Have a question? Explore the videos and FAQs on the <a href="http://www.nyu.edu/it/mfa" target="_blank" style="color: #D11255; text-decoration: none">NYU IT website</a>, or contact the <a href="http://www.nyu.edu/it/servicedesk" target="_blank" style="color: #D11255; text-decoration: none">NYU IT Service Desk</a>. Thank you for partnering with us to better protect your and NYU&#x2019;s information.<br /><br />- NYU IT Service Desk<br /><br /></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</center></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p style="padding-left: 7px">&#xA0;</p>
+
+</body>
+
+</html>
+
+--====1499702432====--
+
+From 1590697763274702641@xxx Fri Jan 26 23:00:01 +0000 2018
+X-GM-THRID: 1590697763274702641
+X-Gmail-Labels: download
+Delivered-To: tk1931@nyu.edu
+Received: by 10.2.131.202 with SMTP id j10csp1239965jah;
+        Fri, 26 Jan 2018 15:00:02 -0800 (PST)
+X-Google-Smtp-Source: AH8x224Wa1tOijbcjyphUXd+upq/SANrecFC2wsPaaFu4fbRFP2h8jq9vuQpjU8xTtQlr+S0BOpv
+X-Received: by 10.55.50.213 with SMTP id y204mr21719131qky.86.1517007602091;
+        Fri, 26 Jan 2018 15:00:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1517007602; cv=none;
+        d=google.com; s=arc-20160816;
+        b=stzgg3L3OInEtCkhDzrZMRCKY2hoFd++HARWiDxe21mnb9u/0eEEBrWTrEUj791ltG
+         EP3PyZNKj/o/rhGdQuacthzxEyMlQiDcKtvQA/cN/nnOQ+SyVccP0rhAC3EzGMPF+WnN
+         sGlCrCMUsFp6CTGG/coTGXnRpPn5eAuuK5tfO+3L7sZgLz113XAaCz9vcEf8BbFMdh7g
+         kkncCXvFof8x+QOZNh+43TZhQ/nvwevL/nHu0rKsLK00veTQ8tp7fSdTKVlKJtm/K0u3
+         PEIfOa2w1M2Me6hCMbbMeGbFveDAjhRCxJBiG7wvv3tKpcNYo6Rj4BV3vHcXtZvwp/VT
+         yvXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:to:from:date
+         :message-id:arc-authentication-results;
+        bh=ZRV4tAJRH6pXxJgF9MYF7PYO5Jr4B4r8IbcwtifDeKQ=;
+        b=RChorR287LEJjTikjtX7f2ZXrDhO+5Zd20lkdn/T/q6AnKmKkC20mWbmZ/lsefAf9K
+         LgSe1vOKBS2jC25ZBhJf+EDArCixknDTgxy0uPd9yX9kJZzQTr9P6RZdDFCQEV97/oJs
+         gUZIeEKddvFg5aEKFs5whKqaaLW+pDUdGj0PNJmDLOg43YnsNfsQlZmbCh/x/Qo6JBXi
+         HMiG5/Zv/tztk9nhQxCzojAobmxXwCbG+p5lS7ksPWb/M/fqXQ9AqShaDQvmQlvEeIwZ
+         eKYoVF5fLk2n4uO/46cAcmX9P97HsoEiIasOA899MHt7NpqR24E9Cti5TWTQcIMk2iWK
+         3qmg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning bursar.message@nyu.edu does not designate 198.187.196.100 as permitted sender) smtp.mailfrom=bursar.message@nyu.edu
+Return-Path: <bursar.message@nyu.edu>
+Received: from gmx3.home.nyu.edu (GMX21.HOME.NYU.EDU. [216.165.32.212])
+        by mx.google.com with ESMTPS id i40si8622467qtf.289.2018.01.26.15.00.01
+        for <tk1931@nyu.edu>
+        (version=TLS1 cipher=AES128-SHA bits=128/128);
+        Fri, 26 Jan 2018 15:00:02 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning bursar.message@nyu.edu does not designate 198.187.196.100 as permitted sender) client-ip=198.187.196.100;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning bursar.message@nyu.edu does not designate 198.187.196.100 as permitted sender) smtp.mailfrom=bursar.message@nyu.edu
+Received: from mx3.nyu.edu (mx3.local [10.100.100.243])
+	by gmx3.home.nyu.edu (8.14.9/8.14.9) with ESMTP id w0QN01BA029605
+	for <tk1931@nyu.edu>; Fri, 26 Jan 2018 18:00:01 -0500 (EST)
+Received: from r1.home.nyu.edu (R1.HOME.NYU.EDU [216.165.32.240])
+	by mx3.nyu.edu (8.14.9/8.14.9) with ESMTP id w0QMxwfY029200
+	for <tk1931@nyu.edu>; Fri, 26 Jan 2018 18:00:01 -0500 (EST)
+Received: from mx0a-00256a01.pphosted.com ([148.163.150.240])
+  by r1.home.nyu.edu with ESMTP/TLS/AES256-SHA; 26 Jan 2018 17:59:48 -0500
+Received: from pps.filterd (m0094546.ppops.net [127.0.0.1])
+	by mx0b-00256a01.pphosted.com (8.16.0.22/8.16.0.22) with SMTP id w0QMlQtH146950
+	for <tk1931@nyu.edu>; Fri, 26 Jan 2018 17:59:48 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=bursar.message@nyu.edu
+Received: from tufmon.touchnet.com (tufmon.touchnet.com [198.187.196.100])
+	by mx0b-00256a01.pphosted.com with ESMTP id 2fr9cccpp0-14
+	for <tk1931@nyu.edu>; Fri, 26 Jan 2018 17:59:47 -0500
+Received: from tn-dc-app-f4n2 ([172.18.4.142]) by tufmon.touchnet.com with Microsoft SMTPSVC(7.5.7601.17514);
+	 Fri, 26 Jan 2018 16:59:30 -0600
+Message-ID: <580591014.1517007570296.JavaMail.TN-DC-APP-F4N2$@smtp1>
+Date: Fri, 26 Jan 2018 16:59:30 -0600 (CST)
+From: bursar.message@nyu.edu
+To: tk1931@nyu.edu
+Subject: 2017 1098-T Tax Form Available
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-OriginalArrivalTime: 26 Jan 2018 22:59:30.0365 (UTC) FILETIME=[52C6A6D0:01D396F9]
+X-CLX-Shades: MLX
+X-CLX-Response: 1TFkXHhsdEQpMehcaEQpZTRdnZnIRCllJFxpxGhAadwYZEx1xExkTGhAadwY YGgYaEQpZXhdoY3kRCklGF0RPXVNFWEFfdUJFWV5PThEKQ04XEx5pdU1DHm1fTBJ/cB1FG2ZkXH JLWQcZfxJgHUB7ZxkRClhcFx8EGgQbGB8HTkkdHhMaHUwFGxoEGxoaBB4SBB8QGx4aHxoRCl5ZF
+ 3hFfE4FEQpNXBceGxgRCkxaF2hpTU1NEQpFWRdva2sRCkNaFxsTEgQbEh0EGxMcBBsaGhEKQl4X GxEKQlwXGhEKQkUXaUFCRwFeWgUFTkERCkJOF29rBUZ9QUZQZnxOEQpCTBdpQUJHAV5aBQVOQRE KQmwXaUFCRwFeWgUFTkERCkJAF2ZMAV1ZREFYRU5+EQpCWBdpYGhiBRxuHUxIYBEKWlgXGBEKcG
+ cXZ1MeTH19Y39IZ14QGxoaEQpwaBd6XngFSGVtE2RZehAaEQpwaBdgS3puTnB7cmtmExASGhEKc GgXehpffn1oG09zSF8QGxocEQpwaBdpGEscGUMbAWlSaBATExEKcGgXbVt+bV5SXX1mZBIQGxob EQpwfxdrQB5hWHhyWk1QWxAfHhEKcF8XbmRtRVxgYHpdaH4QExwRCnB9F2xbb1MaRx5gWF5MEBM eEQptfhcaEQpYTRdLESA=
+X-Orig-IP: 198.187.196.100
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,, definitions=2018-01-26_10:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=3 phishscore=0 bulkscore=0 spamscore=0 clxscore=417
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1711220000
+ definitions=main-1801260297
+<html>
+IRS Form 1098-T is entitled "Tuition Statement," and contains information to assist the IRS and you in determining if you are eligible to claim educational related tax credits such as the American Opportunity Credit and Lifetime Learning Tax Credit for 2017.
+
+The Tax Relief Act of 1997 states that educational institutions, such as New York University, are required to file informational returns with the IRS indicating a student's enrollment, and report either amounts billed, or payments received for qualified tuition and related expenses. The 1098-T form contains information that was sent to the IRS by New York University. The form is an informational return for your personal records, and is not required to be submitted with your 2017 tax return. 
+ 
+For a list of Frequently Asked Questions regarding this form, please visit the 1098-T section of http://www.nyu.edu/bursar. Your 2017 1098-T form has been issued and is now available for viewing in your Bursar eSuite. In order to view the 1098-T form, please ensure that your pop-up blocker is disabled.
+
+To access your form: 
+
+- Log in to NYUHome.
+- Select the "Academics" tab.
+- Click the "Go" button on the Albert card to log in to Albert.
+- Click the "Sign in to Albert" button.
+- In Albert, click the "Finances" button.
+- Click "View Bursar Account."
+- Click the link in the lightbox to continue to the NYU Office of the Bursar eSuite.
+- In eSuite, click the "My Account" option and select "Statements" from the drop-down menu.
+- All 1098-T forms will be listed in the "1098-T Tax Statement" section. Click the gear icon to view the 1098-T (ensure your pop-up blocker is turned off).
+
+If you did not "Opt In" to paperless forms, you will also receive a copy of your 1098-T in the mail.
+
+For other questions regarding this form, please contact the Office of the Bursar at (212) 998-2806 or bursar.studentaccounts@nyu.edu with your University ID number (the 'N number,' which can be found in the 'Preferences' section of NYUHome).	
+	
+Student Name --- [ Theodore Kim ]	
+	
+Sincerely,
+
+New York University
+Office of the Bursar
+
+Billing - Financial Aid - Registration - Housing - Meal Plans - nyu.edu/studentlink
+</html>
+From 1552988514637957852@xxx Tue Dec 06 17:27:40 +0000 2016
+X-GM-THRID: 1552988514637957852
+X-Gmail-Labels: download
+Delivered-To: tk1931@nyu.edu
+Received: by 10.194.80.196 with SMTP id t4csp2334749wjx;
+        Tue, 6 Dec 2016 09:27:40 -0800 (PST)
+X-Received: by 10.200.38.50 with SMTP id u47mr63626582qtu.288.1481045259923;
+        Tue, 06 Dec 2016 09:27:39 -0800 (PST)
+Return-Path: <emdmaster@nyu.edu>
+Received: from gmx2.home.nyu.edu (GMX14.HOME.NYU.EDU. [128.122.118.141])
+        by mx.google.com with ESMTP id c62si12192756qkg.184.2016.12.06.09.27.38;
+        Tue, 06 Dec 2016 09:27:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of emdmaster@nyu.edu designates 128.122.118.82 as permitted sender) client-ip=128.122.118.82;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of emdmaster@nyu.edu designates 128.122.118.82 as permitted sender) smtp.mailfrom=emdmaster@nyu.edu
+Received: from nyu.edu (WWW3.HOME.NYU.EDU [128.122.118.82])
+	by gmx2.home.nyu.edu (8.14.9/8.14.9) with SMTP id uB6HRa7U009111;
+	Tue, 6 Dec 2016 12:27:36 -0500 (EST)
+Message-Id: <201612061727.uB6HRa7U009111@gmx2.home.nyu.edu>
+From: NYU Student Health Center <health.media@nyu.edu>
+Errors-To: emdmaster@nyu.edu
+Date: Tue, 6 Dec 2016 12:27:36 -0500
+Subject: Student Health Winter Break Reminders
+MIME-Version: 1.0
+Content-type: multipart/alternative; boundary="====1481045258===="
+
+--====1481045258====
+Content-type: text/plain; charset="UTF-8"
+
+New York University
+
+As the semester winds down and winter break approaches, here’s
+what you need to know about health care access. Be prepared for
+winter break by working with the Student Health Center now.
+
+
+Graduating in December? Please Note: you will have access to the
+Student Health Center until January 8, 2017. Click here for
+information on post-NYU insurance options and transitioning your
+care.
+
+Winter Break Hours
+
+The Student Health Center will be closed Saturday, December
+24, 2016, to Monday, January 2, 2017. Click here for a complete
+listing of winter break hours (January 3–22).
+
+Please Note: The Student Health Center will be open with limited
+services on Tuesday, January 3rd, offering Urgent Care, Counseling
+& Psychiatry Walk-In, and Pharmacy services.
+
+For information on access to specific services see below
+
+Medical and Counseling Services
+
+Necessary follow-up care
+Avoid a last-minute rush by scheduling pre-break follow-up
+services NOW. This includes getting your lab results and refilling
+your prescriptions.
+
+Medical services: click here or call (212) 443-1000
+
+Mental health services: (212) 998-4780
+
+Flu shots
+It’s not too late to get vaccinated. Do it for yourself and those
+around you. Make an appointment at the Student Health Center by
+calling (212) 443-1188 or online at https://shcportal.nyu.edu.
+
+Emergencies
+As always, for a life- or limb-threatening emergency, call 911 (or
+other local emergency services).
+
+Urgent medical needs: Call the SHC main number, (212) 443-1000. A
+nurse will speak to you about your symptoms and recommend an
+appropriate course of action.
+
+Urgent mental health needs: Call the Wellness Exchange hotline: (212)
+443-9999.
+
+Counseling services
+The Wellness Exchange hotline, (212) 443-9999, is available 24/7,
+and this will not change over winter break. While our offices are
+closed, NYU Crisis Response Counselors (CRC) will be on call at
+all times to manage urgent concerns. 
+
+Optometry
+
+If you need to stock up on contact lenses and related supplies
+before the winter break, call Optometry Services: (212) 443-1260.
+
+Please Note: If you place an online order for contact lenses while
+the SHC is closed, the order will not be confirmed until the SHC
+re-opens after winter break on January 4, 2017. 
+
+Prescriptions
+
+The SHC Pharmacy will be closed Saturday, December 24, through
+Monday, January 2, and will reopen on Tuesday, January 3. Call or
+stop by before 4:00 pm the 23rd to avoid long last-minute wait
+times, the SHC Pharmacy will close at 5:00pm on December 23rd.
+
+Refills at the SHC
+If you are taking medications (antibiotics, antidepressants,
+asthma medication, birth control pills, etc.) prescribed by one of
+our health care providers, plan to have enough to last throughout
+your winter break or make arrangements to transfer your
+prescriptions to another pharmacy.
+
+To refill your prescriptions, stop by the pharmacy during regular
+business hours. Don’t wait until the 23rd.
+
+If you need a new prescription for medications that you take on an
+ongoing basis, contact your provider now: make an appointment or
+send a secure message through https://shcportal.nyu.edu.
+
+Transfer refills
+If you can’t make it in for a refill before winter break, you can
+transfer your prescription to another pharmacy in order to fill it
+elsewhere. You must do this before the SHC Pharmacy closes on
+December 23rd at 5:00pm, and we recommend you do it sooner to
+avoid long last-minute wait times. Here’s how:
+1. Call the pharmacy where you want to fill your prescription
+before December 23rd
+2. Give the pharmacy the name of your medication and ask them to
+call the SHC Pharmacy at (212) 443-1050. 
+
+Using Student Health Insurance Away from NYU
+
+NYU-sponsored Student Health Insurance Plan 
+If you need medical attention while the SHC is closed; you may
+visit a health care provider without a referral. Seeking services
+from providers in the MagnaCare or MultiPlan Networks will reduce
+your out-of-pocket expenses. Find a MagnaCare or MultiPlan
+provider at http://www.chpstudent.com/nyu.
+
+Please refer to the student health insurance guidebooks for Washington
+Square or Tandon coverage information or call Consolidated Health
+Plans, the insurance plan administrator: (877) 373-1170.
+
+--====1481045258====
+Content-type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes" />
+
+
+
+</head>
+
+<body style="-webkit-text-size-adjust: none; background: #FFF; margin: 0; padding: 0; width: 100% !important" bgcolor="#FFF"><style type="text/css">
+
+body {
+
+width: 100% !important;
+
+}
+
+ReadMsgBody {
+
+width: 100%;
+
+}
+
+ExternalClass {
+
+width: 100%;
+
+}
+
+body {
+
+-webkit-text-size-adjust: none;
+
+}
+
+body {
+
+background-color: #FFF; margin: 0; padding: 0;
+
+}
+
+img {
+
+border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;
+
+}
+
+a:hover {
+
+text-decoration: underline;
+
+}
+
+#steinhardt-v3 a:hover {
+
+text-decoration: underline;
+
+}
+
+#standardv2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#cas-v3 a :hover {
+
+text-decoration: underline;
+
+}
+
+#fas a:hover {
+
+text-decoration: underline;
+
+}
+
+#gsas a:hover.largecolumn {
+
+text-decoration: underline;
+
+}
+
+#gsas-v3 a :hover {
+
+text-decoration: underline;
+
+}
+
+#visual-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#visual a:hover {
+
+text-decoration: underline;
+
+}
+
+#global a:hover {
+
+text-decoration: underline;
+
+}
+
+#nursing a:hover.largecolumn {
+
+text-decoration: underline;
+
+}
+
+#nursing #smallcolumn  a:hover {
+
+text-decoration: underline;
+
+}
+
+#nursing a:hover {
+
+text-decoration: underline;
+
+}
+
+#nursing-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#hr-retirement a:hover {
+
+text-decoration: underline;
+
+}
+
+#residential-life-founders a:hover {
+
+text-decoration: underline;
+
+}
+
+#residential-life-founders #footer a:hover {
+
+text-decoration: underline;
+
+}
+
+#tisch a:hover {
+
+text-decoration: underline;
+
+}
+
+#tisch #footer a:hover {
+
+text-decoration: underline;
+
+}
+
+#silver a:hover {
+
+text-decoration: underline;
+
+}
+
+#steinhardt-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#steinhardt a:hover {
+
+text-decoration: underline;
+
+}
+
+#ilearn a:hover {
+
+text-decoration: underline;
+
+}
+
+#livesmart a:hover {
+
+text-decoration: underline;
+
+}
+
+#standard a:hover {
+
+text-decoration: underline;
+
+}
+
+#formal a:hover {
+
+text-decoration: underline;
+
+}
+
+#nyuminute-v2 a:hover {
+
+text-decoration: underline;
+
+}
+
+#memo a:hover {
+
+text-decoration: underline;
+
+}
+
+#brc a:visited {
+
+color: #ed1849; text-decoration: none;
+
+}
+
+#brc a:hover {
+
+text-decoration: underline;
+
+}
+
+#dollars a:hover {
+
+text-decoration: underline;
+
+}
+
+#dollars02 a:hover {
+
+text-decoration: underline;
+
+}
+
+#recognition a:hover {
+
+text-decoration: underline;
+
+}
+
+#pso a:hover {
+
+text-decoration: underline;
+
+}
+
+#phd-v2 a :hover {
+
+text-decoration: underline;
+
+}
+
+#dental a :hover {
+
+text-decoration: underline;
+
+}
+
+#public-safety a :hover {
+
+text-decoration: underline;
+
+}
+
+#studentlink a:hover {
+
+text-decoration: underline;
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  #InTheNews .icon {
+
+    display: none !important;
+
+  }
+
+  #InTheNews .context {
+
+    font-size: .95em; padding: 0 1em 0 0;
+
+  }
+
+  #InTheNews .context td {
+
+    padding: .25em 0 .5em 1em !important;
+
+  }
+
+  #InTheNews .date {
+
+    padding-left: .5em;
+
+  }
+
+  #InTheNews .title {
+
+    padding-left: .5em;
+
+  }
+
+  #InTheNews .pressPages {
+
+    font-size: .9em;
+
+  }
+
+}
+
+</style>
+
+<table id="standardv2" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 20px; width: 100%" cellspacing="0" cellpadding="0">
+
+<tbody>
+
+<tr>
+
+<td style="border-collapse: collapse; text-align: left; vertical-align: top" align="left" valign="top">
+
+<table id="header-wrap" style="background: #57068c; width: 100%" cellspacing="0" cellpadding="0" bgcolor="#57068c">
+
+<tbody>
+
+<tr>
+
+<td style="border-collapse: collapse; text-align: left; vertical-align: top" align="left" valign="top">
+
+<table id="header" cellspacing="0" cellpadding="0" align="center" style="margin: 15px auto; padding: 0 15px; width: 100%">
+
+<tbody>
+
+<tr>
+
+<td style="border-collapse: collapse; text-align: left; vertical-align: top" align="left" valign="top"><a href="http://www.nyu.edu/" style="color: #D11255; display: block; line-height: 1px; text-decoration: none"><img src="http://www.nyu.edu/info/email.direct/images/common/logo-nyu.png" alt="New York University" width="89" height="30" style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none" /></a></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<!--/#header--></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<!--/#header-wrap--><center>
+
+<table id="main" style="padding: 30px 15px 0; width: 100%" cellspacing="0" cellpadding="0">
+
+<tbody>
+
+<tr>
+
+<td valign="top" style="border-collapse: collapse; text-align: left; vertical-align: top" align="left"><span style="font-family: Arial, sans-serif">As the semester winds down and&#xA0;winter&#xA0;break&#xA0;approaches, here&#x2019;s what you need to know about health care access. Be prepared for&#xA0;winter break&#xA0;by working with the Student Health Center now.&#xA0;</span>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong><em><br />Graduating in December?</em></strong><em>&#xA0;Please Note: you will have access to the Student Health Center until January 8, 2017.&#xA0;<a href="http://bit.ly/2h2Ar1P" style="color: #D11255; text-decoration: none">Click here</a>&#xA0;for information on post-NYU insurance options and transitioning your care.</em></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Winter&#xA0;Break&#xA0;Hours</strong></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">The Student Health Center will be closed Saturday, December 24,&#xA0;2016,&#xA0;to Monday, January 2, 2017.&#xA0;<a href="http://bit.ly/2h2yWk5" style="color: #D11255; text-decoration: none">Click here</a>&#xA0;for a complete listing of&#xA0;winter break&#xA0;hours (January 3&#x2013;22).</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Please Note:</strong> The Student Health Center will be open with limited services on Tuesday, January 3<sup>rd</sup>, offering Urgent Care, Counseling &amp; Psychiatry Walk-In, and Pharmacy services.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>For information on access to specific services see below</strong></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Medical and Counseling Services</strong></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Necessary follow-up care</strong><br />Avoid a last-minute rush by scheduling pre-break&#xA0;follow-up services NOW. This includes getting your lab results and refilling your prescriptions.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Medical services:</strong>&#xA0;<a href="http://bit.ly/2g5vSUZ" style="color: #D11255; text-decoration: none">click here</a>&#xA0;or call&#xA0;(212) 443-1000</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Mental health services:</strong>&#xA0;(212) 998-4780</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Flu shots</strong><br />It&#x2019;s not too late to get vaccinated. Do it for yourself and those around you. Make an appointment at the Student Health Center by calling&#xA0;(212) 443-1188&#xA0;or online at&#xA0;<a href="http://bit.ly/2gMu2Y8" style="color: #D11255; text-decoration: none">https://shcportal.nyu.edu</a>.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Emergencies</strong><br />As always, for a life- or limb-threatening emergency, call 911 (or other local emergency services).</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Urgent medical needs:</strong>&#xA0;Call the SHC main number,&#xA0;(212) 443-1000. A nurse will speak to you about your symptoms and recommend an appropriate course of action.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Urgent mental health needs:</strong>&#xA0;Call the&#xA0;<a href="http://bit.ly/2hdQBpM" style="color: #D11255; text-decoration: none">Wellness Exchange</a>&#xA0;hotline<span style="text-decoration: underline">:&#xA0;(212) 443-9999.</span></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Counseling services</strong><br />The&#xA0;<a href="http://bit.ly/2hdQBpM" style="color: #D11255; text-decoration: none">Wellness Exchange</a>&#xA0;hotline,&#xA0;(212) 443-9999, is available 24/7, and this will not change over&#xA0;winter&#xA0;break. While our offices are closed, NYU Crisis Response Counselors (CRC) will be on call at all times to manage urgent concerns.&#xA0;</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Optometry</strong></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">If you need to stock up on contact lenses and related supplies before the&#xA0;winter&#xA0;break, call Optometry Services:&#xA0;(212) 443-1260.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">Please Note: If you place an online order for contact lenses while the SHC is closed, the order will not be confirmed until the SHC re-opens after&#xA0;winter&#xA0;break&#xA0;on January 4, 2017.&#xA0;</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Prescriptions</strong></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">The&#xA0;<a href="http://bit.ly/2g6ikn8" style="color: #D11255; text-decoration: none">SHC Pharmacy</a>&#xA0;will be closed Saturday, December 24, through Monday, January 2, and will reopen on Tuesday, January 3. Call or stop by before 4:00 pm the 23rd to avoid long last-minute wait times,&#xA0;the SHC Pharmacy will close at 5:00pm on December 23rd. &#xA0;&#xA0;</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Refills at the SHC</strong><br />If you are taking medications (antibiotics, antidepressants, asthma medication, birth control pills, etc.) prescribed by one of our health care providers, plan to have enough to last throughout your&#xA0;winter&#xA0;break&#xA0;or make arrangements to transfer your prescriptions to another pharmacy.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">To refill your prescriptions, stop by the pharmacy during regular business hours. Don&#x2019;t wait until the 23rd.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">If you need a new prescription for medications that you take on an ongoing basis, contact your provider now: make an appointment or send a secure message through&#xA0;<a href="http://bit.ly/2gMu2Y8" style="color: #D11255; text-decoration: none">https://shcportal.nyu.edu</a>.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Transfer refills</strong><br />If you can&#x2019;t make it in for a refill before&#xA0;winter&#xA0;break, you can transfer your prescription to another pharmacy in order to fill it elsewhere. You must do this before the SHC Pharmacy closes on December 23rd at 5:00pm, and we recommend you do it sooner to avoid long last-minute wait times. Here&#x2019;s how:<br />1. Call the pharmacy where you want to fill your prescription before December 23rd<br />2. Give the pharmacy the name of your medication and ask them to call the SHC Pharmacy at&#xA0;(212) 443-1050.&#xA0;</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>Using Student Health Insurance Away from NYU</strong></p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0"><strong>NYU-sponsored Student Health Insurance Plan&#xA0;</strong><br />If you need medical attention while the SHC is closed; you may visit a health care provider without a referral. Seeking services from providers in the MagnaCare or MultiPlan Networks will reduce your out-of-pocket expenses. Find a MagnaCare or MultiPlan provider at&#xA0;<a href="http://bit.ly/2gMsVI1" style="color: #D11255; text-decoration: none">http://www.chpstudent.com/nyu</a>.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">Please refer to the student health insurance guidebooks for&#xA0;<a href="http://bit.ly/2gzbKXj" style="color: #D11255; text-decoration: none">Washington Square</a>&#xA0;or&#xA0;<a href="http://bit.ly/2hdQIld" style="color: #D11255; text-decoration: none">Tandon</a>&#xA0;coverage information or call Consolidated Health Plans, the insurance plan administrator:&#xA0;(877) 373-1170.</p>
+
+<p style="font-family: Arial, sans-serif; margin: 5px 0 10px; padding: 0">&#xA0;</p>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</center></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</body>
+
+</html>
+
+--====1481045258====--
+
+From 1585360015717598322@xxx Wed Nov 29 00:58:49 +0000 2017
+X-GM-THRID: 1585360015717598322
+X-Gmail-Labels: download,Important
+Delivered-To: tk1931@nyu.edu
+Received: by 10.2.180.24 with SMTP id i24csp3846769jaj;
+        Tue, 28 Nov 2017 16:58:49 -0800 (PST)
+X-Google-Smtp-Source: AGs4zMYyavPK6Wo+sWXJQ3GQWE8q6yW8CBCfauRcYpll48EHx6Jz68PKYvJyAkdjZszFnXz84lho
+X-Received: by 10.55.122.134 with SMTP id v128mr1829763qkc.354.1511917129406;
+        Tue, 28 Nov 2017 16:58:49 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1511917129; cv=none;
+        d=google.com; s=arc-20160816;
+        b=XHnfGUTXe7n6TzTBuOeRey9qHM0mwPOPidsomb6eOITV4x8ad59U/iFkIdBg5squaX
+         ikee7sHHRp3N/HnNTgyt1z/HbqkDQ9ehAetxTQXGqzMDqEWjVlEY5YP29Har68jXA3ZS
+         k4em4t56MqE2JfScxyevmhs4u6bKOfdaAPajZXS94crjSkqk2Mq1+qcaY/BSZdl/neP1
+         /taE1FZ4wCLFKeRYfH6eLbVyWcL70/vmiB2w0oyWgthPcua+FCIDlA0Cz2c8EsEyNc2T
+         ccqUE2IV5s+KMXCNs0GNYj2dxowcp8Blxq7NsqdVjJTi1qag4DKvZac17eVJL5o35dlO
+         KkPA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:to:from:date
+         :message-id:arc-authentication-results;
+        bh=ETEbjknRF8l8XWAZ/A0/F/w+vsrGilWqVt+T0Wbx81c=;
+        b=e/cDRkOyTLU4H13/xxNnedHgts/gb2eksKUM1BhYkwxq/9o1e1ewsfRw8icWqTZ9Ha
+         wmxWO/pSiznP994yoj/TCW0rd/bv/WJ9xI+Ca171nOx4dotZuWk74ZF0/9VpWSYKWr3q
+         AsCVNFetynGBtvppquYAgFY41Ax/gB9ZPxKDPD3Z/BRzvLqKQQRmGpiPOLGrghPZMi8z
+         u9s/FYnOQYdxlwxjRnpLO3NColAN11Y+qkyieCUQ2DaLaLyG1qylQH5dlhRSliGb2ySg
+         jGJQ5RuEuaDMQYXeHT+ZCtkt0ruh5OKOMe4jkI2gmhdt8wPoaWpHWMafq6ezHFFQWwvL
+         pl5g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=softfail (google.com: domain of transitioning bursar.message@nyu.edu does not designate 198.187.196.100 as permitted sender) smtp.mailfrom=bursar.message@nyu.edu
+Return-Path: <bursar.message@nyu.edu>
+Received: from mx52.home.syr.nyu.edu (MX52.HOME.SYR.NYU.EDU. [216.165.86.98])
+        by mx.google.com with ESMTPS id h2si558565qtk.300.2017.11.28.16.58.49
+        for <tk1931@nyu.edu>
+        (version=TLS1_2 cipher=AES128-GCM-SHA256 bits=128/128);
+        Tue, 28 Nov 2017 16:58:49 -0800 (PST)
+Received-SPF: softfail (google.com: domain of transitioning bursar.message@nyu.edu does not designate 198.187.196.100 as permitted sender) client-ip=198.187.196.100;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning bursar.message@nyu.edu does not designate 198.187.196.100 as permitted sender) smtp.mailfrom=bursar.message@nyu.edu
+Received: from r52.home.syr.nyu.edu (R52.HOME.SYR.NYU.EDU [216.165.86.103])
+	by mx52.home.syr.nyu.edu (8.14.9/8.14.9) with ESMTP id vAT0wm4G002035
+	for <tk1931@nyu.edu>; Tue, 28 Nov 2017 19:58:48 -0500 (EST)
+Received: from mx0a-00256a01.pphosted.com ([148.163.150.240])
+  by r52.home.syr.nyu.edu with ESMTP/TLS/AES256-SHA; 28 Nov 2017 19:58:48 -0500
+Received: from pps.filterd (m0075771.ppops.net [127.0.0.1])
+	by mx0b-00256a01.pphosted.com (8.16.0.21/8.16.0.21) with SMTP id vAT0utod028854
+	for <tk1931@nyu.edu>; Tue, 28 Nov 2017 19:58:47 -0500
+Authentication-Results: ppops.net;
+	spf=softfail smtp.mailfrom=bursar.message@nyu.edu
+Received: from tufmon.touchnet.com (tufmon.touchnet.com [198.187.196.100])
+	by mx0b-00256a01.pphosted.com with ESMTP id 2ehgk6t5dt-637
+	for <tk1931@nyu.edu>; Tue, 28 Nov 2017 19:58:47 -0500
+Received: from tn-dc-app-f4n3 ([172.18.4.143]) by tufmon.touchnet.com with Microsoft SMTPSVC(7.5.7601.17514);
+	 Tue, 28 Nov 2017 18:58:44 -0600
+Message-ID: <2085353272.1511917124496.JavaMail.TN-DC-APP-F4N3$@smtp1>
+Date: Tue, 28 Nov 2017 18:58:44 -0600 (CST)
+From: bursar.message@nyu.edu
+To: tk1931@nyu.edu
+Subject: Bill Notification: Spring 2018 Term
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-OriginalArrivalTime: 29 Nov 2017 00:58:44.0619 (UTC) FILETIME=[34ABEDB0:01D368AD]
+X-CLX-Shades: MLX
+X-CLX-Response: 1TFkXGRweEQpMehcaEQpZTRdnZnIRCllJFxpxGhAadwYZHh5xGB0dGhAadwY YGgYaEQpZXhdoY3kRCklGF0RPXVNFWEFfdUJFWV5PThEKQ04XTXV5QmRbbVNLWHV1fUdEbFwZX2 Jnb2JLGnwZQGFhY20RClhcFx8EGgQbGxMHG0gaThhOS08FGxoEGxoaBB4SBBsQGx4aHxoRCl5ZF
+ 3h/HFhDEQpNXBcYHR4RCkxaF2lraU1NTREKRVkXb2trEQpDWhcbExIEGxIdBBsTHAQbGhoRCkJe FxsRCkJcFxoRCkJFF2lBQkcBXloFBU5BEQpCThdvawVGfUFGUGZ8ThEKQkwXaUFCRwFeWgUFTkE RCkJsF2lBQkcBXloFBU5BEQpCQBdlQBN7WhocXkRwaBEKQlgXaWBoYgUcbh1MSGARCk1eFxsRCl
+ pYFxsRCnBnF2dTHkx9fWN/SGdeEBMYEQpwaBdoGUZFGXJAfxh6WBAeEhEKcGgXbENPf0FseRsbH UkQHRoRCnBoF2lzRFxrRmhFG3lJEB4SEQpwaBdkQX1rU0Z5fR9gZxAcGhEKcGgXaGlAAWJwElBB clgQEh8RCm1+FxsRClhNF0sRIA==
+X-Orig-IP: 198.187.196.100
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10432:,, definitions=2017-11-28_13:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=inbound_notspam policy=inbound score=0 priorityscore=0 malwarescore=0
+ suspectscore=3 phishscore=0 bulkscore=0 spamscore=0 clxscore=364
+ lowpriorityscore=0 impostorscore=0 adultscore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.0.1-1709140000 definitions=main-1711290010
+
+Your Spring 2018 term bill is now available for review and payment in the NYU Electronic Suite (eSuite). This bill may include tuition, student health insurance, and/or housing. 
+
+Payment is due January 4, 2018.
+
+To view your bill, visit nyu.edu/bursar/esuite.
+
+To request a waiver of NYU's mandatory student health insurance coverage, visit nyu.edu/shc/insurance.
+
+In order for parents, guardians, or other authorized payers to view and/or pay your bill, you must add them as an authorized user in eSuite. To set up an authorized user, visit nyu.edu/bursar/esuite.
+
+For any questions please contact us at 212-998-2806 or bursar.studentaccounts@nyu.edu (please provide name and University ID, aka N-number, which can be found in the Student Center in Albert). Visit nyu.edu/studentlink for a schedule of our office hours.	
+	
+======== STATEMENT DETAILS ==========	
+Student Name --- [ Theodore Kim ]	
+=====================================	
+	
+Thank you,
+
+Anthony Bonano
+Bursar
+
+Billing - Financial Aid - Registration - Housing - Meal Plans - nyu.edu/studentlink
+
+From 1563125607058363750@xxx Tue Mar 28 14:52:24 +0000 2017
+X-GM-THRID: 1563125607058363750
+X-Gmail-Labels: download
+Delivered-To: tk1931@nyu.edu
+Received: by 10.157.22.207 with SMTP id s15csp1145325ots;
+        Tue, 28 Mar 2017 07:52:24 -0700 (PDT)
+X-Received: by 10.55.164.195 with SMTP id n186mr16895698qke.95.1490712744578;
+        Tue, 28 Mar 2017 07:52:24 -0700 (PDT)
+Return-Path: <askit@nyu.edu>
+Received: from gmx1.home.nyu.edu (GMX7.HOME.NYU.EDU. [128.122.118.134])
+        by mx.google.com with ESMTP id p11si3610984qtg.227.2017.03.28.07.52.24
+        for <tk1931@nyu.edu>;
+        Tue, 28 Mar 2017 07:52:24 -0700 (PDT)
+Received-SPF: pass (google.com: domain of askit@nyu.edu designates 128.122.109.144 as permitted sender) client-ip=128.122.109.144;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of askit@nyu.edu designates 128.122.109.144 as permitted sender) smtp.mailfrom=askit@nyu.edu
+Received: from mx1.nyu.edu (mx1.local [10.100.100.241])
+	by gmx1.home.nyu.edu (8.14.9/8.14.9) with ESMTP id v2SEqOd9032657
+	for <tk1931@nyu.edu>; Tue, 28 Mar 2017 10:52:24 -0400 (EDT)
+Received: from registry.home.nyu.edu (REGISTRY.HOME.NYU.EDU [128.122.109.144])
+	by mx1.nyu.edu (8.14.9/8.14.9) with ESMTP id v2SEqOIw032645
+	for <tk1931@nyu.edu>; Tue, 28 Mar 2017 10:52:24 -0400 (EDT)
+Received: from registry.home.nyu.edu (localhost [127.0.0.1])
+	by registry.home.nyu.edu (8.14.5+Sun/8.14.5) with ESMTP id v2SEqOP0006554
+	for <tk1931@nyu.edu>; Tue, 28 Mar 2017 10:52:24 -0400 (EDT)
+Received: (from itsdba@localhost)
+	by registry.home.nyu.edu (8.14.5+Sun/8.14.5/Submit) id v2SEqOYA006553
+	for tk1931@nyu.edu; Tue, 28 Mar 2017 10:52:24 -0400 (EDT)
+Date: Tue, 28 Mar 2017 10:52:24 -0400 (EDT)
+From: askit@nyu.edu
+Message-Id: <201703281452.v2SEqOYA006553@registry.home.nyu.edu>
+X-Authentication-Warning: registry.home.nyu.edu: itsdba set sender to askit@nyu.edu using -r
+To: tk1931@nyu.edu
+Subject: Password Expiration Notice #2 for tk1931
+
+------------------------------------------
+From: NYU Information Technology <AskIT@nyu.edu>
+Subject: IMPORTANT: IT notification message for Theodore Kim (tk1931)    
+------------------------------------------
+
+**********
+SECOND NOTICE
+**********
+
+This email is a reminder that your NetID password will soon expire and you must change it now by going to the NYU Start Page ( https://start.nyu.edu ) and following the instructions there. 
+
+If you do not change your password before it expires, you will not be able to log into many NYU online services until it is reset. See below for details from the first notice we sent to you.
+ 
+
+**********
+ORIGINAL MESSAGE
+**********
+As part of our ongoing efforts to maintain computer security at NYU, Information Technology requires everyone to change the password used with NYUHome and their NetID on a regular basis. This practice helps protect University data, your personal information, and the wide range of services available over the NYU network. 
+
+Please reset your NetID password now by going to the NYU Start Page ( https://start.nyu.edu ) and following the instructions provided there.
+ 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+YOU MUST CHANGE YOUR NETID PASSWORD BY April 4th, 2017. 
+
+If you miss this deadline, you will not be able to access NYUHome, NYURoam wireless and VPN, and other restricted-access web pages and applications that require central NYU NetID authentication until you reset your password on the NYU Start page.
+
+This will also affect you if you are using an email client such as Thunderbird or Outlook to check your email, or if you are using a non-Google application to check your email on your mobile device. You must change your password for continued access to these services. Once changed, you will need to update your saved password in any services affected by the NetID password change.
+
+Please note: Your NetID password is separate and different from your NYU Google Apps password; see the Google link below for more information.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ 
+If you do not change your password, we will send reminder messages prior to the expiration date.  
+
+If you change your password before the expiration date, you will not receive any further reminders. If you change your password more frequently than the yearly interval, you can avoid these notices altogether.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+If you have questions, please contact the NYU IT Service Desk, available 24x7.
+
+For more detailed instructions on how to change your NetID password, visit:
+http://www.nyu.edu/it/netid
+
+For answers to FAQs about passwords and password changing, browse the NYU ServiceLink knowledge base:
+http://www.nyu.edu/servicelink/keyword/netid+password
+
+For more information about Google Apps for Education, visit: 
+http://www.nyu.edu/google
+
+Thank you for your cooperation in keeping our University systems and data secure.
+
+- NYU Information Technology
+

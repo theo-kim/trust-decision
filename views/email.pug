@@ -3,7 +3,7 @@ extends layout
 //- Main content
 block content
 	div(style="position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:hidden;display:flex;flex-direction:column")
-		div(style="background:#f1f1f1;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;")
+		div(style="background:#f1f1f1;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;flex-shrink:0;")
 			img(src="/images/google.png" style="width:91px;display:inline-block;float:left;cursor:pointer;margin-top:5px;")
 			div(style="float:left;background:#fff;cursor:text;height:30px;width: 50%; max-width: 590px; margin-left:80px;border:1px #cdcdcd solid;overflow:hidden")
 				span(style="border-top:5px solid #000; border-left:5px solid transparent;border-right:5px solid transparent;float:right;width:0;height:0;display:block;margin-top:12px;margin-right:10px;")
@@ -15,7 +15,7 @@ block content
 				img(src="/images/notif.png" style="height:20px;cursor:pointer")
 			div(style="float:right;margin-left:17px;margin-top:2px;")
 				img(src="/images/profile.png" style="height:36px;cursor:pointer")
-		div(style="background:#ffffff;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;")
+		div(style="background:#ffffff;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;flex-shrink:0;")
 			div(style="color:#DD4B58;font-size:19px;margin-top:2px;cursor:pointer")
 				| Gmail
 				span(style="border-top:4px solid #D54937; border-left:4px solid transparent;border-right:4px solid transparent;width:0;height:0;display:inline-block;margin-left:5px;position:relative;top:-5px;")
@@ -85,10 +85,17 @@ block content
 													span(style="display:inline-block;width:95px;text-align:right;color:#aaa") security
 								div(style="font-size:13px;margin-left:auto;")=timestamp
 								img(src="/images/replybutt.png" style="height:30px;margin-top:-7px;margin-left:5px;")
-							div(style="margin-top:10px;flex-grow:1;font-size:14px")!=message
+							div(style="margin-top:10px;flex-grow:1;font-size:14px;flex-shrink:0")!=message
 					div(style="padding:10px;display:flex;flex-direction:row;")
 						img(src="/images/picon.png", style="height:35px;")
 						div(style="margin-left: 10px;flex-grow:1;height:100px;border:1px #e5e5e5 solid;font-size:14px;color:#bbb;padding:10px")
 							| Click here to <u>Reply</u> or <u>Forward</u>
 
 	//- Javascript
+	script.
+		const links = document.querySelectorAll('a');
+		for (let i = 0; i < links.length; ++i) {
+			links[i].addEventListener('click', (e) => {
+				e.preventDefault();
+			})
+		}

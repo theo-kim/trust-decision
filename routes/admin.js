@@ -6,6 +6,8 @@ let db = require('../db.js');
 let moment = require('moment');
 let json2csv = require('json2csv');
 
+let emails = require('../data/emails.json')
+
 let userTable = (process.env.DEBUG) ? 'dev_participants' : 'prod_participants';
 let testTable = (process.env.DEBUG) ? 'dev_tests' : 'prod_tests';
 let roundTable = (process.env.DEBUG) ? 'dev_rounds' : 'prod_rounds';
@@ -111,10 +113,7 @@ router.get('/', (req, res, next) => {
 				  		users: out[1],
 				  		headers: Object.keys(Object.assign(columnLabel, out[0])),
 				  		moment: moment, 
-				  		//csv: result,
-				  		// questions: questions,
-				  		// marketvalues: marketvalues,
-				  		// percentages: percentages
+				  		emails: emails
 				  	});
 				});
 

@@ -5,7 +5,7 @@ mixin question(question, text)
 			textarea.questioninput(id="q" + question, style="width:100%;font-size:16px;padding:10px;margin-top:20px",autocomplete="off")=text
 
 block content
-	div#welcome(style="padding:50px 50px")
+	div#welcome(style="overflow-y:auto;padding:50px 50px;position:absolute;top:0;left:0;right:0;bottom:0")
 		h1 Study Results
 		button(style="display:block;margin-bottom: 10px; border:0; background: #ddd; padding: 5px 20px;", onclick="d()") Download CSV
 		div(style="overflow:auto;position:relative")
@@ -34,6 +34,29 @@ block content
 										a(href='javascript:void(0)', onclick='window.open("/emails/' + s + '/' + row[col] + '")')=row[col] + ' (click to view email)'
 								- else 
 									td=row[col]
+
+		h1 Emails (#{emails[0].phishing.length + emails[0].normal.length + emails[1].phishing.length + emails[1].normal.length})
+		div(style="position:relative;width:100%;overflow:hidden")
+			div(style="width:calc(50% - 40px);padding:20px;float:left;overflow:hidden;")
+				h2: u Apple Scenario
+				div(style="width:calc(50% - 20px);float:left;padding:10px")
+					h3: b Phishing
+					each email, index in emails[0].phishing
+						p: a(href="/emails/Apple/"+index)=email.subject
+				div(style="width:calc(50% - 20px);float:left;padding:10px")
+					h3: b Normal
+					each email, index in emails[0].normal
+						p: a(href="/emails/Apple/"+ (index + emails[0].phishing.length))=email.subject
+			div(style="width:calc(50% - 40px);padding:20px;float:left;overflow:hidden;")
+				h2: u NYU Student Scenario
+				div(style="width:calc(50% - 20px);float:left;padding:10px")
+					h3: b Phishing
+					each email, index in emails[1].phishing
+						p: a(href="/emails/NYU/"+index)=email.subject
+				div(style="width:calc(50% - 20px);float:left;padding:10px")
+					h3: b Normal
+					each email, index in emails[1].normal
+						p: a(href="/emails/NYU/"+ (index + emails[1].phishing.length))=email.subject
 
 	script(type="text/javascript" src="/javascripts/download.js")
 	script(type="text/javascript" src="/javascripts/admin.js")
