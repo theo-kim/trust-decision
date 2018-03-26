@@ -34,7 +34,7 @@ block content
 						option Hourly
 						option Daily
 						option 2 - 3 times a week
-						option Less than 2 times a week
+						option 1 - 2 times a week
 						option At most once a week
 						option I do not use email
 			tr
@@ -54,7 +54,6 @@ block content
 				gender: $("#gender").val(),
 				trust: $("#trust").val()
 			}
-			console.log(data);
 			if (!data.email || !data.age || !data.trust || !data.gender) {
 				alert("Please complete the survey.");
 				return

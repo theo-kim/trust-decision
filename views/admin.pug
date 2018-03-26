@@ -32,6 +32,25 @@ block content
 									- var s = row[col.replace('email_index', 'scenario')];
 									td
 										a(href='javascript:void(0)', onclick='window.open("/emails/' + s + '/' + row[col] + '")')=row[col] + ' (click to view email)'
+								- else if (col.includes('links_clicked') && row[col])
+									- var links = JSON.parse(row[col])
+									- var summs = ''
+									- for (var j = 0; j < links.length; ++j)
+										- summs += '<b>link ' + j + ':</b> <i>Clicked:</i> ['
+										- if (links[j].clicks.length == 0)
+											- summs += 'NONE'
+										- for (var h = 0; h < links[j].clicks.length; ++h)
+											summs
+											- summs += links[j].clicks[h] + ', '
+										- summs += '], <i>Hover:</i> ['
+										- if (links[j].hover.length == 0)
+											- summs += 'NONE'
+										- for (var h = 0; h < links[j].hover.length; ++h)
+											summs
+											- summs += links[j].hover[h] + ', '
+										- summs += ']<br>'
+
+									td !{summs}
 								- else 
 									td=row[col]
 

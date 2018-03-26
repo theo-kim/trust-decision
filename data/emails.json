@@ -3,6 +3,7 @@
 		"phishing": [
 			{
 				"strategy": "Link Manipulation",
+				"category": "Customer Service",
 				"subject": "Your access has been disabled",
 				"from": {
 					"name": "App.Support",
@@ -19,6 +20,7 @@
 			},
 			{
 				"strategy": "Link Manipulation",
+				"category": "Customer Service",
 				"subject": "Account Notification",
 				"from": {
 					"name": "Apple Customer Support",
@@ -35,6 +37,7 @@
 			},
 			{
 				"strategy": "Spam",
+				"category": "Order Invoice",
 				"subject": "Thank you for your purchase",
 				"from": {
 					"name": "Apple Customer Service",
@@ -56,6 +59,7 @@
 		"normal": [
 			{
 				"subject": "Your Apple Telephone Experience",
+				"category": "Customer Service",
 				"from": {
 					"name": "Apple Support",
 					"email": "AppleSupport@insideapple.apple.com" 
@@ -71,6 +75,7 @@
 			},
 			{
 				"subject": "Apple Care Follow Up",
+				"category": "Customer Service",
 				"from": {
 					"name": "Keisha Gray",
 					"email": "lgray2@apple.com" 
@@ -86,6 +91,7 @@
 			},
 			{
 				"subject": "Verify your Apple ID email address",
+				"category": "Customer Service",
 				"from": {
 					"name": "Apple",
 					"email": "appleid@id.apple.com" 
@@ -101,6 +107,7 @@
 			},
 			{
 				"subject": "Discover great holiday gifts.",
+				"category": "Advertisement",
 				"from": {
 					"name": "Apple",
 					"email": "news@insideapple.apple.com"
@@ -116,6 +123,7 @@
 			},
 			{
 				"subject": "Macbook Pro and Macbook pick up speed",
+				"category": "Advertisement",
 				"from": {
 					"name": "Apple",
 					"email": "news@insideapple.apple.com"
@@ -131,6 +139,7 @@
 			},
 			{
 				"subject": "Make your grad's future even brighter",
+				"category": "Advertisement",
 				"from": {
 					"name": "Apple",
 					"email": "news@insideapple.apple.com"
@@ -146,6 +155,7 @@
 			},
 			{
 				"subject": "Thanks for contacting us",
+				"category": "Customer Service",
 				"from": {
 					"name": "Apple Support",
 					"email": "AppleSupport@email.apple.com"
@@ -161,6 +171,7 @@
 			},
 			{
 				"subject": "Call us when your ready",
+				"category": "Customer Service",
 				"from": {
 					"name": "Apple Support",
 					"email": "AppleSupport@email.apple.com"
@@ -176,6 +187,7 @@
 			},
 			{
 				"subject": "Check off your own wish list",
+				"category": "Advertisement",
 				"from": {
 					"name": "Apple",
 					"email": "news@insideapple.apple.com"
@@ -195,6 +207,8 @@
 		"phishing": [
 			{
 				"subject": "Library Account",
+				"category": "University Correspondence",
+				"strategy": "Link Manipulation",
 				"from": {
 					"name": "NYU Libaries",
 					"email": "library@nyu.edu" 
@@ -210,6 +224,8 @@
 			},
 			{
 				"subject": "Congratulations: You are qualified to receive a four month free trial of Chegg Textbook Services",
+				"category": "Advtertisement",
+				"strategy": "Spam",
 				"from": {
 					"name": "",
 					"email": "specials@chegg.com" 
@@ -228,6 +244,8 @@
 			},
 			{
 				"subject": "Bill Tomson has shared a Document on Google Docs with you",
+				"category": "Personal Correspondence",
+				"strategy": "Spear Phishing",
 				"from": {
 					"name": "Bill Tomson",
 					"email": "bt2313@nyu.edu" 
@@ -246,6 +264,8 @@
 			},
 			{
 				"subject": "Workday Inbox - Your Daily Digest",
+				"category": "University Correspondence",
+				"strategy": "Spear Phishing",
 				"from": {
 					"name": "Workday",
 					"email": "nyu@workday.com" 
@@ -260,6 +280,8 @@
 			},
 			{
 				"subject": "Research Assistant",
+				"category": "Personal Correspondence",
+				"strategy": "Spear Phishing",
 				"from": {
 					"name": "Steven Tautle",
 					"email": "steven.t@nyu.edu" 
@@ -276,6 +298,7 @@
 		"normal": [
 			{
 				"subject": "Thank you for your New York University electronic check payment",
+				"category": "University Correspondence",
 				"from": {
 					"name": "bursar.message@nyu.edu",
 					"email": "bursar.message@nyu.edu" 
@@ -291,6 +314,7 @@
 			},
 			{
 				"subject": "Student Health Winter Break Reminders",
+				"category": "University Correspondence",
 				"from": {
 					"name": "NYU Student Health Center",
 					"email": "health.media@nyu.edu"
@@ -306,6 +330,7 @@
 			},
 			{
 				"subject": "NYU Waiver Denied",
+				"category": "University Correspondence",
 				"from": {
 					"name": "Consolidated Health Plans",
 					"email": "webmaster@consolidatedhealthplan.com"
@@ -321,6 +346,7 @@
 			},
 			{
 				"subject": "Security Is a Snap with the MFA App: Set It Up Today",
+				"category": "University Correspondence",
 				"from": {
 					"name": "NYU IT Service Desk",
 					"email": "AskIT@nyu.edu"
@@ -336,6 +362,7 @@
 			},
 			{
 				"subject": "2017 1098-T Tax Form Available",
+				"category": "University Correspondence",
 				"from": {
 					"name": "bursar.message@nyu.edu",
 					"email": "bursar.message@nyu.edu"
@@ -351,6 +378,7 @@
 			},
 			{
 				"subject": "Password Expiration Notice #2",
+				"category": "University Correspondence",
 				"from": {
 					"name": "askit@nyu.edu",
 					"email": "askit@nyu.edu"
@@ -366,6 +394,7 @@
 			},
 			{
 				"subject": "Bill Notification: Spring 2018 Term",
+				"category": "University Correspondence",
 				"from": {
 					"name": "bursar.message@nyu.edu",
 					"email": "bursar.message@nyu.edu"
@@ -381,6 +410,7 @@
 			},
 			{
 				"subject": "Important: Your FSA ID Information Was Changed",
+				"category": "University Correspondence",
 				"from": {
 					"name": "FSA ID Information",
 					"email": "FSA-ID@ed.gov"
@@ -396,6 +426,7 @@
 			},
 			{
 				"subject": "NYU Office of Financial Aid",
+				"category": "University Correspondence",
 				"from": {
 					"name": "financial.aid@nyu.edu",
 					"email": "financial.aid@nyu.edu"
@@ -410,6 +441,7 @@
 			},
 			{
 				"subject": "Chem Lab",
+				"category": "Personal Correspondence",
 				"from": {
 					"name": "Joe Joseph",
 					"email": "jj1234@nyu.edu"

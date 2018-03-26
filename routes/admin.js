@@ -13,7 +13,7 @@ let testTable = (process.env.DEBUG) ? 'dev_tests' : 'prod_tests';
 let roundTable = (process.env.DEBUG) ? 'dev_rounds' : 'prod_rounds';
 
 const scenarioRef = ['Apple', 'Student'];
-const selectionRef = ['Phishing', 'Normal'];
+const selectionRef = ['phishing', 'normal'];
 
 function fetchRounds (index, tests) {
 	return new Promise(function (resolve, reject) {
@@ -53,13 +53,25 @@ function fetchRounds (index, tests) {
 							}
 							else if (column == 'selection') {
 								output[prefix + 'selection'] = selectionRef[round.selection];
+								output[prefix + 'correct'] = ((selectionRef[round.selection] == 'phishing' && round.phishing) || (selectionRef[round.selection] == 'normal' && !round.phishing)) ? 'correct' : 'incorrect'; 
 								columnLabels[prefix + 'selection'] = 0;
+								columnLabels[prefix + 'phishing'] = 0;
+								columnLabels[prefix + 'correct'] = 0;
 							}
 							else if (column == 'email_index') {
-								columnLabels[prefix + column] = 0;
+								let scenarioIndex = (scenarioRef[round.scenario] == "Apple") ? '0' : '1';
+								let s = emails[scenarioIndex];
+								let type = (parseInt(round[column]) < s.phishing.length) ? 'phishing' : 'normal';
+								let index = (parseInt(round[column]) < s.phishing.length) ? parseInt(round[column]) : parseInt(round[column]) - s.phishing.length;
+								let selEmail = s[type][index];
+
 								output[prefix + column] = round[column];
-								columnLabels[prefix + 'email_type'] = 0
-								output[prefix + 'email_type'] = 'Advertisement';
+								output[prefix + 'email_type'] = selEmail.category;
+								if (round.phishing && selEmail.strategy) output[prefix + 'phishing_type'] = selEmail.strategy;
+								else output[prefix + 'phishing_type'] = 'N/A';
+								columnLabels[prefix + column] = 0;
+								columnLabels[prefix + 'email_type'] = 0;
+								columnLabels[prefix + 'phishing_type'] = 0;
 							}
 							else {
 								columnLabels[prefix + column] = 0;
@@ -116,7 +128,6 @@ router.get('/', (req, res, next) => {
 			fetchRounds(0, rows)
 				.then(function(out) {
 					let csv = json2csv({ data: out[1], fields: Object.keys(Object.assign(columnLabel, out[0])) });
-					console.log(csv);
 					res.render('admin', {
 				  		users: out[1],
 				  		headers: Object.keys(Object.assign(columnLabel, out[0])),
