@@ -1,4 +1,4 @@
-var timelimit = 45;
+var timelimit = 30;
 var timelimit2 = 2;
 var timer;
 
@@ -11,6 +11,7 @@ function countdown() {
 	else {
 		document.querySelector('#bottombar').style.top = 0;
 		document.querySelector('#instructions').style.display = "none";
+		document.querySelector('#timeleft').style.display = "none";
 	}
 }
 
@@ -53,6 +54,7 @@ document.querySelector('#instructions').addEventListener('click', function() {
 
 	document.querySelector('#bottominstr').style.bottom = '0';
 	document.querySelector('#bottominstr').style.top = '0';
+	document.getElementById('audio').pause();
 
 	window.clearTimeout(timer);
 })
@@ -63,7 +65,7 @@ document.querySelector('#resume').addEventListener('click', function() {
 	document.querySelector('#bottominstr').style.bottom = '-100%';
 	document.querySelector('#bottominstr').style.top = '100%';
 
-
+	document.getElementById('audio').play();
 	timer = setTimeout(countdown, 1000);
 })
 

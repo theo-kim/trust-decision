@@ -55,6 +55,12 @@ function fetchRounds (index, tests) {
 								output[prefix + 'selection'] = selectionRef[round.selection];
 								columnLabels[prefix + 'selection'] = 0;
 							}
+							else if (column == 'email_index') {
+								columnLabels[prefix + column] = 0;
+								output[prefix + column] = round[column];
+								columnLabels[prefix + 'email_type'] = 0
+								output[prefix + 'email_type'] = 'Advertisement';
+							}
 							else {
 								columnLabels[prefix + column] = 0;
 								output[prefix + column] = round[column];
@@ -105,15 +111,18 @@ router.get('/', (req, res, next) => {
 				columnLabel[columns[i]] = i;
 			}
 
+
 			// Recurse over tests to find rounds
 			fetchRounds(0, rows)
 				.then(function(out) {
-					console.log(out[1])
+					let csv = json2csv({ data: out[1], fields: Object.keys(Object.assign(columnLabel, out[0])) });
+					console.log(csv);
 					res.render('admin', {
 				  		users: out[1],
 				  		headers: Object.keys(Object.assign(columnLabel, out[0])),
 				  		moment: moment, 
-				  		emails: emails
+				  		emails: emails,
+				  		csv: csv
 				  	});
 				});
 

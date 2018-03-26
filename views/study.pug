@@ -2,7 +2,7 @@ extends layout
 
 //- Main content
 block content
-	div(style="position:absolute;top:0;left:0;right:0;bottom:30%;overflow:hidden;display:flex;flex-direction:column")
+	div(style="position:absolute;top:0;left:0;right:0;bottom:10%;overflow:hidden;display:flex;flex-direction:column")
 		div(style="background:#f1f1f1;width:100%;position:relative;padding: 10px 28px 10px 30px;overflow:hidden;border-bottom: 1px solid #e5e5e5;display:flex;flex-direction:row;align-items:center;word-break:normal:flex-shrink:0;")
 			img(src="/images/google.png" style="width:91px;display:inline-block;float:left;cursor:pointer;margin-top:5px;")
 			div(style="float:left;background:#fff;cursor:text;height:30px;width: 50%; max-width: 590px; margin-left:80px;border:1px #cdcdcd solid;overflow:hidden")
@@ -90,13 +90,12 @@ block content
 						img(src="/images/picon.png", style="height:35px;")
 						div(style="margin-left: 10px;flex-grow:1;height:100px;border:1px #e5e5e5 solid;font-size:14px;color:#bbb;padding:10px")
 							| Click here to <u>Reply</u> or <u>Forward</u>
-	div#bottombar(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.9);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:70%;")
-		h4(style="color:white;") <span id="seconds">45</span> seconds remaining
-		h3(style="color:white;") Please select one:
+	div#bottombar(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.9);padding:20px;display:flex;flex-direction:row;align-items:center;justify-content:center;top:90%;")
+		h4#timeleft(style="color:white;position:absolute;left: 10px") <span id="seconds">30</span> seconds remaining
 		div
 			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-top:10px;", onclick="next(0)") Phishing
 			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-left:20px;margin-top:10px;", onclick="next(1)") Normal
-		div#instructions(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;margin-top:25px;") Review Instructions (Timer will Pause)
+		div#instructions(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;position:absolute;right:10px;") Review Instructions (Timer will Pause)
 	div#bottominstr(style="position:absolute;bottom:-100%;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.9);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:100%;")
 		h2(style="color:white;") #{scenario.name}
 		div(style="color:white;")=scenario.body
@@ -108,7 +107,7 @@ block content
 	div#waitbar(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,1);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:0;")
 		h4(style="color:white;") Please wait <span id="wait">10</span> seconds
 
-	audio(autoplay, style="display:none;", loop)
+	audio#audio(autoplay, style="display:none;", loop)
 		source(src=sound, type="audio/wav")
 		source(src=sound, type="audio/flac")
 		source(src=sound, type="audio/mpeg")
