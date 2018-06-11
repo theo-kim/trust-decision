@@ -59,5 +59,11 @@ block content
 				return;
 			}
 			//- window.location = '/study';
-			$.post('/api/participant', data, function() { window.location = '/study'; }, console.error);
+			$.ajax({
+				type: "POST",
+				url: '/api/participant',
+				data: data, 
+				success: function() { window.location = '/study'; },
+				error: console.error
+			});
 		}
