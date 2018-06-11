@@ -63,7 +63,8 @@ block content
 			$.ajax({
 				type: "POST",
 				url: '/api/participant',
-				data: data, 
+				data: data,
+				complete: console.log, 
 				success: function() { window.location = '/study'; },
 				error: console.error
 			});
