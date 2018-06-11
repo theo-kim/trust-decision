@@ -13,6 +13,7 @@ router.get('/', (req, res, next) => {
 	else {
 		const s = parseInt(req.cookies.scenario);
 		const r = parseInt(req.cookies.round);
+		const l = parseInt(req.cookies.left);
 
 		if (r === 0) {
 			res.render('scenario', {name: scenarios[0].name, body: scenarios[0].body});
@@ -66,7 +67,8 @@ router.get('/', (req, res, next) => {
 				scenario: scenarios[s],
 				sound: sounds[randSound],
 				soundNum: randSound,
-				emailIndex: emailIndex
+				emailIndex: emailIndex,
+				left: l
 			});
 			// END
 		}

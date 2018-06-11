@@ -18,6 +18,9 @@ router.route('/participant')
 			trust: req.body.trust,
 			age: req.body.age,
 		};
+
+		data["left_choice"] = (req.cookies.left==0 ? "Report Phishing" : "Nothing to Report");
+
 		db(userTable).returning('id').insert(data)
 			.then((id) => {
 				var dt = new Date();
