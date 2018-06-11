@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bootstrap',  express.static(__dirname + '/bower_components/bootstrap/dist'));
+app.use('/jquery',  express.static(__dirname + '/bower_components/jquery/dist/jquery.min.js'));
 app.use('/jquery-cookie',  express.static(__dirname + '/bower_components/jquery.cookie/jquery.cookie.js'));
 app.use('/moment',  express.static(__dirname + '/bower_components/moment/min/moment.min.js'));
 app.use('/table',  express.static(__dirname + '/bower_components/bootstrap-table/src'));

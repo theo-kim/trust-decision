@@ -12,7 +12,7 @@ block content
 			table#table(data-toggle="table", data-pagination="true", data-sortable="true", data-search="true", style="font-size:16px;positon:relative")
 				thead
 					tr
-						- var columns = headers
+						- var columns = headers;
 						- for (var i = 0; i < columns.length; ++i)
 							th= columns[i]
 				tbody(style="max-height:100px;overflow-y:auto")
@@ -33,20 +33,18 @@ block content
 									td
 										a(href='javascript:void(0)', onclick='window.open("/emails/' + s + '/' + row[col] + '")')=row[col] + ' (click to view email)'
 								- else if (col.includes('links_clicked') && row[col])
-									- var links = JSON.parse(row[col])
-									- var summs = ''
+									- var links = JSON.parse(row[col]);
+									- var summs = '';
 									- for (var j = 0; j < links.length; ++j)
 										- summs += '<b>link ' + j + ':</b> <i>Clicked:</i> ['
 										- if (links[j].clicks.length == 0)
 											- summs += 'NONE'
 										- for (var h = 0; h < links[j].clicks.length; ++h)
-											summs
 											- summs += links[j].clicks[h] + ', '
 										- summs += '], <i>Hover:</i> ['
 										- if (links[j].hover.length == 0)
 											- summs += 'NONE'
 										- for (var h = 0; h < links[j].hover.length; ++h)
-											summs
 											- summs += links[j].hover[h] + ', '
 										- summs += ']<br>'
 
@@ -83,4 +81,5 @@ block content
 	script.
 		$('.pushes > tbody > tr').not('.round1').hide();
 		$('.inputs > tbody > tr').not('.round1').hide();
-		var csv = `!{csv}`
+		var csv = `!{csv}`;
+		console.log(csv)
