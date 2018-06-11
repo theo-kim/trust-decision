@@ -44,7 +44,7 @@ router.route('/endsurvey')
 		var utcDate = dt.toUTCString();
 		data.ending = utcDate;
 		db(testTable).update(data, "id").where('id', req.cookies.test)
-			.then((dk) => res.send("success"))			
+			.then((dk) => res.send("success"))		
 	});
 
 router.route('/round')
