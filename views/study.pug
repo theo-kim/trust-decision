@@ -93,8 +93,8 @@ block content
 	div#bottombar(style="position:absolute;bottom:0px;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.9);padding:20px;display:flex;flex-direction:row;align-items:center;justify-content:center;top:90%;")
 		h4#timeleft(style="color:white;position:absolute;left: 10px") <span id="seconds">30</span> seconds remaining
 		div
-			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-top:10px;", onclick="next(0)") Phishing
-			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-left:20px;margin-top:10px;", onclick="next(1)") Normal
+			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-top:10px;", onclick="next(" + left + ")")=(left==0 ? "Report Phishing" : "Nothing to Report")
+			div(style="display:inline-flex;width:300px;text-align:center;height:50px;background:#ccc;flex-direction:row;align-items:center;justify-content:center;cursor:pointer;margin-left:20px;margin-top:10px;", onclick="next(" + (left==0 ? 1 : 0) + ")")=(left==1 ? "Report Phishing" : "Nothing to Report")
 		div#instructions(style="color:#2A5DB0;cursor:pointer;text-decoration:underline;position:absolute;right:10px;") Review Instructions (Timer will Pause)
 	div#bottominstr(style="position:absolute;bottom:-100%;left:0px;right:0;text-align:center;background:rgba(0,0,0,0.9);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;top:100%;")
 		h2(style="color:white;") #{scenario.name}

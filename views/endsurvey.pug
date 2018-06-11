@@ -48,13 +48,13 @@ block content
 		function next() {
 			var radioValue = $("input[name='q1']:checked").val();
 			var data = {
-				q1: $("input[name='q1']:checked").val(),
-				q2: $("input[name='q2']:checked").val(),
-				q3: $("input[name='q3']:checked").val(),
+				q1: $("input[name='q0']:checked").val(),
+				q2: $("input[name='q1']:checked").val(),
+				q3: $("input[name='q2']:checked").val(),
 				feedback: $("#feedback").val()
 			}
 
-			console.log(data);
+			//console.log(data);
 			window.location = '/result';
-			//$.post('/api/endsurvey', data, function() { window.location = '/result'; });
+			$.post('/api/endsurvey', data, function() { window.location = '/result'; });
 		}
