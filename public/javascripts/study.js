@@ -1,5 +1,5 @@
 var timelimit = 30;
-var timelimit2 = 2;
+var timelimit2 = 3;
 var timer;
 var links = document.querySelectorAll('a');
 var linkTimer = null;
