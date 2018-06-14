@@ -47,6 +47,10 @@ function fetchRounds (index, tests) {
 								columnLabels[prefix + 'duration_seconds'] = 0;
 							}
 							else if (column == 'ending') {}
+							else if (column == 'sound' && round[column] == "") {
+								columnLabels[prefix + column] = 0;
+								output[prefix + column] = "silence";							
+							}
 							else if (column == 'scenario') {
 								output[prefix + 'scenario'] = scenarioRef[round.scenario];
 								columnLabels[prefix + 'scenario'] = 0;
