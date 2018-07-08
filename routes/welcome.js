@@ -10,6 +10,7 @@ router.get('/', (req, res, next) => {
 	res.cookie('sound', '0000000000', { maxAge : 8.64e7 });
 	res.cookie('emails', '0', { maxAge : 8.64e7 }); 
 	res.cookie('left', Math.round(Math.random()), { maxAge : 8.64e7 })
+	res.cookie('eval', 0, { maxAge : 8.64e7 });
 	
 	// Render welcome page
 	res.render('welcome');

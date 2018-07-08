@@ -8,6 +8,7 @@ var emails = require('../../data/emails.json');
 var userTable = (process.env.DEBUG) ? 'dev_participants' : 'prod_participants';
 var testTable = (process.env.DEBUG) ? 'dev_tests' : 'prod_tests';
 var roundTable = (process.env.DEBUG) ? 'dev_rounds' : 'prod_rounds';
+var evalTable = (process.env.DEBUG) ? 'dev_evals' : 'prod_evals';
 
 /* GET home page. */
 router.route('/participant')
@@ -70,6 +71,30 @@ router.route('/round')
 		})
 		.then((dk) => res.send("success"))			
 	});
+
+router.route('/sounds')
+	.post((req, res, next) => {
+		const data = {
+			testid: parseInt(req.cookies.test),
+			sound: req.body.sound,
+			pleasant: req.body.pleasant,
+			chaotic: req.body.chaotic,
+			exciting: req.body.exciting,
+			eventful: req.body.eventful,
+			calm: req.body.calm,
+			annoying: req.body.annoying,
+			uneventful: req.body.uneventful,
+			monotonous: req.body.monotonous,
+		};
+
+		// console.log(data);
+
+		db(evalTable).returning('id').insert(data)
+			.then((id) => {
+				res.cookie('eval', parseInt(req.cookies.eval) + 1, { maxAge : 8.64e7 });
+				res.send(id);
+			});
+	});	
 
 router.use('/admin', adminAPI);
 

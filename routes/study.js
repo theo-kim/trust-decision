@@ -72,6 +72,9 @@ router.get('/', (req, res, next) => {
 			});
 			// END
 		}
+		else if (parseInt(req.cookies.eval) < sounds.length - 1) {
+			res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
+		}
 		else {
 			res.render('endsurvey', { questions: { 0: "Do you like icecream?", 1: "Do you like pizza?", 2: "Do you like fruit?", } });
 		}

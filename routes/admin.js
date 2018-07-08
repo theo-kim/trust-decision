@@ -58,6 +58,9 @@ function fetchRounds (index, tests) {
 								columnLabels[prefix + 'phishing'] = 0;
 								columnLabels[prefix + 'correct'] = 0;
 							}
+							else if (column == 'phishing') {
+								
+							}
 							else if (column == 'email_index') {
 								let scenarioIndex = (scenarioRef[round.scenario] == "Apple") ? '0' : '1';
 								let s = emails[scenarioIndex];
