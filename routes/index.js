@@ -9,6 +9,7 @@ const endsurvey = require('./endsurvey.js');
 const result = require('./result.js');
 const email = require('./email.js');
 const soundsurvey = require('./soundsurvey.js');
+const data = require('./getresults.js');
 const api = require('./api/');
 
 router.use('/api', api);
@@ -20,6 +21,7 @@ router.use('/endsurvey', endsurvey);
 router.use('/result', result);
 router.use('/emails', email);
 router.use('/soundsurvey', soundsurvey);
+router.use('/data.csv', data);
 router.use('/', welcome);
 
 module.exports = router;
