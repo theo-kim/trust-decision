@@ -5,7 +5,7 @@ var sounds = ["", "/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-	if (parseInt(req.cookies.eval) + 1 > sounds.length) {
+	if (parseInt(req.cookies.eval) + 1 < sounds.length) {
 		res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
 	}
 	else {

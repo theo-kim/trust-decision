@@ -2,17 +2,17 @@ extends layout.pug
 
 mixin likert(name)
 	ul.likert
-		li
+		li.small
 			input(type='radio', name=name, value='strong_disagree', autocomplete='off')
 			label Strongly Disagree
-		li
+		li.small
 			input(type='radio', name=name, value='disagree', autocomplete='off')
-		li
+		li.small
 			input(type='radio', name=name, value='neutral', autocomplete='off')
 			label Neutral
-		li
+		li.small
 			input(type='radio', name=name, value='agree', autocomplete='off')
-		li
+		li.small
 			input(type='radio', name=name, value='strong_agree', autocomplete='off')
 			label Strongly Agree
 
