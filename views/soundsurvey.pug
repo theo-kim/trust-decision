@@ -70,8 +70,7 @@ block content
 
 			if (!flag) alert('Please answer all fo the questions.')
 			else {
-				console.log(data)
 				// window.location = '/result';
-				$.post('/api/sounds', data, function() { window.location = '/result'; });
+				$.post('/api/sounds', data, function() { window.location.reload(); });
 			}
 		}
