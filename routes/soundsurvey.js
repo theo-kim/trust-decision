@@ -5,7 +5,12 @@ var sounds = ["", "/sounds/city.mp3", "/sounds/concert.mp3", "/sounds/country.mp
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-	res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
+	if (parseInt(req.cookies.eval) + 1 > sounds.length) {
+		res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
+	}
+	else {
+		res.render('endsurvey', { questions: { 0: "Do you like icecream?", 1: "Do you like pizza?", 2: "Do you like fruit?", } });
+	}
 });
 
 module.exports = router;

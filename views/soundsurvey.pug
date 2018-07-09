@@ -3,17 +3,17 @@ extends layout.pug
 mixin likert(name)
 	ul.likert
 		li
-			input(type='radio', name=name, value='strong_disagree')
+			input(type='radio', name=name, value='strong_disagree', autocomplete='off')
 			label Strongly Disagree
 		li
-			input(type='radio', name=name, value='disagree')
+			input(type='radio', name=name, value='disagree', autocomplete='off')
 		li
-			input(type='radio', name=name, value='neutral')
+			input(type='radio', name=name, value='neutral', autocomplete='off')
 			label Neutral
 		li
-			input(type='radio', name=name, value='med_agree')
+			input(type='radio', name=name, value='agree', autocomplete='off')
 		li
-			input(type='radio', name=name, value='strong_agree')
+			input(type='radio', name=name, value='strong_agree', autocomplete='off')
 			label Strongly Agree
 
 mixin question(index, question)
@@ -41,7 +41,7 @@ block content
 			+question(6, "The soundscape feels <b>uneventful</b>")
 			+question(7, "The soundscape sounds <b>monotonous</b>")
 
-		button#next.good(onclick="next();", style="float:none; margin: 50px auto") Complete Study
+		button#next.good(onclick="next();", style="float:none; margin: 50px auto") Continue
 
 		audio#audio(autoplay, style="display:none;", loop)
 			source(src=sound, type="audio/wav")
@@ -49,6 +49,7 @@ block content
 			source(src=sound, type="audio/mpeg")
 
 	script.
+		window.scrollTop(0)
 		function next() {
 			var flag = true;
 			var radioValue = $("input[name='q1']:checked").val();
