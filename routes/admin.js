@@ -11,6 +11,7 @@ let emails = require('../data/emails.json')
 let userTable = (process.env.DEBUG) ? 'dev_participants' : 'prod_participants';
 let testTable = (process.env.DEBUG) ? 'dev_tests' : 'prod_tests';
 let roundTable = (process.env.DEBUG) ? 'dev_rounds' : 'prod_rounds';
+let evalTable = (process.env.DEBUG) ? 'dev_evals' : 'prod_evals'; 
 
 const scenarioRef = ['Apple', 'Student'];
 const selectionRef = ['phishing', 'normal'];
@@ -21,7 +22,6 @@ function fetchRounds (index, tests) {
 		if (index >= tests.length) {
 			resolve();
 		}
-
 		else {
 			let columnLabels = {}, output = tests[index];
 
@@ -62,9 +62,6 @@ function fetchRounds (index, tests) {
 								columnLabels[prefix + 'phishing'] = 0;
 								columnLabels[prefix + 'correct'] = 0;
 							}
-							else if (column == 'phishing') {
-								
-							}
 							else if (column == 'email_index') {
 								let scenarioIndex = (scenarioRef[round.scenario] == "Apple") ? '0' : '1';
 								let s = emails[scenarioIndex];
@@ -87,6 +84,19 @@ function fetchRounds (index, tests) {
 						}
 					}
 
+					return db.select().from(evalTable).where('testid', tests[index].id)
+				})
+				.then(function (result) {
+					for (let i = 0; i < result.length; ++i) {
+						var prefix = "sound_evaluation_" + result[i].sound + "_";
+						for (let field in result[i]) {
+							if (field == "id" || field == "testid" || field == "sound") {}
+							else {
+								columnLabels[prefix + field] = 0;
+								output[prefix + field] = result[i][field];
+							}
+						}
+					}
 					return fetchRounds(index + 1, tests);
 				})
 				.then(function (result) {
