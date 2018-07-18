@@ -10,7 +10,7 @@ mixin likert(name)
 			label Mainly disagree
 		li.small
 			input(type='radio', name=name, value='3', autocomplete='off')
-			label Neither agree. nor disagree
+			label Neither agree, nor disagree
 		li.small
 			input(type='radio', name=name, value='4', autocomplete='off')
 			label Mainly agree
@@ -26,16 +26,71 @@ mixin question(index, question)
 		td(style="padding:10px;")
 			+likert("q" + index)
 
+mixin likert2(name)
+	ul.likert
+		li.small
+			input(type='radio', name=name, value='1', autocomplete='off')
+			label Very bad
+		li.small
+			input(type='radio', name=name, value='2', autocomplete='off')
+			label Bad
+		li.small
+			input(type='radio', name=name, value='3', autocomplete='off')
+			label Neither good, nor bad
+		li.small
+			input(type='radio', name=name, value='4', autocomplete='off')
+			label Good
+		li.small
+			input(type='radio', name=name, value='5', autocomplete='off')
+			label Very good
+
+mixin question2(index, question)
+	tr
+		td(style="padding:10px;text-align:left;")
+			label(for="gender", style="font-weight:normal;") !{question}
+				| &nbsp;&nbsp;&nbsp;
+		td(style="padding:10px;")
+			+likert2("q" + index)
+
+mixin likert3(name)
+	ul.likert
+		li.small
+			input(type='radio', name=name, value='1', autocomplete='off')
+			label Not at all
+		li.small
+			input(type='radio', name=name, value='2', autocomplete='off')
+			label A little
+		li.small
+			input(type='radio', name=name, value='3', autocomplete='off')
+			label Moderately
+		li.small
+			input(type='radio', name=name, value='4', autocomplete='off')
+			label A lot
+		li.small
+			input(type='radio', name=name, value='5', autocomplete='off')
+			label Dominates completely
+
+mixin question3(index, question)
+	tr
+		td(style="padding:10px;text-align:left;")
+			label(for="gender", style="font-weight:normal;") !{question}
+				| &nbsp;&nbsp;&nbsp;
+		td(style="padding:10px;")
+			+likert3("q" + index)
+
 block content
 	- var s = sound.replace('/sounds/', '').replace('.mp3', '').replace('.wav', '');
 	div#welcome(style="overflow-y: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0;")
 		h3(style="text-align:center;clear:right")="Sound Survey - " + s 
+		br
+		hr
+		h4
+			center <b>QUESTION 1</b>
 		h4(style="text-align:center;clear:right") 
 			i For each of the 8 scales below, to waht extent do you agree or disagree that the present surrounding sound environment is: (please tick off one response alternative per statement):
 			br
 			br
-			i (For your reference, the word <b>sound environment</b> refers to the sounds being played in the background of the study simulating various environments.  Pleasw evaluate the soundscape currently being played in the background.)
-		hr
+			i (For your reference, the word <b>sound environment</b> refers to the sounds being played in the background of the study simulating various environments.  Please evaluate the soundscape currently being played in the background.)
 		table(style="margin: 0 auto;")
 			+question(0, "<b>pleasant</b>")
 			+question(1, "<b>chaotic</b>")
@@ -45,6 +100,30 @@ block content
 			+question(5, "<b>annoying</b>")
 			+question(6, "<b>eventful</b>")
 			+question(7, "<b>monotonous</b>")
+
+		br
+		hr
+		h4
+			center <b>QUESTION 2</b>
+		h4(style="text-align:center;clear:right") 
+			i Overall, how would you describe the present surrounding sound environment?
+
+		table(style="margin: 0 auto;")
+			+question2(8, "")
+			
+		br
+		hr
+		h4
+			center <b>QUESTION 3</b>
+		h4(style="text-align:center;clear:right") 
+			i To what extent do you presently hear the following four types of sounds? (please tick off one response alternative per statement)
+
+		table(style="margin: 0 auto;")
+			+question3(9, "<b>Traffic noise</b><br>(e.g., cars, buses, trains, air planes)")
+			+question3(10, "<b>Other noise</b><br>(e.g., sirens, construction, industry, loading of goods)")
+			+question3(11, "<b>Sounds from human beings</b><br>(e.g., conversation, laughter, children at play, footsteps)")
+			+question3(12, "<b>Natural sounds</b><br>(e.g., singing birds, flowing water, wind in vegetation)")
+			
 
 		button#next.good(onclick="next();", style="float:none; margin: 50px auto") Continue
 
@@ -63,26 +142,33 @@ block content
 			var flag = true;
 			var radioValue = $("input[name='q1']:checked").val();
 			var data = {
-				pleasant: $("input[name='q0']:checked").val(),
-				chaotic: $("input[name='q1']:checked").val(),
-				vibrant: $("input[name='q2']:checked").val(),
-				uneventful: $("input[name='q3']:checked").val(),
-				calm: $("input[name='q4']:checked").val(),
-				annoying: $("input[name='q5']:checked").val(),
-				eventful: $("input[name='q6']:checked").val(),
-				monotonous: $("input[name='q7']:checked").val(),
+				pleasant: parseInt($("input[name='q0']:checked").val()),
+				chaotic: parseInt($("input[name='q1']:checked").val()),
+				vibrant: parseInt($("input[name='q2']:checked").val()),
+				uneventful: parseInt($("input[name='q3']:checked").val()),
+				calm: parseInt($("input[name='q4']:checked").val()),
+				annoying: parseInt($("input[name='q5']:checked").val()),
+				eventful: parseInt($("input[name='q6']:checked").val()),
+				monotonous: parseInt($("input[name='q7']:checked").val()),
+				traffic: parseInt($("input[name='q9']:checked").val()),
+				other: parseInt($("input[name='q10']:checked").val()),
+				human: parseInt($("input[name='q11']:checked").val()),
+				nature: parseInt($("input[name='q12']:checked").val()),
+				quality: parseInt($("input[name='q8']:checked").val()),
 				sound: "#{s}",
 			}
 
-			// data.pleasantness = (data.pleasant - data.annoying) + 
-
 			for (var key in data) {
-				if (data[key] == null) flag = false;
+				if (data[key] == null || isNaN(data[key])) flag = false;
 			}
 
 			if (!flag) alert('Please answer all fo the questions.')
 			else {
+				data.pleasantness = (data.pleasant - data.annoying) + (Math.sqrt(0.5) * (data.calm - data.chaotic)) + (Math.sqrt(0.5) * (data.vibrant - data.monotonous));
+
+				data.eventfulness = (data.eventful - data.uneventful) + (Math.sqrt(0.5) * (data.chaotic - data.calm)) + (Math.sqrt(0.5) * (data.vibrant - data.monotonous));
+				console.log(data)
 				// window.location = '/result';
-				$.post('/api/sounds', data, function() { window.location.reload(); });
+				//- $.post('/api/sounds', data, function() { window.location.reload(); });
 			}
 		}
