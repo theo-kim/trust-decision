@@ -167,8 +167,7 @@ block content
 				data.pleasantness = (data.pleasant - data.annoying) + (Math.sqrt(0.5) * (data.calm - data.chaotic)) + (Math.sqrt(0.5) * (data.vibrant - data.monotonous));
 
 				data.eventfulness = (data.eventful - data.uneventful) + (Math.sqrt(0.5) * (data.chaotic - data.calm)) + (Math.sqrt(0.5) * (data.vibrant - data.monotonous));
-				console.log(data)
 				// window.location = '/result';
-				//- $.post('/api/sounds', data, function() { window.location.reload(); });
+				$.post('/api/sounds', data, function() { window.location.reload(); });
 			}
 		}
