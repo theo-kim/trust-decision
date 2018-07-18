@@ -3,18 +3,20 @@ extends layout.pug
 mixin likert(name)
 	ul.likert
 		li.small
-			input(type='radio', name=name, value='strong_disagree', autocomplete='off')
-			label Strongly Disagree
+			input(type='radio', name=name, value='1', autocomplete='off')
+			label Fully disagree
 		li.small
-			input(type='radio', name=name, value='disagree', autocomplete='off')
+			input(type='radio', name=name, value='2', autocomplete='off')
+			label Mainly disagree
 		li.small
-			input(type='radio', name=name, value='neutral', autocomplete='off')
-			label Neutral
+			input(type='radio', name=name, value='3', autocomplete='off')
+			label Neither agree. nor disagree
 		li.small
-			input(type='radio', name=name, value='agree', autocomplete='off')
+			input(type='radio', name=name, value='4', autocomplete='off')
+			label Mainly agree
 		li.small
-			input(type='radio', name=name, value='strong_agree', autocomplete='off')
-			label Strongly Agree
+			input(type='radio', name=name, value='5', autocomplete='off')
+			label Fully agree
 
 mixin question(index, question)
 	tr
@@ -29,20 +31,20 @@ block content
 	div#welcome(style="overflow-y: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0;")
 		h3(style="text-align:center;clear:right")="Sound Survey - " + s 
 		h4(style="text-align:center;clear:right") 
-			i To what extent do you agree with the 8 statements below on how you experience the present surrounding soundscape environment (please tick off one response alternative per statement):
+			i For each of the 8 scales below, to waht extent do you agree or disagree that the present surrounding sound environment is: (please tick off one response alternative per statement):
 			br
 			br
-			i (For your reference, the word <b>soundscape</b> refers to the sounds being played in the background of the study simulating various environments.  The indicated soundscape, <b>#{s}</b>, is currently being played in the background for your reference.)
+			i (For your reference, the word <b>sound environment</b> refers to the sounds being played in the background of the study simulating various environments.  Pleasw evaluate the soundscape currently being played in the background.)
 		hr
 		table(style="margin: 0 auto;")
-			+question(0, "The soundscape sounds <b>pleasant</b>")
-			+question(1, "The soundscape feels <b>chaotic</b>")
-			+question(2, "The soundscape feels <b>exciting</b>")
-			+question(3, "The soundscape feels <b>eventful</b>")
-			+question(4, "The soundscape feels <b>calm</b>")
-			+question(5, "The soundscape sounds <b>annoying</b>")
-			+question(6, "The soundscape feels <b>uneventful</b>")
-			+question(7, "The soundscape sounds <b>monotonous</b>")
+			+question(0, "<b>pleasant</b>")
+			+question(1, "<b>chaotic</b>")
+			+question(2, "<b>vibrant</b>")
+			+question(3, "<b>uneventful</b>")
+			+question(4, "<b>calm</b>")
+			+question(5, "<b>annoying</b>")
+			+question(6, "<b>eventful</b>")
+			+question(7, "<b>monotonous</b>")
 
 		button#next.good(onclick="next();", style="float:none; margin: 50px auto") Continue
 
@@ -52,21 +54,27 @@ block content
 			source(src=sound, type="audio/mpeg")
 
 	script.
-		window.scrollTop(0)
+		document.getElementById("welcome").scrollTop = 0;
+
+		window.onbeforeunload = function () {
+			document.getElementById("welcome").scrollTop = 0;
+		}
 		function next() {
 			var flag = true;
 			var radioValue = $("input[name='q1']:checked").val();
 			var data = {
 				pleasant: $("input[name='q0']:checked").val(),
 				chaotic: $("input[name='q1']:checked").val(),
-				exciting: $("input[name='q2']:checked").val(),
-				eventful: $("input[name='q3']:checked").val(),
+				vibrant: $("input[name='q2']:checked").val(),
+				uneventful: $("input[name='q3']:checked").val(),
 				calm: $("input[name='q4']:checked").val(),
 				annoying: $("input[name='q5']:checked").val(),
-				uneventful: $("input[name='q6']:checked").val(),
+				eventful: $("input[name='q6']:checked").val(),
 				monotonous: $("input[name='q7']:checked").val(),
 				sound: "#{s}",
 			}
+
+			// data.pleasantness = (data.pleasant - data.annoying) + 
 
 			for (var key in data) {
 				if (data[key] == null) flag = false;
