@@ -74,18 +74,9 @@ router.route('/round')
 
 router.route('/sounds')
 	.post((req, res, next) => {
-		const data = {
-			testid: parseInt(req.cookies.test),
-			sound: req.body.sound,
-			pleasant: req.body.pleasant,
-			chaotic: req.body.chaotic,
-			exciting: req.body.exciting,
-			eventful: req.body.eventful,
-			calm: req.body.calm,
-			annoying: req.body.annoying,
-			uneventful: req.body.uneventful,
-			monotonous: req.body.monotonous,
-		};
+		const data = req.body;
+
+		data.testid = parseInt(req.cookies.test);
 
 		// console.log(data);
 
