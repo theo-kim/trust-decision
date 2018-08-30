@@ -74,6 +74,8 @@ document.querySelector('#resume').addEventListener('click', function() {
 	timer = setTimeout(countdown, 1000);
 })
 
+document.querySelector('#round').innerHTML = $.cookie('round');
+
 function next(selection) {
 	// Alter sound cookie to record played sound
 	var soundCookie = $.cookie('sound');

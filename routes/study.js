@@ -16,12 +16,13 @@ router.get('/', (req, res, next) => {
 		const l = parseInt(req.cookies.left);
 
 		if (r === 0) {
-			res.render('scenario', {name: scenarios[0].name, body: scenarios[0].body});
+			res.render('scenario', {name: scenarios[s].name, body: scenarios[s].body});
 		}
 		else if (r === emails[0].normal.length + emails[0].phishing.length + 1) {
-			res.cookie('scenario', 1, { maxAge : 8.64e7 });
-			res.cookie('emails', 0, { maxAge : 8.64e7 });
-			res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
+			res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
+			// res.cookie('scenario', 1, { maxAge : 8.64e7 });
+			// res.cookie('emails', 0, { maxAge : 8.64e7 });
+			// res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
 		}
 		else if (r < emails[0].normal.length + emails[0].phishing.length + emails[1].normal.length + emails[1].phishing.length + 2) {
 			// Get random sound that has been played less than 5 times
@@ -30,7 +31,7 @@ router.get('/', (req, res, next) => {
 
 			do {
 				randSound = Math.floor(Math.random() * 10);
-			} while (parseInt(playedSounds[randSound]) > 4)
+			} while (parseInt(playedSounds[randSound]) > 2)
 			// END
 
 			// Get random email, but see if it was used already
