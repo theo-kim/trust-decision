@@ -101,29 +101,7 @@ block content
 			+question(6, "<b>eventful</b>")
 			+question(7, "<b>monotonous</b>")
 
-		br
-		hr
-		h4
-			center <b>QUESTION 2</b>
-		h4(style="text-align:center;clear:right") 
-			i Overall, how would you describe the present surrounding sound environment?
-
-		table(style="margin: 0 auto;")
-			+question2(8, "")
-			
-		br
-		hr
-		h4
-			center <b>QUESTION 3</b>
-		h4(style="text-align:center;clear:right") 
-			i To what extent do you presently hear the following four types of sounds? (please tick off one response alternative per statement)
-
-		table(style="margin: 0 auto;")
-			+question3(9, "<b>Traffic noise</b><br>(e.g., cars, buses, trains, air planes)")
-			+question3(10, "<b>Other noise</b><br>(e.g., sirens, construction, industry, loading of goods)")
-			+question3(11, "<b>Sounds from human beings</b><br>(e.g., conversation, laughter, children at play, footsteps)")
-			+question3(12, "<b>Natural sounds</b><br>(e.g., singing birds, flowing water, wind in vegetation)")
-			
+		br	
 
 		button#next.good(onclick="next();", style="float:none; margin: 50px auto") Continue
 
@@ -150,11 +128,6 @@ block content
 				annoying: parseInt($("input[name='q5']:checked").val()),
 				eventful: parseInt($("input[name='q6']:checked").val()),
 				monotonous: parseInt($("input[name='q7']:checked").val()),
-				traffic: parseInt($("input[name='q9']:checked").val()),
-				other: parseInt($("input[name='q10']:checked").val()),
-				human: parseInt($("input[name='q11']:checked").val()),
-				nature: parseInt($("input[name='q12']:checked").val()),
-				quality: parseInt($("input[name='q8']:checked").val()),
 				sound: "#{s}",
 			}
 
