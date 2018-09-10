@@ -31,12 +31,8 @@ mixin question(index, question)
 block content
 	div#welcome
 		h3(style="text-align:center;clear:right") Exit Survey
-		h4(style="text-align:center;clear:right") 
-			i Please complete the following exit survey questions by selecting the right value on each scale
 		hr
 		table(style="margin: 0 auto;")
-			each value, index in questions
-				+question(parseInt(index), value)
 			tr
 				td(style="padding:10px;text-align:left;vertical-align:top")
 					| Is there anything else you would like to tell us about the experience you just had with this study?

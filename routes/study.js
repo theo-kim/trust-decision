@@ -19,7 +19,12 @@ router.get('/', (req, res, next) => {
 			res.render('scenario', {name: scenarios[s].name, body: scenarios[s].body});
 		}
 		else if (r === emails[0].normal.length + emails[0].phishing.length + 1) {
-			res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
+			if (parseInt(req.cookies.eval) < sounds.length - 1) {
+				res.render('soundsurvey', { sound: sounds[parseInt(req.cookies.eval) + 1] });
+			}
+			else {
+				res.render('endsurvey', { questions: { 0: "Do you like icecream?", 1: "Do you like pizza?", 2: "Do you like fruit?", } });
+			}
 			// res.cookie('scenario', 1, { maxAge : 8.64e7 });
 			// res.cookie('emails', 0, { maxAge : 8.64e7 });
 			// res.render('scenario', {name: scenarios[1].name, body: scenarios[1].body});
