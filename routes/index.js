@@ -12,6 +12,7 @@ const soundsurvey = require('./soundsurvey.js');
 const data = require('./getresults.js');
 const sounds = require('./sounds.js');
 const api = require('./api/');
+const fulldata = require('./fulldata.js');
 
 router.use('/api', api);
 
@@ -24,6 +25,7 @@ router.use('/emails', email);
 router.use('/soundsurvey', soundsurvey);
 router.use('/data.csv', data);
 router.use('/sounds.csv', sounds);
+router.use('/data.xlsx', fulldata);
 router.use('/', welcome);
 
 module.exports = router;

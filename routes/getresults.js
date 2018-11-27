@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
 		.whereNotNull(t + '.ending')
 		.then((rows) => {
 			columnLabel = [
-				"userid", "round", "test_duration (s)", "round_duration (s)", "scenario", "sound", "email_index", "selection", 
+				"userid", "testid","round", "test_duration (s)", "round_duration (s)", "scenario", "sound", "email_index", "selection", 
 				"phishing", "result", "email_type", "phishing_type", "links_clicked", "total_correct", "left_choice", "feedback", "q1", "q2", "q3", "age", "gender", "email", "trust" 
 			]
 			for (let i = 0; i < rows.length; ++i) {
