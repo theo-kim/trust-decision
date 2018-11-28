@@ -42,6 +42,7 @@ router.get('/', (req, res, next) => {
 		.then((rows) => {
 			if (rows.length == 0) {
 				res.send(xlsx.write(oldworkbook, {type:'buffer'}));
+				return Promise.reject()
 			}
 			else {
 				columnLabel = [
@@ -364,7 +365,7 @@ router.get('/', (req, res, next) => {
 			res.charset = 'UTF-8';
 			res.send(xlsx.write(workbook, {type:'buffer'}));
 			res.end();
-		});
+		}, () => {});
 
 });
 
