@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "debug-windows": "cd bin & db.bat & cd ../ & set DEBUG=trust-decision & nodemon ./bin/www",
     "debug": "DATABASE_URL=\"$(heroku config:get DATABASE_URL -a trust-decision)?ssl=true\" DEBUG=trust-decision:* nodemon ./bin/www",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "update": "git pull"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
