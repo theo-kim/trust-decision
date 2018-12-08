@@ -41,8 +41,8 @@ router.get('/', (req, res, next) => {
 		.andWhere(t + '.id', '>', lastid)
 		.then((rows) => {
 			if (rows.length == 0) {
-				res.send(xlsx.write(oldworkbook, {type:'buffer'}));
-				return Promise.reject()
+				// res.send(xlsx.write(oldworkbook, {type:'buffer'}));
+				return Promise.resolve([])
 			}
 			else {
 				columnLabel = [
