@@ -18,7 +18,7 @@
     "express": "~4.15.5",
     "iplocation": "^5.0.0",
     "json2csv": "^3.11.5",
-    "knex": "^0.14.2",
+    "knex": "^2.4.0",
     "less-middleware": "~2.2.1",
     "moment": "^2.19.3",
     "morgan": "~1.9.0",
